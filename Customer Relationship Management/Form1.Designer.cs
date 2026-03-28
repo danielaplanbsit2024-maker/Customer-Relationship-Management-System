@@ -28,12 +28,238 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            pictureBox1 = new PictureBox();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            pictureBox2 = new PictureBox();
+            button1 = new Button();
+            button2 = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Cooper Black", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(24, 102);
+            label1.Name = "label1";
+            label1.Size = new Size(268, 36);
+            label1.TabIndex = 0;
+            label1.Text = "GROUP ACLAN";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Cooper Black", 10F);
+            label2.Location = new Point(52, 172);
+            label2.Name = "label2";
+            label2.Size = new Size(171, 23);
+            label2.TabIndex = 1;
+            label2.Text = "Aplan, Daniel S.";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Cooper Black", 10F);
+            label3.Location = new Point(52, 207);
+            label3.Name = "label3";
+            label3.Size = new Size(188, 23);
+            label3.TabIndex = 2;
+            label3.Text = "Cruz, Rochelle M.";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Cooper Black", 10F);
+            label4.Location = new Point(52, 244);
+            label4.Name = "label4";
+            label4.Size = new Size(204, 23);
+            label4.TabIndex = 3;
+            label4.Text = "Estapia, Joaquin C.";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Cooper Black", 10F);
+            label5.Location = new Point(52, 282);
+            label5.Name = "label5";
+            label5.Size = new Size(287, 23);
+            label5.TabIndex = 4;
+            label5.Text = "Manansala, Martha Faith A.";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Image = Properties.Resources.notepad_bg2;
+            pictureBox1.Location = new Point(24, 33);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(489, 489);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.PapayaWhip;
+            label6.Font = new Font("Cooper Black", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(105, 161);
+            label6.Name = "label6";
+            label6.Size = new Size(145, 36);
+            label6.TabIndex = 6;
+            label6.Text = "BSIT-2B";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.PapayaWhip;
+            label7.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(150, 233);
+            label7.Name = "label7";
+            label7.Size = new Size(208, 27);
+            label7.TabIndex = 7;
+            label7.Text = "Aplan, Daniel S.";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.PapayaWhip;
+            label8.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(150, 282);
+            label8.Name = "label8";
+            label8.Size = new Size(223, 27);
+            label8.TabIndex = 8;
+            label8.Text = "Cruz, Rochelle M.";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.PapayaWhip;
+            label9.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(150, 331);
+            label9.Name = "label9";
+            label9.Size = new Size(247, 27);
+            label9.TabIndex = 9;
+            label9.Text = "Estapia, Joaquin C.";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.PapayaWhip;
+            label10.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(150, 381);
+            label10.Name = "label10";
+            label10.Size = new Size(276, 27);
+            label10.TabIndex = 10;
+            label10.Text = "Manansala, Martha A.";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Cooper Black", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(562, 66);
+            label11.Name = "label11";
+            label11.Size = new Size(472, 110);
+            label11.TabIndex = 12;
+            label11.Text = "BigBrew";
+            label11.Click += label11_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox2.Image = Properties.Resources.bbrew_mustache;
+            pictureBox2.Location = new Point(697, 181);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(188, 49);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 13;
+            pictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.PapayaWhip;
+            button1.Location = new Point(640, 282);
+            button1.Name = "button1";
+            button1.Size = new Size(304, 93);
+            button1.TabIndex = 14;
+            button1.Text = "Start";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.PapayaWhip;
+            button2.Location = new Point(640, 394);
+            button2.Name = "button2";
+            button2.Size = new Size(304, 93);
+            button2.TabIndex = 15;
+            button2.Text = "Exit";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(14F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Text = "Form1";
+            BackColor = Color.Peru;
+            ClientSize = new Size(1078, 544);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(pictureBox2);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(pictureBox1);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Font = new Font("Cooper Black", 10F);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MaximumSize = new Size(1100, 600);
+            MinimumSize = new Size(1100, 600);
+            Name = "Form1";
+            Text = "Customer Relationship Management";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private PictureBox pictureBox1;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private PictureBox pictureBox2;
+        private Button button1;
+        private Button button2;
     }
 }
