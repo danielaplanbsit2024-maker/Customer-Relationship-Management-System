@@ -29,40 +29,40 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customers));
-            btnLogout = new Button();
+            btnCustomersLogout = new Button();
             panel3 = new Panel();
             pictureBox2 = new PictureBox();
-            lblExit = new Label();
             pictureBox1 = new PictureBox();
-            btnHistory = new Button();
-            btnItems = new Button();
-            btnCategories = new Button();
-            btnDashboard = new Button();
-            btnSales = new Button();
+            btnCustomersToHistory = new Button();
+            btnCustomersToItems = new Button();
+            btnCustomersToCategories = new Button();
+            btnCustomersToDashboard = new Button();
+            btnCustomersToSales = new Button();
             btnCustomers = new Button();
+            btnMinimizeCustomers = new Button();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // btnLogout
+            // btnCustomersLogout
             // 
-            btnLogout.BackColor = Color.FromArgb(85, 61, 30);
-            btnLogout.FlatAppearance.BorderSize = 0;
-            btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.ForeColor = SystemColors.Info;
-            btnLogout.Location = new Point(1026, 68);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(134, 35);
-            btnLogout.TabIndex = 41;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = false;
+            btnCustomersLogout.BackColor = Color.FromArgb(85, 61, 30);
+            btnCustomersLogout.FlatAppearance.BorderSize = 0;
+            btnCustomersLogout.FlatStyle = FlatStyle.Flat;
+            btnCustomersLogout.ForeColor = SystemColors.Info;
+            btnCustomersLogout.Location = new Point(1026, 68);
+            btnCustomersLogout.Name = "btnCustomersLogout";
+            btnCustomersLogout.Size = new Size(134, 35);
+            btnCustomersLogout.TabIndex = 41;
+            btnCustomersLogout.Text = "Logout";
+            btnCustomersLogout.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(75, 54, 33);
+            panel3.Controls.Add(btnMinimizeCustomers);
             panel3.Controls.Add(pictureBox2);
-            panel3.Controls.Add(lblExit);
             panel3.Controls.Add(pictureBox1);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
@@ -80,17 +80,6 @@
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
-            // lblExit
-            // 
-            lblExit.AutoSize = true;
-            lblExit.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblExit.ForeColor = SystemColors.Info;
-            lblExit.Location = new Point(1103, 9);
-            lblExit.Name = "lblExit";
-            lblExit.Size = new Size(45, 48);
-            lblExit.TabIndex = 11;
-            lblExit.Text = "_";
-            // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
@@ -102,70 +91,70 @@
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
-            // btnHistory
+            // btnCustomersToHistory
             // 
-            btnHistory.BackColor = Color.FromArgb(85, 61, 30);
-            btnHistory.FlatAppearance.BorderSize = 0;
-            btnHistory.FlatStyle = FlatStyle.Flat;
-            btnHistory.ForeColor = SystemColors.Info;
-            btnHistory.Location = new Point(855, 68);
-            btnHistory.Name = "btnHistory";
-            btnHistory.Size = new Size(171, 35);
-            btnHistory.TabIndex = 40;
-            btnHistory.Text = "History";
-            btnHistory.UseVisualStyleBackColor = false;
+            btnCustomersToHistory.BackColor = Color.FromArgb(85, 61, 30);
+            btnCustomersToHistory.FlatAppearance.BorderSize = 0;
+            btnCustomersToHistory.FlatStyle = FlatStyle.Flat;
+            btnCustomersToHistory.ForeColor = SystemColors.Info;
+            btnCustomersToHistory.Location = new Point(855, 68);
+            btnCustomersToHistory.Name = "btnCustomersToHistory";
+            btnCustomersToHistory.Size = new Size(171, 35);
+            btnCustomersToHistory.TabIndex = 40;
+            btnCustomersToHistory.Text = "History";
+            btnCustomersToHistory.UseVisualStyleBackColor = false;
             // 
-            // btnItems
+            // btnCustomersToItems
             // 
-            btnItems.BackColor = Color.FromArgb(85, 61, 30);
-            btnItems.FlatAppearance.BorderSize = 0;
-            btnItems.FlatStyle = FlatStyle.Flat;
-            btnItems.ForeColor = SystemColors.Info;
-            btnItems.Location = new Point(513, 68);
-            btnItems.Name = "btnItems";
-            btnItems.Size = new Size(171, 35);
-            btnItems.TabIndex = 38;
-            btnItems.Text = "Items";
-            btnItems.UseVisualStyleBackColor = false;
+            btnCustomersToItems.BackColor = Color.FromArgb(85, 61, 30);
+            btnCustomersToItems.FlatAppearance.BorderSize = 0;
+            btnCustomersToItems.FlatStyle = FlatStyle.Flat;
+            btnCustomersToItems.ForeColor = SystemColors.Info;
+            btnCustomersToItems.Location = new Point(513, 68);
+            btnCustomersToItems.Name = "btnCustomersToItems";
+            btnCustomersToItems.Size = new Size(171, 35);
+            btnCustomersToItems.TabIndex = 38;
+            btnCustomersToItems.Text = "Items";
+            btnCustomersToItems.UseVisualStyleBackColor = false;
             // 
-            // btnCategories
+            // btnCustomersToCategories
             // 
-            btnCategories.BackColor = Color.FromArgb(85, 61, 30);
-            btnCategories.FlatAppearance.BorderSize = 0;
-            btnCategories.FlatStyle = FlatStyle.Flat;
-            btnCategories.ForeColor = SystemColors.Info;
-            btnCategories.Location = new Point(684, 68);
-            btnCategories.Name = "btnCategories";
-            btnCategories.Size = new Size(171, 35);
-            btnCategories.TabIndex = 39;
-            btnCategories.Text = "Categories";
-            btnCategories.UseVisualStyleBackColor = false;
+            btnCustomersToCategories.BackColor = Color.FromArgb(85, 61, 30);
+            btnCustomersToCategories.FlatAppearance.BorderSize = 0;
+            btnCustomersToCategories.FlatStyle = FlatStyle.Flat;
+            btnCustomersToCategories.ForeColor = SystemColors.Info;
+            btnCustomersToCategories.Location = new Point(684, 68);
+            btnCustomersToCategories.Name = "btnCustomersToCategories";
+            btnCustomersToCategories.Size = new Size(171, 35);
+            btnCustomersToCategories.TabIndex = 39;
+            btnCustomersToCategories.Text = "Categories";
+            btnCustomersToCategories.UseVisualStyleBackColor = false;
             // 
-            // btnDashboard
+            // btnCustomersToDashboard
             // 
-            btnDashboard.BackColor = Color.FromArgb(85, 61, 30);
-            btnDashboard.FlatAppearance.BorderSize = 0;
-            btnDashboard.FlatStyle = FlatStyle.Flat;
-            btnDashboard.ForeColor = SystemColors.Info;
-            btnDashboard.Location = new Point(0, 68);
-            btnDashboard.Name = "btnDashboard";
-            btnDashboard.Size = new Size(171, 35);
-            btnDashboard.TabIndex = 35;
-            btnDashboard.Text = "Dashboard";
-            btnDashboard.UseVisualStyleBackColor = false;
+            btnCustomersToDashboard.BackColor = Color.FromArgb(85, 61, 30);
+            btnCustomersToDashboard.FlatAppearance.BorderSize = 0;
+            btnCustomersToDashboard.FlatStyle = FlatStyle.Flat;
+            btnCustomersToDashboard.ForeColor = SystemColors.Info;
+            btnCustomersToDashboard.Location = new Point(0, 68);
+            btnCustomersToDashboard.Name = "btnCustomersToDashboard";
+            btnCustomersToDashboard.Size = new Size(171, 35);
+            btnCustomersToDashboard.TabIndex = 35;
+            btnCustomersToDashboard.Text = "Dashboard";
+            btnCustomersToDashboard.UseVisualStyleBackColor = false;
             // 
-            // btnSales
+            // btnCustomersToSales
             // 
-            btnSales.BackColor = Color.FromArgb(85, 61, 30);
-            btnSales.FlatAppearance.BorderSize = 0;
-            btnSales.FlatStyle = FlatStyle.Flat;
-            btnSales.ForeColor = SystemColors.Info;
-            btnSales.Location = new Point(171, 68);
-            btnSales.Name = "btnSales";
-            btnSales.Size = new Size(171, 35);
-            btnSales.TabIndex = 36;
-            btnSales.Text = "Sales";
-            btnSales.UseVisualStyleBackColor = false;
+            btnCustomersToSales.BackColor = Color.FromArgb(85, 61, 30);
+            btnCustomersToSales.FlatAppearance.BorderSize = 0;
+            btnCustomersToSales.FlatStyle = FlatStyle.Flat;
+            btnCustomersToSales.ForeColor = SystemColors.Info;
+            btnCustomersToSales.Location = new Point(171, 68);
+            btnCustomersToSales.Name = "btnCustomersToSales";
+            btnCustomersToSales.Size = new Size(171, 35);
+            btnCustomersToSales.TabIndex = 36;
+            btnCustomersToSales.Text = "Sales";
+            btnCustomersToSales.UseVisualStyleBackColor = false;
             // 
             // btnCustomers
             // 
@@ -180,19 +169,33 @@
             btnCustomers.Text = "Customers";
             btnCustomers.UseVisualStyleBackColor = false;
             // 
+            // btnMinimizeCustomers
+            // 
+            btnMinimizeCustomers.BackColor = Color.FromArgb(75, 54, 33);
+            btnMinimizeCustomers.FlatAppearance.BorderSize = 0;
+            btnMinimizeCustomers.FlatStyle = FlatStyle.Flat;
+            btnMinimizeCustomers.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMinimizeCustomers.ForeColor = SystemColors.Info;
+            btnMinimizeCustomers.Location = new Point(1094, 0);
+            btnMinimizeCustomers.Name = "btnMinimizeCustomers";
+            btnMinimizeCustomers.Size = new Size(54, 65);
+            btnMinimizeCustomers.TabIndex = 29;
+            btnMinimizeCustomers.Text = "_";
+            btnMinimizeCustomers.UseVisualStyleBackColor = false;
+            // 
             // Customers
             // 
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(1160, 650);
-            Controls.Add(btnLogout);
+            Controls.Add(btnCustomersLogout);
             Controls.Add(panel3);
-            Controls.Add(btnHistory);
-            Controls.Add(btnItems);
-            Controls.Add(btnCategories);
-            Controls.Add(btnDashboard);
-            Controls.Add(btnSales);
+            Controls.Add(btnCustomersToHistory);
+            Controls.Add(btnCustomersToItems);
+            Controls.Add(btnCustomersToCategories);
+            Controls.Add(btnCustomersToDashboard);
+            Controls.Add(btnCustomersToSales);
             Controls.Add(btnCustomers);
             Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -209,16 +212,16 @@
 
         #endregion
 
-        private Button btnLogout;
+        private Button btnCustomersLogout;
         private Panel panel3;
         private PictureBox pictureBox2;
-        private Label lblExit;
         private PictureBox pictureBox1;
-        private Button btnHistory;
-        private Button btnItems;
-        private Button btnCategories;
-        private Button btnDashboard;
-        private Button btnSales;
+        private Button btnCustomersToHistory;
+        private Button btnCustomersToItems;
+        private Button btnCustomersToCategories;
+        private Button btnCustomersToDashboard;
+        private Button btnCustomersToSales;
         private Button btnCustomers;
+        private Button btnMinimizeCustomers;
     }
 }
