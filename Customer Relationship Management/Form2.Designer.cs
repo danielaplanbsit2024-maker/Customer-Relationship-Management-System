@@ -44,6 +44,7 @@
             MinimumSize = new Size(1100, 600);
             Name = "Form2";
             Text = "Customer Relationship Management";
+            Load += Form2_Load;
             ResumeLayout(false);
         }
 
