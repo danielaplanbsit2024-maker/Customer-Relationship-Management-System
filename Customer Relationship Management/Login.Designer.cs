@@ -37,8 +37,8 @@
             txtLoginPassword = new TextBox();
             lblLoginPassword = new Label();
             btnLogin = new Button();
-            lblExit = new Label();
             btnLoginRegister = new Button();
+            btnLoginExit = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -124,17 +124,6 @@
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
             // 
-            // lblExit
-            // 
-            lblExit.AutoSize = true;
-            lblExit.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblExit.ForeColor = Color.FromArgb(75, 54, 33);
-            lblExit.Location = new Point(792, 9);
-            lblExit.Name = "lblExit";
-            lblExit.Size = new Size(29, 29);
-            lblExit.TabIndex = 9;
-            lblExit.Text = "X";
-            // 
             // btnLoginRegister
             // 
             btnLoginRegister.BackColor = SystemColors.Info;
@@ -149,14 +138,28 @@
             btnLoginRegister.Text = "Register";
             btnLoginRegister.UseVisualStyleBackColor = false;
             // 
+            // btnLoginExit
+            // 
+            btnLoginExit.BackColor = SystemColors.Info;
+            btnLoginExit.FlatAppearance.BorderSize = 0;
+            btnLoginExit.FlatStyle = FlatStyle.Flat;
+            btnLoginExit.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLoginExit.ForeColor = Color.FromArgb(75, 54, 33);
+            btnLoginExit.Location = new Point(790, 2);
+            btnLoginExit.Name = "btnLoginExit";
+            btnLoginExit.Size = new Size(38, 34);
+            btnLoginExit.TabIndex = 11;
+            btnLoginExit.Text = "X";
+            btnLoginExit.UseVisualStyleBackColor = false;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(15F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(830, 600);
+            Controls.Add(btnLoginExit);
             Controls.Add(btnLoginRegister);
-            Controls.Add(lblExit);
             Controls.Add(btnLogin);
             Controls.Add(txtLoginPassword);
             Controls.Add(lblLoginPassword);
@@ -187,8 +190,8 @@
         private Label lblLoginPassword;
         private Button btnLogin;
         private Label lblRegister;
-        private Label lblExit;
         private PictureBox pictureBox2;
         private Button btnLoginRegister;
+        private Button btnLoginExit;
     }
 }

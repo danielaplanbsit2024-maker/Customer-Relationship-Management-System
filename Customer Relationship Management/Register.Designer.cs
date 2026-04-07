@@ -32,7 +32,6 @@
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            lblExit = new Label();
             txtRegisterPassword = new TextBox();
             lblRegisterPassword = new Label();
             txtRegisterUsername = new TextBox();
@@ -41,6 +40,7 @@
             lblRegisterConfirmPass = new Label();
             btnRegister = new Button();
             btnRegisterLogin = new Button();
+            btnRegisterExit = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -76,17 +76,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
-            // 
-            // lblExit
-            // 
-            lblExit.AutoSize = true;
-            lblExit.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblExit.ForeColor = Color.FromArgb(75, 54, 33);
-            lblExit.Location = new Point(793, 9);
-            lblExit.Name = "lblExit";
-            lblExit.Size = new Size(29, 29);
-            lblExit.TabIndex = 10;
-            lblExit.Text = "X";
             // 
             // txtRegisterPassword
             // 
@@ -167,12 +156,27 @@
             btnRegisterLogin.Text = "Login";
             btnRegisterLogin.UseVisualStyleBackColor = false;
             // 
+            // btnRegisterExit
+            // 
+            btnRegisterExit.BackColor = SystemColors.Info;
+            btnRegisterExit.FlatAppearance.BorderSize = 0;
+            btnRegisterExit.FlatStyle = FlatStyle.Flat;
+            btnRegisterExit.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRegisterExit.ForeColor = Color.FromArgb(75, 54, 33);
+            btnRegisterExit.Location = new Point(792, 0);
+            btnRegisterExit.Name = "btnRegisterExit";
+            btnRegisterExit.Size = new Size(38, 34);
+            btnRegisterExit.TabIndex = 21;
+            btnRegisterExit.Text = "X";
+            btnRegisterExit.UseVisualStyleBackColor = false;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(15F, 29F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(831, 600);
+            Controls.Add(btnRegisterExit);
             Controls.Add(btnRegisterLogin);
             Controls.Add(btnRegister);
             Controls.Add(txtRegisterConfirmPass);
@@ -181,7 +185,6 @@
             Controls.Add(lblRegisterPassword);
             Controls.Add(txtRegisterUsername);
             Controls.Add(lblRegisterUsername);
-            Controls.Add(lblExit);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -201,7 +204,6 @@
         private Panel panel1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Label lblExit;
         private TextBox txtRegisterPassword;
         private Label lblRegisterPassword;
         private TextBox txtRegisterUsername;
@@ -210,5 +212,6 @@
         private Label lblRegisterConfirmPass;
         private Button btnRegister;
         private Button btnRegisterLogin;
+        private Button btnRegisterExit;
     }
 }
