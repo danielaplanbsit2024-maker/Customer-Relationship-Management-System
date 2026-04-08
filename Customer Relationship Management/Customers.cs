@@ -14,5 +14,10 @@ namespace Customer_Relationship_Management
         {
             InitializeComponent();
         }
+
+        private void Customers_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
