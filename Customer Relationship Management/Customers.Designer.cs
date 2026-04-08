@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customers));
             btnCustomersLogout = new Button();
             panel3 = new Panel();
+            btnMinimizeCustomers = new Button();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             btnCustomersToHistory = new Button();
@@ -39,7 +40,9 @@
             btnCustomersToDashboard = new Button();
             btnCustomersToSales = new Button();
             btnCustomers = new Button();
-            btnMinimizeCustomers = new Button();
+            label9 = new Label();
+            label1 = new Label();
+            label2 = new Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -69,6 +72,20 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1160, 68);
             panel3.TabIndex = 34;
+            // 
+            // btnMinimizeCustomers
+            // 
+            btnMinimizeCustomers.BackColor = Color.FromArgb(75, 54, 33);
+            btnMinimizeCustomers.FlatAppearance.BorderSize = 0;
+            btnMinimizeCustomers.FlatStyle = FlatStyle.Flat;
+            btnMinimizeCustomers.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMinimizeCustomers.ForeColor = SystemColors.Info;
+            btnMinimizeCustomers.Location = new Point(1094, 0);
+            btnMinimizeCustomers.Name = "btnMinimizeCustomers";
+            btnMinimizeCustomers.Size = new Size(54, 65);
+            btnMinimizeCustomers.TabIndex = 29;
+            btnMinimizeCustomers.Text = "_";
+            btnMinimizeCustomers.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
@@ -169,19 +186,35 @@
             btnCustomers.Text = "Customers";
             btnCustomers.UseVisualStyleBackColor = false;
             // 
-            // btnMinimizeCustomers
+            // label9
             // 
-            btnMinimizeCustomers.BackColor = Color.FromArgb(75, 54, 33);
-            btnMinimizeCustomers.FlatAppearance.BorderSize = 0;
-            btnMinimizeCustomers.FlatStyle = FlatStyle.Flat;
-            btnMinimizeCustomers.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnMinimizeCustomers.ForeColor = SystemColors.Info;
-            btnMinimizeCustomers.Location = new Point(1094, 0);
-            btnMinimizeCustomers.Name = "btnMinimizeCustomers";
-            btnMinimizeCustomers.Size = new Size(54, 65);
-            btnMinimizeCustomers.TabIndex = 29;
-            btnMinimizeCustomers.Text = "_";
-            btnMinimizeCustomers.UseVisualStyleBackColor = false;
+            label9.BackColor = Color.Tan;
+            label9.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(0, 106);
+            label9.Name = "label9";
+            label9.Size = new Size(1160, 90);
+            label9.TabIndex = 42;
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.Tan;
+            label1.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(0, 559);
+            label1.Name = "label1";
+            label1.Size = new Size(1160, 90);
+            label1.TabIndex = 43;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.LemonChiffon;
+            label2.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(0, 524);
+            label2.Name = "label2";
+            label2.Size = new Size(1160, 35);
+            label2.TabIndex = 44;
             // 
             // Customers
             // 
@@ -189,6 +222,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(1160, 650);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(label9);
             Controls.Add(btnCustomersLogout);
             Controls.Add(panel3);
             Controls.Add(btnCustomersToHistory);
@@ -223,5 +259,8 @@
         private Button btnCustomersToSales;
         private Button btnCustomers;
         private Button btnMinimizeCustomers;
+        private Label label9;
+        private Label label1;
+        private Label label2;
     }
 }
