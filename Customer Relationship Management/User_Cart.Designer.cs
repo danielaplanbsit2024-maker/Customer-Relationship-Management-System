@@ -52,6 +52,9 @@
             colSubtotal = new DataGridViewTextBoxColumn();
             btnDelete = new DataGridViewButtonColumn();
             label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -205,7 +208,7 @@
             // label4
             // 
             label4.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(826, 296);
+            label4.Location = new Point(826, 307);
             label4.Name = "label4";
             label4.Size = new Size(123, 35);
             label4.TabIndex = 42;
@@ -215,7 +218,7 @@
             // label5
             // 
             label5.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(830, 331);
+            label5.Location = new Point(830, 356);
             label5.Name = "label5";
             label5.Size = new Size(151, 35);
             label5.TabIndex = 43;
@@ -225,7 +228,7 @@
             // label6
             // 
             label6.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(840, 386);
+            label6.Location = new Point(840, 402);
             label6.Name = "label6";
             label6.Size = new Size(141, 55);
             label6.TabIndex = 44;
@@ -298,19 +301,56 @@
             // 
             // label7
             // 
+            label7.BackColor = SystemColors.ControlDark;
+            label7.FlatStyle = FlatStyle.System;
             label7.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(997, 261);
+            label7.Location = new Point(983, 259);
             label7.Name = "label7";
-            label7.Size = new Size(151, 35);
+            label7.Size = new Size(165, 35);
             label7.TabIndex = 47;
-            label7.Text = "Total Items:";
             label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            label8.BackColor = SystemColors.ControlDark;
+            label8.FlatStyle = FlatStyle.System;
+            label8.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(983, 305);
+            label8.Name = "label8";
+            label8.Size = new Size(165, 35);
+            label8.TabIndex = 48;
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            label9.BackColor = SystemColors.ControlDark;
+            label9.FlatStyle = FlatStyle.System;
+            label9.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(983, 353);
+            label9.Name = "label9";
+            label9.Size = new Size(165, 35);
+            label9.TabIndex = 49;
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            label10.BackColor = SystemColors.ControlDark;
+            label10.FlatStyle = FlatStyle.System;
+            label10.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(962, 408);
+            label10.Name = "label10";
+            label10.Size = new Size(165, 43);
+            label10.TabIndex = 50;
+            label10.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // User_Cart
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1160, 650);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(button6);
             Controls.Add(button4);
@@ -358,5 +398,8 @@
         private DataGridViewTextBoxColumn colSubtotal;
         private DataGridViewButtonColumn btnDelete;
         private Label label7;
+        private Label label8;
+        private Label label9;
+        private Label label10;
     }
 }
