@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Home));
             panel3 = new Panel();
+            button5 = new Button();
+            pictureBox1 = new PictureBox();
             btnMinimizeCustomers = new Button();
             pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            button1 = new Button();
             button2 = new Button();
+            button1 = new Button();
             button3 = new Button();
             pictureBox3 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             button4 = new Button();
-            button5 = new Button();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -63,6 +63,30 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1160, 74);
             panel3.TabIndex = 35;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(75, 54, 33);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.ForeColor = SystemColors.Info;
+            button5.Location = new Point(1010, 13);
+            button5.Name = "button5";
+            button5.Size = new Size(147, 46);
+            button5.TabIndex = 55;
+            button5.Text = "REVIEWS";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(95, 9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(261, 52);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
             // 
             // btnMinimizeCustomers
             // 
@@ -88,16 +112,18 @@
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // button2
             // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(95, 9);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(261, 52);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            button2.BackColor = Color.FromArgb(75, 54, 33);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = SystemColors.Info;
+            button2.Location = new Point(552, 12);
+            button2.Name = "button2";
+            button2.Size = new Size(146, 47);
+            button2.TabIndex = 46;
+            button2.Text = "HOME";
+            button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -111,19 +137,6 @@
             button1.TabIndex = 45;
             button1.Text = "PRODUCTS";
             button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(75, 54, 33);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = SystemColors.Info;
-            button2.Location = new Point(552, 12);
-            button2.Name = "button2";
-            button2.Size = new Size(146, 47);
-            button2.TabIndex = 46;
-            button2.Text = "HOME";
-            button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -140,7 +153,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.bbreww;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(30, 173);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(560, 373);
@@ -193,19 +206,6 @@
             button4.Text = "Order Now";
             button4.UseVisualStyleBackColor = false;
             // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(75, 54, 33);
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.ForeColor = SystemColors.Info;
-            button5.Location = new Point(1010, 13);
-            button5.Name = "button5";
-            button5.Size = new Size(147, 46);
-            button5.TabIndex = 55;
-            button5.Text = "REVIEWS";
-            button5.UseVisualStyleBackColor = false;
-            // 
             // User_Home
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -223,8 +223,8 @@
             Name = "User_Home";
             Text = "User_Home";
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
