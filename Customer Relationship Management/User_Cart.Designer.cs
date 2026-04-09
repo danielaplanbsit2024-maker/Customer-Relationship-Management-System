@@ -51,6 +51,7 @@
             colQty = new DataGridViewTextBoxColumn();
             colSubtotal = new DataGridViewTextBoxColumn();
             btnDelete = new DataGridViewButtonColumn();
+            label7 = new Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -295,11 +296,22 @@
             btnDelete.UseColumnTextForButtonValue = true;
             btnDelete.Width = 150;
             // 
+            // label7
+            // 
+            label7.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(997, 261);
+            label7.Name = "label7";
+            label7.Size = new Size(151, 35);
+            label7.TabIndex = 47;
+            label7.Text = "Total Items:";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // User_Cart
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1160, 650);
+            Controls.Add(label7);
             Controls.Add(button6);
             Controls.Add(button4);
             Controls.Add(label6);
@@ -345,5 +357,6 @@
         private DataGridViewTextBoxColumn colQty;
         private DataGridViewTextBoxColumn colSubtotal;
         private DataGridViewButtonColumn btnDelete;
+        private Label label7;
     }
 }
