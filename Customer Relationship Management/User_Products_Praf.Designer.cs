@@ -69,6 +69,7 @@
             label2 = new Label();
             panel2 = new Panel();
             panel1 = new Panel();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -104,21 +105,21 @@
             button10.BackColor = Color.Tan;
             button10.FlatStyle = FlatStyle.Flat;
             button10.ForeColor = Color.SaddleBrown;
-            button10.Location = new Point(32, 169);
+            button10.Location = new Point(35, 178);
             button10.Name = "button10";
-            button10.Size = new Size(142, 31);
+            button10.Size = new Size(138, 29);
             button10.TabIndex = 41;
             button10.Text = "Add to cart";
             button10.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
-            label4.Font = new Font("Verdana", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(0, 137);
             label4.Name = "label4";
             label4.Size = new Size(203, 28);
             label4.TabIndex = 40;
-            label4.Text = "COOKIES AND CREAM";
+            label4.Text = "COFFEE JELLY";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox4
@@ -161,7 +162,7 @@
             label5.Name = "label5";
             label5.Size = new Size(136, 28);
             label5.TabIndex = 40;
-            label5.Text = "OKINAWA";
+            label5.Text = "MOCA";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox5
@@ -248,7 +249,7 @@
             label7.Name = "label7";
             label7.Size = new Size(203, 28);
             label7.TabIndex = 40;
-            label7.Text = "CHEESECAKE";
+            label7.Text = "CHOCOLATE";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox7
@@ -287,11 +288,11 @@
             // 
             // label8
             // 
-            label8.Location = new Point(29, 137);
+            label8.Location = new Point(18, 137);
             label8.Name = "label8";
-            label8.Size = new Size(150, 28);
+            label8.Size = new Size(171, 28);
             label8.TabIndex = 40;
-            label8.Text = "WINTERMELON";
+            label8.Text = "VANILLA COFFEE";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox8
@@ -306,11 +307,13 @@
             // 
             // label3
             // 
-            label3.Location = new Point(34, 137);
+            label3.BackColor = Color.Transparent;
+            label3.ForeColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(34, 131);
             label3.Name = "label3";
             label3.Size = new Size(136, 28);
             label3.TabIndex = 40;
-            label3.Text = "DARK CHOCO";
+            label3.Text = "CARAMEL";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
@@ -497,7 +500,7 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button6.ForeColor = SystemColors.Info;
+            button6.ForeColor = Color.DarkOrange;
             button6.Location = new Point(65, 148);
             button6.Name = "button6";
             button6.Size = new Size(190, 56);
@@ -534,6 +537,7 @@
             // 
             panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel2.BackColor = Color.FromArgb(194, 122, 47);
+            panel2.Controls.Add(label9);
             panel2.Controls.Add(button10);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(pictureBox3);
@@ -555,6 +559,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(327, 409);
             panel1.TabIndex = 47;
+            // 
+            // label9
+            // 
+            label9.BackColor = Color.Transparent;
+            label9.ForeColor = SystemColors.ActiveCaptionText;
+            label9.Location = new Point(34, 152);
+            label9.Name = "label9";
+            label9.Size = new Size(136, 28);
+            label9.TabIndex = 42;
+            label9.Text = "MACCHIATO";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // User_Products_Praf
             // 
@@ -635,5 +650,6 @@
         private Label label2;
         private Panel panel2;
         private Panel panel1;
+        private Label label9;
     }
 }

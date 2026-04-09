@@ -267,7 +267,7 @@
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = SystemColors.Info;
+            button4.ForeColor = Color.DarkOrange;
             button4.Location = new Point(65, 86);
             button4.Name = "button4";
             button4.Size = new Size(190, 56);
