@@ -39,6 +39,11 @@
             button3 = new Button();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            col_item = new DataGridViewTextBoxColumn();
+            colPrice = new DataGridViewTextBoxColumn();
+            colQty = new DataGridViewTextBoxColumn();
+            colSubtotal = new DataGridViewTextBoxColumn();
+            btnDelete = new DataGridViewButtonColumn();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -46,11 +51,6 @@
             label6 = new Label();
             button4 = new Button();
             button6 = new Button();
-            col_item = new DataGridViewTextBoxColumn();
-            colPrice = new DataGridViewTextBoxColumn();
-            colQty = new DataGridViewTextBoxColumn();
-            colSubtotal = new DataGridViewTextBoxColumn();
-            btnDelete = new DataGridViewButtonColumn();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
@@ -185,82 +185,6 @@
             dataGridView1.Size = new Size(794, 469);
             dataGridView1.TabIndex = 38;
             // 
-            // label2
-            // 
-            label2.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(879, 167);
-            label2.Name = "label2";
-            label2.Size = new Size(221, 67);
-            label2.TabIndex = 40;
-            label2.Text = "ORDER SUMMARY";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            label3.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(826, 261);
-            label3.Name = "label3";
-            label3.Size = new Size(151, 35);
-            label3.TabIndex = 41;
-            label3.Text = "Total Items:";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            label4.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(826, 307);
-            label4.Name = "label4";
-            label4.Size = new Size(123, 35);
-            label4.TabIndex = 42;
-            label4.Text = "Subtotal:";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            label5.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(830, 356);
-            label5.Name = "label5";
-            label5.Size = new Size(151, 35);
-            label5.TabIndex = 43;
-            label5.Text = "Delivery Fee:";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            label6.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(840, 402);
-            label6.Name = "label6";
-            label6.Size = new Size(141, 55);
-            label6.TabIndex = 44;
-            label6.Text = "TOTAL:";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.SeaGreen;
-            button4.BackgroundImageLayout = ImageLayout.None;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = SystemColors.ButtonFace;
-            button4.Location = new Point(840, 478);
-            button4.Name = "button4";
-            button4.Size = new Size(291, 60);
-            button4.TabIndex = 45;
-            button4.Text = "PROCEED TO CHECKOUT";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            button6.BackColor = Color.Firebrick;
-            button6.BackgroundImageLayout = ImageLayout.None;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = SystemColors.ControlLightLight;
-            button6.Location = new Point(857, 544);
-            button6.Name = "button6";
-            button6.Size = new Size(260, 48);
-            button6.TabIndex = 46;
-            button6.Text = "CLEAR CART";
-            button6.UseVisualStyleBackColor = false;
-            // 
             // col_item
             // 
             col_item.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -299,12 +223,88 @@
             btnDelete.UseColumnTextForButtonValue = true;
             btnDelete.Width = 150;
             // 
+            // label2
+            // 
+            label2.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(875, 167);
+            label2.Name = "label2";
+            label2.Size = new Size(221, 67);
+            label2.TabIndex = 40;
+            label2.Text = "ORDER SUMMARY";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(822, 258);
+            label3.Name = "label3";
+            label3.Size = new Size(151, 35);
+            label3.TabIndex = 41;
+            label3.Text = "Total Items:";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            label4.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(822, 304);
+            label4.Name = "label4";
+            label4.Size = new Size(123, 35);
+            label4.TabIndex = 42;
+            label4.Text = "Subtotal:";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            label5.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(826, 353);
+            label5.Name = "label5";
+            label5.Size = new Size(151, 35);
+            label5.TabIndex = 43;
+            label5.Text = "Delivery Fee:";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            label6.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(836, 399);
+            label6.Name = "label6";
+            label6.Size = new Size(141, 55);
+            label6.TabIndex = 44;
+            label6.Text = "TOTAL:";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.SeaGreen;
+            button4.BackgroundImageLayout = ImageLayout.None;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = SystemColors.ButtonFace;
+            button4.Location = new Point(836, 475);
+            button4.Name = "button4";
+            button4.Size = new Size(291, 60);
+            button4.TabIndex = 45;
+            button4.Text = "PROCEED TO CHECKOUT";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.Firebrick;
+            button6.BackgroundImageLayout = ImageLayout.None;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.ForeColor = SystemColors.ControlLightLight;
+            button6.Location = new Point(853, 541);
+            button6.Name = "button6";
+            button6.Size = new Size(260, 48);
+            button6.TabIndex = 46;
+            button6.Text = "CLEAR CART";
+            button6.UseVisualStyleBackColor = false;
+            // 
             // label7
             // 
             label7.BackColor = SystemColors.ControlDark;
             label7.FlatStyle = FlatStyle.System;
             label7.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(983, 259);
+            label7.Location = new Point(979, 256);
             label7.Name = "label7";
             label7.Size = new Size(165, 35);
             label7.TabIndex = 47;
@@ -315,7 +315,7 @@
             label8.BackColor = SystemColors.ControlDark;
             label8.FlatStyle = FlatStyle.System;
             label8.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(983, 305);
+            label8.Location = new Point(979, 302);
             label8.Name = "label8";
             label8.Size = new Size(165, 35);
             label8.TabIndex = 48;
@@ -326,7 +326,7 @@
             label9.BackColor = SystemColors.ControlDark;
             label9.FlatStyle = FlatStyle.System;
             label9.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(983, 353);
+            label9.Location = new Point(979, 350);
             label9.Name = "label9";
             label9.Size = new Size(165, 35);
             label9.TabIndex = 49;
@@ -337,7 +337,7 @@
             label10.BackColor = SystemColors.ControlDark;
             label10.FlatStyle = FlatStyle.System;
             label10.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(962, 408);
+            label10.Location = new Point(958, 405);
             label10.Name = "label10";
             label10.Size = new Size(165, 43);
             label10.TabIndex = 50;
