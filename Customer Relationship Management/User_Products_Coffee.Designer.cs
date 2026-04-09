@@ -240,7 +240,7 @@
             panel4.Controls.Add(button11);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(pictureBox4);
-            panel4.Location = new Point(650, 187);
+            panel4.Location = new Point(650, 179);
             panel4.Name = "panel4";
             panel4.Size = new Size(203, 212);
             panel4.TabIndex = 60;
@@ -366,7 +366,7 @@
             panel2.Controls.Add(button10);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(pictureBox3);
-            panel2.Location = new Point(398, 187);
+            panel2.Location = new Point(398, 179);
             panel2.Name = "panel2";
             panel2.Size = new Size(203, 212);
             panel2.TabIndex = 58;
@@ -408,7 +408,7 @@
             // 
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Franklin Gothic Medium", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1, 105);
+            label1.Location = new Point(0, 81);
             label1.Name = "label1";
             label1.Size = new Size(1157, 65);
             label1.TabIndex = 57;
@@ -422,7 +422,7 @@
             panel5.Controls.Add(button12);
             panel5.Controls.Add(label5);
             panel5.Controls.Add(pictureBox5);
-            panel5.Location = new Point(900, 187);
+            panel5.Location = new Point(900, 179);
             panel5.Name = "panel5";
             panel5.Size = new Size(203, 212);
             panel5.TabIndex = 59;
@@ -467,7 +467,7 @@
             panel1.Controls.Add(button6);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(12, 185);
+            panel1.Location = new Point(12, 177);
             panel1.Name = "panel1";
             panel1.Size = new Size(327, 409);
             panel1.TabIndex = 56;
@@ -510,7 +510,7 @@
             panel7.Controls.Add(button14);
             panel7.Controls.Add(label7);
             panel7.Controls.Add(pictureBox7);
-            panel7.Location = new Point(650, 431);
+            panel7.Location = new Point(650, 423);
             panel7.Name = "panel7";
             panel7.Size = new Size(203, 212);
             panel7.TabIndex = 62;
@@ -554,7 +554,7 @@
             panel6.Controls.Add(button13);
             panel6.Controls.Add(label6);
             panel6.Controls.Add(pictureBox6);
-            panel6.Location = new Point(900, 431);
+            panel6.Location = new Point(900, 423);
             panel6.Name = "panel6";
             panel6.Size = new Size(203, 212);
             panel6.TabIndex = 63;
@@ -566,7 +566,7 @@
             panel8.Controls.Add(button15);
             panel8.Controls.Add(label8);
             panel8.Controls.Add(pictureBox8);
-            panel8.Location = new Point(398, 431);
+            panel8.Location = new Point(398, 423);
             panel8.Name = "panel8";
             panel8.Size = new Size(203, 212);
             panel8.TabIndex = 61;
