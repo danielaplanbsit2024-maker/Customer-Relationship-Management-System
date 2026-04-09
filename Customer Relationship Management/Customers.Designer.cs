@@ -232,10 +232,10 @@
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Lucida Sans", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(12, 122);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(310, 31);
+            textBox1.Size = new Size(310, 30);
             textBox1.TabIndex = 45;
             textBox1.Text = "SEARCH NAME / CONTACT#";
             textBox1.TextAlign = HorizontalAlignment.Center;
@@ -244,7 +244,7 @@
             // 
             label13.BackColor = Color.Tan;
             label13.BorderStyle = BorderStyle.FixedSingle;
-            label13.Font = new Font("Lucida Sans", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.Black;
             label13.Location = new Point(328, 121);
             label13.Name = "label13";
@@ -267,7 +267,7 @@
             button6.BackColor = Color.FromArgb(75, 54, 33);
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Lucida Sans", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button6.ForeColor = Color.White;
             button6.Location = new Point(738, 114);
             button6.Name = "button6";
@@ -302,7 +302,7 @@
             // label3
             // 
             label3.BackColor = Color.Tan;
-            label3.Font = new Font("Lucida Sans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
             label3.Location = new Point(12, 595);
             label3.Name = "label3";
@@ -316,7 +316,7 @@
             button1.BackColor = Color.FromArgb(75, 54, 33);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Lucida Sans", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
             button1.Location = new Point(663, 587);
             button1.Name = "button1";
@@ -330,7 +330,7 @@
             button2.BackColor = Color.PeachPuff;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Lucida Sans", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(85, 61, 30);
             button2.Location = new Point(846, 586);
             button2.Name = "button2";
@@ -342,7 +342,7 @@
             // label4
             // 
             label4.BackColor = Color.LemonChiffon;
-            label4.Font = new Font("Lucida Sans", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
             label4.Location = new Point(853, 538);
             label4.Name = "label4";
