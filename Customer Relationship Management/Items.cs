@@ -8,11 +8,21 @@ using System.Windows.Forms;
 
 namespace Customer_Relationship_Management
 {
-    public partial class Form2 : Form
+    public partial class Items : Form
     {
-        public Form2()
+        public Items()
         {
             InitializeComponent();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
