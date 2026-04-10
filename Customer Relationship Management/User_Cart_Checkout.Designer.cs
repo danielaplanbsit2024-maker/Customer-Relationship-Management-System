@@ -39,6 +39,21 @@
             label1 = new Label();
             panel3 = new Panel();
             label2 = new Label();
+            label3 = new Label();
+            textBox1 = new TextBox();
+            label4 = new Label();
+            textBox2 = new TextBox();
+            label5 = new Label();
+            textBox3 = new TextBox();
+            label6 = new Label();
+            textBox4 = new TextBox();
+            radioButton1 = new RadioButton();
+            label7 = new Label();
+            radioButton2 = new RadioButton();
+            label8 = new Label();
+            textBox5 = new TextBox();
+            button4 = new Button();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
@@ -169,11 +184,181 @@
             label2.Text = "CUSTOMER DETAILS";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label3
+            // 
+            label3.BorderStyle = BorderStyle.FixedSingle;
+            label3.Location = new Point(23, 218);
+            label3.Name = "label3";
+            label3.Size = new Size(253, 40);
+            label3.TabIndex = 55;
+            label3.Text = "First Name";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Location = new Point(276, 218);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(391, 40);
+            textBox1.TabIndex = 56;
+            // 
+            // label4
+            // 
+            label4.BorderStyle = BorderStyle.FixedSingle;
+            label4.Location = new Point(23, 257);
+            label4.Name = "label4";
+            label4.Size = new Size(253, 40);
+            label4.TabIndex = 57;
+            label4.Text = "Last Name";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox2
+            // 
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.Location = new Point(276, 257);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(391, 40);
+            textBox2.TabIndex = 58;
+            // 
+            // label5
+            // 
+            label5.BorderStyle = BorderStyle.FixedSingle;
+            label5.Location = new Point(23, 296);
+            label5.Name = "label5";
+            label5.Size = new Size(253, 75);
+            label5.TabIndex = 59;
+            label5.Text = "Delivery Address";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox3
+            // 
+            textBox3.BorderStyle = BorderStyle.FixedSingle;
+            textBox3.Location = new Point(276, 296);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(391, 75);
+            textBox3.TabIndex = 60;
+            // 
+            // label6
+            // 
+            label6.BorderStyle = BorderStyle.FixedSingle;
+            label6.Location = new Point(23, 370);
+            label6.Name = "label6";
+            label6.Size = new Size(253, 40);
+            label6.TabIndex = 61;
+            label6.Text = "Phone Number";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox4
+            // 
+            textBox4.BorderStyle = BorderStyle.FixedSingle;
+            textBox4.Location = new Point(276, 370);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(391, 40);
+            textBox4.TabIndex = 62;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(54, 520);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(252, 26);
+            radioButton1.TabIndex = 63;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Cash on Delivery (COD)";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            label7.BorderStyle = BorderStyle.FixedSingle;
+            label7.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(23, 445);
+            label7.Name = "label7";
+            label7.Size = new Size(644, 54);
+            label7.TabIndex = 64;
+            label7.Text = "PAYMENT METHOD";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(54, 567);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(228, 26);
+            radioButton2.TabIndex = 65;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "E-wallet (Gcash only)";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            label8.BorderStyle = BorderStyle.FixedSingle;
+            label8.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(718, 185);
+            label8.Name = "label8";
+            label8.Size = new Size(396, 54);
+            label8.TabIndex = 66;
+            label8.Text = "ORDER SUMMARY";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox5
+            // 
+            textBox5.BorderStyle = BorderStyle.FixedSingle;
+            textBox5.Location = new Point(718, 257);
+            textBox5.Multiline = true;
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(396, 260);
+            textBox5.TabIndex = 67;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.SeaGreen;
+            button4.BackgroundImageLayout = ImageLayout.None;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = SystemColors.ButtonFace;
+            button4.Location = new Point(857, 576);
+            button4.Name = "button4";
+            button4.Size = new Size(271, 52);
+            button4.TabIndex = 68;
+            button4.Text = "CONFIRM CHECKOUT";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.Firebrick;
+            button6.BackgroundImageLayout = ImageLayout.None;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.ForeColor = SystemColors.ControlLightLight;
+            button6.Location = new Point(576, 576);
+            button6.Name = "button6";
+            button6.Size = new Size(260, 52);
+            button6.TabIndex = 69;
+            button6.Text = "BACK TO CART";
+            button6.UseVisualStyleBackColor = false;
+            // 
             // User_Cart_Checkout
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1160, 650);
+            Controls.Add(button6);
+            Controls.Add(button4);
+            Controls.Add(textBox5);
+            Controls.Add(label8);
+            Controls.Add(radioButton2);
+            Controls.Add(label7);
+            Controls.Add(radioButton1);
+            Controls.Add(textBox4);
+            Controls.Add(label6);
+            Controls.Add(textBox3);
+            Controls.Add(label5);
+            Controls.Add(textBox2);
+            Controls.Add(label4);
+            Controls.Add(textBox1);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel3);
@@ -185,6 +370,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -199,5 +385,20 @@
         private Label label1;
         private Panel panel3;
         private Label label2;
+        private Label label3;
+        private TextBox textBox1;
+        private Label label4;
+        private TextBox textBox2;
+        private Label label5;
+        private TextBox textBox3;
+        private Label label6;
+        private TextBox textBox4;
+        private RadioButton radioButton1;
+        private Label label7;
+        private RadioButton radioButton2;
+        private Label label8;
+        private TextBox textBox5;
+        private Button button4;
+        private Button button6;
     }
 }

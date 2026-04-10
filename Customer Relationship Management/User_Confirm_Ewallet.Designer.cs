@@ -1,0 +1,233 @@
+﻿namespace Customer_Relationship_Management
+{
+    partial class User_Confirm_Ewallet
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Confirm_Ewallet));
+            panel3 = new Panel();
+            button5 = new Button();
+            pictureBox1 = new PictureBox();
+            btnMinimizeCustomers = new Button();
+            pictureBox2 = new PictureBox();
+            button2 = new Button();
+            button1 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            label3 = new Label();
+            label1 = new Label();
+            pictureBox3 = new PictureBox();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            SuspendLayout();
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(75, 54, 33);
+            panel3.Controls.Add(button5);
+            panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(btnMinimizeCustomers);
+            panel3.Controls.Add(pictureBox2);
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(button1);
+            panel3.Controls.Add(button3);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1160, 74);
+            panel3.TabIndex = 57;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(75, 54, 33);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.ForeColor = SystemColors.Info;
+            button5.Location = new Point(1010, 13);
+            button5.Name = "button5";
+            button5.Size = new Size(147, 46);
+            button5.TabIndex = 55;
+            button5.Text = "REVIEWS";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(95, 9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(261, 52);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
+            // btnMinimizeCustomers
+            // 
+            btnMinimizeCustomers.BackColor = Color.FromArgb(75, 54, 33);
+            btnMinimizeCustomers.FlatAppearance.BorderSize = 0;
+            btnMinimizeCustomers.FlatStyle = FlatStyle.Flat;
+            btnMinimizeCustomers.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMinimizeCustomers.ForeColor = SystemColors.Info;
+            btnMinimizeCustomers.Location = new Point(1203, 0);
+            btnMinimizeCustomers.Name = "btnMinimizeCustomers";
+            btnMinimizeCustomers.Size = new Size(59, 57);
+            btnMinimizeCustomers.TabIndex = 29;
+            btnMinimizeCustomers.Text = "_";
+            btnMinimizeCustomers.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(-5, -8);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(108, 86);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(75, 54, 33);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = SystemColors.Info;
+            button2.Location = new Point(552, 12);
+            button2.Name = "button2";
+            button2.Size = new Size(146, 47);
+            button2.TabIndex = 46;
+            button2.Text = "HOME";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(75, 54, 33);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = SystemColors.Info;
+            button1.Location = new Point(707, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(146, 47);
+            button1.TabIndex = 45;
+            button1.Text = "PRODUCTS";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(75, 54, 33);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.ForeColor = SystemColors.Info;
+            button3.Location = new Point(857, 12);
+            button3.Name = "button3";
+            button3.Size = new Size(146, 47);
+            button3.TabIndex = 47;
+            button3.Text = "CART";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Tan;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Impact", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.Sienna;
+            button4.Location = new Point(451, 557);
+            button4.Name = "button4";
+            button4.Size = new Size(280, 43);
+            button4.TabIndex = 61;
+            button4.Text = "BACK TO HOME";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(311, 449);
+            label3.Name = "label3";
+            label3.Size = new Size(525, 67);
+            label3.TabIndex = 60;
+            label3.Text = "Enjoy your order when it arrives. Have a good day!";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Gabriola", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(404, 379);
+            label1.Name = "label1";
+            label1.Size = new Size(378, 74);
+            label1.TabIndex = 59;
+            label1.Text = "Thanks for your order!";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(451, 122);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(280, 257);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 58;
+            pictureBox3.TabStop = false;
+            // 
+            // User_Confirm_Ewallet
+            // 
+            AutoScaleDimensions = new SizeF(11F, 22F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1160, 650);
+            Controls.Add(panel3);
+            Controls.Add(button4);
+            Controls.Add(label3);
+            Controls.Add(label1);
+            Controls.Add(pictureBox3);
+            Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "User_Confirm_Ewallet";
+            Text = "User_Confirm_Ewallet";
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Panel panel3;
+        private Button button5;
+        private PictureBox pictureBox1;
+        private Button btnMinimizeCustomers;
+        private PictureBox pictureBox2;
+        private Button button2;
+        private Button button1;
+        private Button button3;
+        private Button button4;
+        private Label label3;
+        private Label label1;
+        private PictureBox pictureBox3;
+    }
+}
