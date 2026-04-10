@@ -39,6 +39,9 @@
             button3 = new Button();
             label1 = new Label();
             label2 = new Label();
+            textBox5 = new TextBox();
+            button4 = new Button();
+            button6 = new Button();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -169,11 +172,50 @@
             label2.Text = "CUSTOMER REVIEWS";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // textBox5
+            // 
+            textBox5.BorderStyle = BorderStyle.FixedSingle;
+            textBox5.Location = new Point(293, 261);
+            textBox5.Multiline = true;
+            textBox5.Name = "textBox5";
+            textBox5.PlaceholderText = "FEEDBACK";
+            textBox5.Size = new Size(567, 244);
+            textBox5.TabIndex = 68;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.SeaGreen;
+            button4.BackgroundImageLayout = ImageLayout.None;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = SystemColors.ButtonFace;
+            button4.Location = new Point(589, 539);
+            button4.Name = "button4";
+            button4.Size = new Size(271, 52);
+            button4.TabIndex = 69;
+            button4.Text = "SUBMIT FEEDBACK";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.Firebrick;
+            button6.BackgroundImageLayout = ImageLayout.None;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.ForeColor = SystemColors.ControlLightLight;
+            button6.Location = new Point(293, 539);
+            button6.Name = "button6";
+            button6.Size = new Size(260, 52);
+            button6.TabIndex = 70;
+            button6.Text = "BACK TO HOME";
+            button6.UseVisualStyleBackColor = false;
+            // 
             // User_Reviews
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1160, 650);
+            Controls.Add(button6);
+            Controls.Add(button4);
+            Controls.Add(textBox5);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel3);
@@ -185,6 +227,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -199,5 +242,8 @@
         private Button button3;
         private Label label1;
         private Label label2;
+        private TextBox textBox5;
+        private Button button4;
+        private Button button6;
     }
 }
