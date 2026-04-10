@@ -103,7 +103,7 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Image = Properties.Resources.notepad_bg2;
+            pictureBox1.Image = null; // resource not found in Properties.Resources
             pictureBox1.Location = new Point(24, 33);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(489, 489);
@@ -179,7 +179,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.bbrew_mustache;
+            pictureBox2.Image = null; // resource not found in Properties.Resources
             pictureBox2.Location = new Point(728, 161);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(188, 49);
@@ -210,9 +210,9 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(12F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Peru;
+            this.AutoScaleDimensions = new SizeF(12F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = Color.Peru;
             ClientSize = new Size(1078, 544);
             Controls.Add(btnExit);
             Controls.Add(btnStart);
