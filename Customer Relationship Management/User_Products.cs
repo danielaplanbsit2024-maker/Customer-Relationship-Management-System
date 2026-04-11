@@ -53,7 +53,7 @@ namespace Customer_Relationship_Management
 
                     // get the user's Id
                     var userIdObj = db.ExecuteScalar(
-                        "SELECT Id FROM Users WHERE Username = @username",
+                        "SELECT Id FROM Users WHERE username = @username",
                         new Dictionary<string, object> { ["@username"] = CurrentUser }
                     );
 
@@ -63,7 +63,7 @@ namespace Customer_Relationship_Management
                         return;
                     }
 
-                    int userId = Convert.ToInt32(userIdObj);
+                    int id = Convert.ToInt32(userIdObj);
 
                     // insert product and user id (do not insert identity column)
                     // Use a dedicated UserId column to track which user added the product  
@@ -93,7 +93,7 @@ namespace Customer_Relationship_Management
 
                     // get the user's Id
                     var userIdObj = db.ExecuteScalar(
-                         "SELECT Id FROM Users WHERE Username = @username",
+                         "SELECT Id FROM Users WHERE username = @username",
                          new Dictionary<string, object> { ["@username"] = CurrentUser }
                      );
 
