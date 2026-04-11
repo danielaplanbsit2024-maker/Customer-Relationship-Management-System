@@ -69,6 +69,7 @@
             button15 = new Button();
             label8 = new Label();
             pictureBox8 = new PictureBox();
+            cartQuantity = new Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -90,6 +91,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(75, 54, 33);
+            panel3.Controls.Add(cartQuantity);
             panel3.Controls.Add(button5);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(btnMinimizeCustomers);
@@ -320,6 +322,7 @@
             button10.TabIndex = 41;
             button10.Text = "Add to cart";
             button10.UseVisualStyleBackColor = false;
+            button10.Click += button10_Click;
             // 
             // label3
             // 
@@ -563,6 +566,17 @@
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
             // 
+            // cartQuantity
+            // 
+            cartQuantity.AutoSize = true;
+            cartQuantity.Font = new Font("Verdana", 10F);
+            cartQuantity.ForeColor = Color.Red;
+            cartQuantity.Location = new Point(954, 13);
+            cartQuantity.Name = "cartQuantity";
+            cartQuantity.Size = new Size(25, 25);
+            cartQuantity.TabIndex = 56;
+            cartQuantity.Text = "1";
+            // 
             // User_Products
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
@@ -583,6 +597,7 @@
             Name = "User_Products";
             Text = "User_Products";
             panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
@@ -643,5 +658,6 @@
         private Button button15;
         private Label label8;
         private PictureBox pictureBox8;
+        private Label cartQuantity;
     }
 }

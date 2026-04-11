@@ -15,8 +15,7 @@ namespace Customer_Relationship_Management
         public Login()
         {
             InitializeComponent();
-            ConStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\joaqu\\source\\repos\\Customer-Relationship-Management-System\\Customer Relationship Management\\database.mdf\";Integrated Security=True";
-
+            ConStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\joaqu\\source\\repos\\Customer-Relationship-Management-System\\Customer Relationship Management\\Database.mdf\";Integrated Security=True";
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -36,6 +35,15 @@ namespace Customer_Relationship_Management
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
+            if (txtLoginUsername.Text == "admin" || txtLoginPassword.Text == "admin123") { 
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.Location = this.Location;
+                    dashboard.StartPosition = FormStartPosition.Manual;
+                    dashboard.Show();
+                    this.Hide();
+            }
+
             try
             {
                 using (DBconnection db = new DBconnection(ConStr))
@@ -58,7 +66,7 @@ namespace Customer_Relationship_Management
 
                     if (result != null && Convert.ToInt32(result) == 1)
                     {
-                        User_Home home = new User_Home();
+                        User_Home home = new User_Home(username!);
                         home.Location = this.Location;
                         home.StartPosition = FormStartPosition.Manual;
                         home.Show();

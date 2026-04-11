@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel3 = new Panel();
             btnMinimizeDashboard = new Button();
             pictureBox2 = new PictureBox();
@@ -49,18 +49,18 @@
             btnDashboardToHistory = new Button();
             btnDashboardLogout = new Button();
             panel1 = new Panel();
-            panel2 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            panel2 = new Panel();
             label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            panel4 = new Panel();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
+            panel5 = new Panel();
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
@@ -159,6 +159,7 @@
             btnDashboardToSales.TabIndex = 21;
             btnDashboardToSales.Text = "Sales";
             btnDashboardToSales.UseVisualStyleBackColor = false;
+            btnDashboardToSales.Click += btnDashboardToSales_Click;
             // 
             // btnDashboardToCustomers
             // 
@@ -237,6 +238,39 @@
             panel1.Size = new Size(274, 124);
             panel1.TabIndex = 27;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(31, 85);
+            label3.Name = "label3";
+            label3.Size = new Size(209, 22);
+            label3.TabIndex = 6;
+            label3.Text = "vs. Yesterday: +8.5%";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(11, 43);
+            label2.Name = "label2";
+            label2.Size = new Size(250, 34);
+            label2.TabIndex = 5;
+            label2.Text = "PHP 12,500.00";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(42, 8);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 25);
+            label1.TabIndex = 4;
+            label1.Text = "TODAY'S SALES";
+            // 
             // panel2
             // 
             panel2.BackColor = Color.Tan;
@@ -250,73 +284,16 @@
             panel2.TabIndex = 28;
             panel2.Paint += panel2_Paint;
             // 
-            // panel4
+            // label6
             // 
-            panel4.BackColor = Color.NavajoWhite;
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(label7);
-            panel4.Controls.Add(label8);
-            panel4.Controls.Add(label9);
-            panel4.Location = new Point(584, 114);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(274, 124);
-            panel4.TabIndex = 29;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = SystemColors.ControlDarkDark;
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(label10);
-            panel5.Controls.Add(label11);
-            panel5.Controls.Add(label12);
-            panel5.Location = new Point(869, 114);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(274, 124);
-            panel5.TabIndex = 29;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(42, 8);
-            label1.Name = "label1";
-            label1.Size = new Size(190, 25);
-            label1.TabIndex = 4;
-            label1.Text = "TODAY'S SALES";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(11, 43);
-            label2.Name = "label2";
-            label2.Size = new Size(250, 34);
-            label2.TabIndex = 5;
-            label2.Text = "PHP 12,500.00";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(31, 85);
-            label3.Name = "label3";
-            label3.Size = new Size(209, 22);
-            label3.TabIndex = 6;
-            label3.Text = "vs. Yesterday: +8.5%";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(41, 8);
-            label4.Name = "label4";
-            label4.Size = new Size(192, 25);
-            label4.TabIndex = 7;
-            label4.Text = "TRANSACTIONS";
+            label6.AutoSize = true;
+            label6.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(67, 85);
+            label6.Name = "label6";
+            label6.Size = new Size(130, 22);
+            label6.TabIndex = 7;
+            label6.Text = "Orders Today";
             // 
             // label5
             // 
@@ -329,16 +306,28 @@
             label5.TabIndex = 7;
             label5.Text = "115";
             // 
-            // label6
+            // label4
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(67, 85);
-            label6.Name = "label6";
-            label6.Size = new Size(130, 22);
-            label6.TabIndex = 7;
-            label6.Text = "Orders Today";
+            label4.AutoSize = true;
+            label4.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(41, 8);
+            label4.Name = "label4";
+            label4.Size = new Size(192, 25);
+            label4.TabIndex = 7;
+            label4.Text = "TRANSACTIONS";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.NavajoWhite;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(label7);
+            panel4.Controls.Add(label8);
+            panel4.Controls.Add(label9);
+            panel4.Location = new Point(584, 114);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(274, 124);
+            panel4.TabIndex = 29;
             // 
             // label7
             // 
@@ -372,6 +361,18 @@
             label9.Size = new Size(211, 25);
             label9.TabIndex = 10;
             label9.Text = "NEW CUSTOMERS";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = SystemColors.ControlDarkDark;
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(label10);
+            panel5.Controls.Add(label11);
+            panel5.Controls.Add(label12);
+            panel5.Location = new Point(869, 114);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(274, 124);
+            panel5.TabIndex = 29;
             // 
             // label10
             // 
@@ -410,19 +411,19 @@
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(245, 241, 218);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(245, 241, 218);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.BackgroundColor = Color.FromArgb(75, 54, 33);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(74, 53, 26);
-            dataGridViewCellStyle10.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle10.ForeColor = Color.FromArgb(254, 254, 225);
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(74, 53, 26);
+            dataGridViewCellStyle2.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(254, 254, 225);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(16, 244);
             dataGridView1.Name = "dataGridView1";
@@ -435,19 +436,19 @@
             // dataGridView2
             // 
             dataGridView2.AllowUserToAddRows = false;
-            dataGridViewCellStyle11.BackColor = Color.FromArgb(245, 241, 218);
-            dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(245, 241, 218);
+            dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView2.BackgroundColor = Color.FromArgb(75, 54, 33);
             dataGridView2.BorderStyle = BorderStyle.None;
             dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = Color.FromArgb(74, 53, 26);
-            dataGridViewCellStyle12.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle12.ForeColor = Color.FromArgb(254, 254, 225);
-            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(74, 53, 26);
+            dataGridViewCellStyle4.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(254, 254, 225);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(585, 244);
             dataGridView2.Name = "dataGridView2";
@@ -484,19 +485,19 @@
             // dataGridView3
             // 
             dataGridView3.AllowUserToAddRows = false;
-            dataGridViewCellStyle13.BackColor = Color.FromArgb(245, 241, 218);
-            dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(245, 241, 218);
+            dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView3.BackgroundColor = Color.Gray;
             dataGridView3.BorderStyle = BorderStyle.None;
             dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = Color.FromArgb(74, 53, 26);
-            dataGridViewCellStyle14.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle14.ForeColor = Color.FromArgb(254, 254, 225);
-            dataGridViewCellStyle14.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(74, 53, 26);
+            dataGridViewCellStyle6.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(254, 254, 225);
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Location = new Point(16, 436);
             dataGridView3.Name = "dataGridView3";
@@ -509,19 +510,19 @@
             // dataGridView4
             // 
             dataGridView4.AllowUserToAddRows = false;
-            dataGridViewCellStyle15.BackColor = Color.FromArgb(245, 241, 218);
-            dataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(245, 241, 218);
+            dataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView4.BackgroundColor = Color.NavajoWhite;
             dataGridView4.BorderStyle = BorderStyle.None;
             dataGridView4.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = Color.FromArgb(74, 53, 26);
-            dataGridViewCellStyle16.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle16.ForeColor = Color.FromArgb(254, 254, 225);
-            dataGridViewCellStyle16.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
-            dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(74, 53, 26);
+            dataGridViewCellStyle8.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(254, 254, 225);
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView4.Location = new Point(585, 436);
             dataGridView4.Name = "dataGridView4";

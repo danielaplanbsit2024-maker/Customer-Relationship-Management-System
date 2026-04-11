@@ -42,6 +42,7 @@
             label2 = new Label();
             label3 = new Label();
             button4 = new Button();
+            homeUsername = new Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -137,6 +138,7 @@
             button1.TabIndex = 45;
             button1.Text = "PRODUCTS";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button3
             // 
@@ -166,11 +168,13 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Gabriola", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(737, 201);
+            label1.Location = new Point(613, 188);
             label1.Name = "label1";
             label1.Size = new Size(304, 81);
             label1.TabIndex = 51;
             label1.Text = "WELCOME BACK!";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -206,12 +210,24 @@
             button4.Text = "Order Now";
             button4.UseVisualStyleBackColor = false;
             // 
+            // homeUsername
+            // 
+            homeUsername.AccessibleDescription = "";
+            homeUsername.Location = new Point(746, 269);
+            homeUsername.Name = "homeUsername";
+            homeUsername.RightToLeft = RightToLeft.No;
+            homeUsername.Size = new Size(276, 38);
+            homeUsername.TabIndex = 55;
+            homeUsername.TextAlign = ContentAlignment.MiddleCenter;
+            homeUsername.Click += homeUsername_Click;
+            // 
             // User_Home
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 234, 211);
             ClientSize = new Size(1160, 650);
+            Controls.Add(homeUsername);
             Controls.Add(button4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -245,5 +261,6 @@
         private Label label3;
         private Button button4;
         private Button button5;
+        private Label homeUsername;
     }
 }

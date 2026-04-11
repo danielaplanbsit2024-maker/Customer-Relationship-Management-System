@@ -29,5 +29,10 @@ namespace Customer_Relationship_Management
         {
 
         }
+
+        private void btnDashboardToSales_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
