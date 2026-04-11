@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Products));
             panel3 = new Panel();
+            cartQuantity = new Label();
             button5 = new Button();
             pictureBox1 = new PictureBox();
             btnMinimizeCustomers = new Button();
@@ -69,7 +70,6 @@
             button15 = new Button();
             label8 = new Label();
             pictureBox8 = new PictureBox();
-            cartQuantity = new Label();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -105,6 +105,17 @@
             panel3.Size = new Size(1160, 74);
             panel3.TabIndex = 36;
             // 
+            // cartQuantity
+            // 
+            cartQuantity.AutoSize = true;
+            cartQuantity.Font = new Font("Verdana", 10F);
+            cartQuantity.ForeColor = Color.Red;
+            cartQuantity.Location = new Point(954, 13);
+            cartQuantity.Name = "cartQuantity";
+            cartQuantity.Size = new Size(0, 25);
+            cartQuantity.TabIndex = 56;
+            cartQuantity.Click += cartQuantity_Click;
+            // 
             // button5
             // 
             button5.BackColor = Color.FromArgb(75, 54, 33);
@@ -117,6 +128,7 @@
             button5.TabIndex = 55;
             button5.Text = "REVIEWS";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // pictureBox1
             // 
@@ -165,6 +177,7 @@
             button2.TabIndex = 46;
             button2.Text = "HOME";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -191,6 +204,7 @@
             button3.TabIndex = 47;
             button3.Text = "CART";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // panel1
             // 
@@ -565,17 +579,6 @@
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
-            // 
-            // cartQuantity
-            // 
-            cartQuantity.AutoSize = true;
-            cartQuantity.Font = new Font("Verdana", 10F);
-            cartQuantity.ForeColor = Color.Red;
-            cartQuantity.Location = new Point(954, 13);
-            cartQuantity.Name = "cartQuantity";
-            cartQuantity.Size = new Size(25, 25);
-            cartQuantity.TabIndex = 56;
-            cartQuantity.Text = "1";
             // 
             // User_Products
             // 

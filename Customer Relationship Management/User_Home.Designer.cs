@@ -77,6 +77,7 @@
             button5.TabIndex = 55;
             button5.Text = "REVIEWS";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // pictureBox1
             // 
@@ -152,6 +153,7 @@
             button3.TabIndex = 47;
             button3.Text = "CART";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // pictureBox3
             // 
@@ -209,6 +211,7 @@
             button4.TabIndex = 54;
             button4.Text = "Order Now";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // homeUsername
             // 

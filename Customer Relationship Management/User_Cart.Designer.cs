@@ -89,6 +89,7 @@
             button5.TabIndex = 55;
             button5.Text = "REVIEWS";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // pictureBox1
             // 
@@ -137,6 +138,7 @@
             button2.TabIndex = 46;
             button2.Text = "HOME";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -150,6 +152,7 @@
             button1.TabIndex = 45;
             button1.Text = "PRODUCTS";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button3
             // 

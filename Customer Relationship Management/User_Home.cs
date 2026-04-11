@@ -57,5 +57,33 @@ namespace Customer_Relationship_Management
             products.Show();
             this.Hide();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            User_Products products = new User_Products(CurrentUser!);
+            products.Location = this.Location;
+            products.Name = this.Name;
+            products.StartPosition = FormStartPosition.CenterScreen;
+            products.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            User_Cart cart = new User_Cart(CurrentUser!);
+            cart.Location = this.Location;
+            cart.StartPosition = FormStartPosition.CenterScreen;
+            cart.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            User_Reviews reviews = new User_Reviews(CurrentUser!);
+            reviews.Location = this.Location;
+            reviews.StartPosition = FormStartPosition.CenterScreen;
+            reviews.Show();
+            this.Hide();
+        }
     }
 }
