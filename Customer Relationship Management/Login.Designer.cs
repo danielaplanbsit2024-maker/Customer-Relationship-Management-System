@@ -123,6 +123,7 @@
             btnLogin.TabIndex = 7;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnLoginRegister
             // 
@@ -137,6 +138,7 @@
             btnLoginRegister.TabIndex = 10;
             btnLoginRegister.Text = "Register";
             btnLoginRegister.UseVisualStyleBackColor = false;
+            btnLoginRegister.Click += btnLoginRegister_Click;
             // 
             // btnLoginExit
             // 
@@ -151,6 +153,7 @@
             btnLoginExit.TabIndex = 11;
             btnLoginExit.Text = "X";
             btnLoginExit.UseVisualStyleBackColor = false;
+            btnLoginExit.Click += btnLoginExit_Click;
             // 
             // Login
             // 
