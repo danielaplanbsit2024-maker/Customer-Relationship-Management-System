@@ -1,53 +1,84 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Customer_Relationship_Management
 {
     public partial class User_Reviews : Form
     {
-        // Property to store the logged-in user's name
         public string CurrentUser { get; private set; }
+        private readonly string ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
 
         public User_Reviews(string username)
         {
             InitializeComponent();
-            // SAVE the username passed from the previous form
             this.CurrentUser = username;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // Pass CurrentUser to Home
+            if (string.IsNullOrWhiteSpace(reviewDescription.Text) || reviewDescription.Text == "FEEDBACK")
+            {
+                MessageBox.Show("Please enter your feedback before submitting.", "Empty Review");
+                return;
+            }
+
+            try
+            {
+                using (DBconnection db = new DBconnection(ConStr))
+                {
+                    var userIdObj = db.ExecuteScalar("SELECT Id FROM Users WHERE username = @user",
+                        new Dictionary<string, object> { ["@user"] = CurrentUser });
+
+                    if (userIdObj != null)
+                    {
+                        string sql = "INSERT INTO Reviews (id, reviewDescriptio) VALUES (@uid, @desc)";
+
+                        db.CRUD(sql, new Dictionary<string, object>
+                        {
+                            ["@uid"] = userIdObj,
+                            ["@desc"] = reviewDescription.Text.Trim()
+                        });
+
+                        MessageBox.Show("Thank you for your feedback!", "Review Submitted");
+
+                        reviewDescription.Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error submitting review: " + ex.Message);
+            }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
             User_Home home = new User_Home(CurrentUser);
             home.Location = this.Location;
-            home.StartPosition = FormStartPosition.CenterScreen;
+            home.StartPosition = FormStartPosition.Manual; // Use Manual to stay at current Location
             home.Show();
-            this.Close(); // Use Close instead of Hide to save memory
+            this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e) => btnHome_Click(sender, e);
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Pass CurrentUser to Products
             User_Products products = new User_Products(CurrentUser);
             products.Location = this.Location;
-            products.StartPosition = FormStartPosition.CenterScreen;
             products.Show();
             this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Pass CurrentUser to Cart
             User_Cart cart = new User_Cart(CurrentUser);
             cart.Location = this.Location;
-            cart.StartPosition = FormStartPosition.CenterScreen;
             cart.Show();
             this.Close();
         }
+
+        private void reviewDescription_TextChanged(object sender, EventArgs e) { }
     }
 }

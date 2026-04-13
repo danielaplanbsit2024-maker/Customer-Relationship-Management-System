@@ -157,7 +157,7 @@ namespace Customer_Relationship_Management
 
         private void button8_Click(object sender, EventArgs e)
         {
-            User_Products_FruitTea fruitTea = new User_Products_FruitTea();
+            User_Products_FruitTea fruitTea = new User_Products_FruitTea(CurrentUser!);
             fruitTea.Location = this.Location;
             fruitTea.StartPosition = FormStartPosition.CenterParent;
             fruitTea.Show(); this.Hide();

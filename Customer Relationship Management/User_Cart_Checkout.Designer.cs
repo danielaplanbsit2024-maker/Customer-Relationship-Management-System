@@ -40,20 +40,20 @@
             panel3 = new Panel();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
+            firstName = new TextBox();
             label4 = new Label();
-            textBox2 = new TextBox();
+            lastName = new TextBox();
             label5 = new Label();
-            textBox3 = new TextBox();
+            address = new TextBox();
             label6 = new Label();
-            textBox4 = new TextBox();
-            radioButton1 = new RadioButton();
+            phoneNo = new TextBox();
+            COD = new RadioButton();
             label7 = new Label();
-            radioButton2 = new RadioButton();
+            Gcash = new RadioButton();
             label8 = new Label();
-            textBox5 = new TextBox();
-            button4 = new Button();
-            button6 = new Button();
+            orderSummary = new TextBox();
+            checkout = new Button();
+            backToCart = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
@@ -194,14 +194,15 @@
             label3.Text = "First Name";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // firstName
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(276, 218);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(391, 40);
-            textBox1.TabIndex = 56;
+            firstName.BorderStyle = BorderStyle.FixedSingle;
+            firstName.Location = new Point(276, 218);
+            firstName.Multiline = true;
+            firstName.Name = "firstName";
+            firstName.Size = new Size(391, 40);
+            firstName.TabIndex = 56;
+            firstName.TextChanged += firstName_TextChanged;
             // 
             // label4
             // 
@@ -213,14 +214,14 @@
             label4.Text = "Last Name";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // lastName
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(276, 257);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(391, 40);
-            textBox2.TabIndex = 58;
+            lastName.BorderStyle = BorderStyle.FixedSingle;
+            lastName.Location = new Point(276, 257);
+            lastName.Multiline = true;
+            lastName.Name = "lastName";
+            lastName.Size = new Size(391, 40);
+            lastName.TabIndex = 58;
             // 
             // label5
             // 
@@ -232,14 +233,14 @@
             label5.Text = "Delivery Address";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox3
+            // address
             // 
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Location = new Point(276, 296);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(391, 75);
-            textBox3.TabIndex = 60;
+            address.BorderStyle = BorderStyle.FixedSingle;
+            address.Location = new Point(276, 296);
+            address.Multiline = true;
+            address.Name = "address";
+            address.Size = new Size(391, 75);
+            address.TabIndex = 60;
             // 
             // label6
             // 
@@ -251,25 +252,25 @@
             label6.Text = "Phone Number";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox4
+            // phoneNo
             // 
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Location = new Point(276, 370);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(391, 40);
-            textBox4.TabIndex = 62;
+            phoneNo.BorderStyle = BorderStyle.FixedSingle;
+            phoneNo.Location = new Point(276, 370);
+            phoneNo.Multiline = true;
+            phoneNo.Name = "phoneNo";
+            phoneNo.Size = new Size(391, 40);
+            phoneNo.TabIndex = 62;
             // 
-            // radioButton1
+            // COD
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(54, 520);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(252, 26);
-            radioButton1.TabIndex = 63;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Cash on Delivery (COD)";
-            radioButton1.UseVisualStyleBackColor = true;
+            COD.AutoSize = true;
+            COD.Location = new Point(54, 520);
+            COD.Name = "COD";
+            COD.Size = new Size(252, 26);
+            COD.TabIndex = 63;
+            COD.TabStop = true;
+            COD.Text = "Cash on Delivery (COD)";
+            COD.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -282,16 +283,16 @@
             label7.Text = "PAYMENT METHOD";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // radioButton2
+            // Gcash
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(54, 567);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(228, 26);
-            radioButton2.TabIndex = 65;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "E-wallet (Gcash only)";
-            radioButton2.UseVisualStyleBackColor = true;
+            Gcash.AutoSize = true;
+            Gcash.Location = new Point(54, 567);
+            Gcash.Name = "Gcash";
+            Gcash.Size = new Size(228, 26);
+            Gcash.TabIndex = 65;
+            Gcash.TabStop = true;
+            Gcash.Text = "E-wallet (Gcash only)";
+            Gcash.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -304,60 +305,65 @@
             label8.Text = "ORDER SUMMARY";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox5
+            // orderSummary
             // 
-            textBox5.BorderStyle = BorderStyle.FixedSingle;
-            textBox5.Location = new Point(718, 257);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(396, 260);
-            textBox5.TabIndex = 67;
+            orderSummary.BorderStyle = BorderStyle.FixedSingle;
+            orderSummary.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            orderSummary.Location = new Point(718, 257);
+            orderSummary.Multiline = true;
+            orderSummary.Name = "orderSummary";
+            orderSummary.ReadOnly = true;
+            orderSummary.ScrollBars = ScrollBars.Vertical;
+            orderSummary.Size = new Size(396, 260);
+            orderSummary.TabIndex = 67;
             // 
-            // button4
+            // checkout
             // 
-            button4.BackColor = Color.SeaGreen;
-            button4.BackgroundImageLayout = ImageLayout.None;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = SystemColors.ButtonFace;
-            button4.Location = new Point(857, 576);
-            button4.Name = "button4";
-            button4.Size = new Size(271, 52);
-            button4.TabIndex = 68;
-            button4.Text = "CONFIRM CHECKOUT";
-            button4.UseVisualStyleBackColor = false;
+            checkout.BackColor = Color.SeaGreen;
+            checkout.BackgroundImageLayout = ImageLayout.None;
+            checkout.FlatStyle = FlatStyle.Flat;
+            checkout.ForeColor = SystemColors.ButtonFace;
+            checkout.Location = new Point(857, 576);
+            checkout.Name = "checkout";
+            checkout.Size = new Size(271, 52);
+            checkout.TabIndex = 68;
+            checkout.Text = "CONFIRM CHECKOUT";
+            checkout.UseVisualStyleBackColor = false;
+            checkout.Click += checkout_Click;
             // 
-            // button6
+            // backToCart
             // 
-            button6.BackColor = Color.Firebrick;
-            button6.BackgroundImageLayout = ImageLayout.None;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = SystemColors.ControlLightLight;
-            button6.Location = new Point(576, 576);
-            button6.Name = "button6";
-            button6.Size = new Size(260, 52);
-            button6.TabIndex = 69;
-            button6.Text = "BACK TO CART";
-            button6.UseVisualStyleBackColor = false;
+            backToCart.BackColor = Color.Firebrick;
+            backToCart.BackgroundImageLayout = ImageLayout.None;
+            backToCart.FlatStyle = FlatStyle.Flat;
+            backToCart.ForeColor = SystemColors.ControlLightLight;
+            backToCart.Location = new Point(576, 576);
+            backToCart.Name = "backToCart";
+            backToCart.Size = new Size(260, 52);
+            backToCart.TabIndex = 69;
+            backToCart.Text = "BACK TO CART";
+            backToCart.UseVisualStyleBackColor = false;
+            backToCart.Click += backToCart_Click;
             // 
             // User_Cart_Checkout
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1160, 650);
-            Controls.Add(button6);
-            Controls.Add(button4);
-            Controls.Add(textBox5);
+            Controls.Add(backToCart);
+            Controls.Add(checkout);
+            Controls.Add(orderSummary);
             Controls.Add(label8);
-            Controls.Add(radioButton2);
+            Controls.Add(Gcash);
             Controls.Add(label7);
-            Controls.Add(radioButton1);
-            Controls.Add(textBox4);
+            Controls.Add(COD);
+            Controls.Add(phoneNo);
             Controls.Add(label6);
-            Controls.Add(textBox3);
+            Controls.Add(address);
             Controls.Add(label5);
-            Controls.Add(textBox2);
+            Controls.Add(lastName);
             Controls.Add(label4);
-            Controls.Add(textBox1);
+            Controls.Add(firstName);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -386,19 +392,19 @@
         private Panel panel3;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox firstName;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox lastName;
         private Label label5;
-        private TextBox textBox3;
+        private TextBox address;
         private Label label6;
-        private TextBox textBox4;
-        private RadioButton radioButton1;
+        private TextBox phoneNo;
+        private RadioButton COD;
         private Label label7;
-        private RadioButton radioButton2;
+        private RadioButton Gcash;
         private Label label8;
-        private TextBox textBox5;
-        private Button button4;
-        private Button button6;
+        private TextBox orderSummary;
+        private Button checkout;
+        private Button backToCart;
     }
 }

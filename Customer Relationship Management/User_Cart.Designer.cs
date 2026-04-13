@@ -181,6 +181,7 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(804, 469);
             dataGridView1.TabIndex = 38;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label2
             // 
@@ -244,6 +245,7 @@
             button4.TabIndex = 45;
             button4.Text = "PROCEED TO CHECKOUT";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button6
             // 
