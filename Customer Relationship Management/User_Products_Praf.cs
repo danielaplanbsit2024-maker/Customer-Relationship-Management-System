@@ -100,7 +100,7 @@ namespace Customer_Relationship_Management
 
         private void coffee_Click(object sender, EventArgs e)
         {
-            User_Products_Coffee coffee = new User_Products_Coffee();
+            User_Products_Coffee coffee = new User_Products_Coffee(CurrentUser!);
             coffee.Location = this.Location;
             coffee.Show();
             this.Hide();
@@ -132,11 +132,43 @@ namespace Customer_Relationship_Management
 
         private void brosty_Click_1(object sender, EventArgs e)
         {
-            User_Products_Brosty brosty = new User_Products_Brosty();
+            User_Products_Brosty brosty = new User_Products_Brosty(CurrentUser);
             brosty.Location = this.Location;
             brosty.StartPosition = FormStartPosition.CenterScreen;
             brosty.Show();
             this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            User_Home Home = new User_Home(CurrentUser!);
+            Home.Location = this.Location;
+            Home.StartPosition = FormStartPosition.CenterScreen;
+            Home.Show(); this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            User_Products products = new User_Products(CurrentUser!);
+            products.Location = this.Location;
+            products.StartPosition = FormStartPosition.CenterScreen;
+            products.Show(); this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            User_Cart cart = new User_Cart(CurrentUser!);
+            cart.Location = this.Location;
+            cart.StartPosition = FormStartPosition.CenterScreen;
+            cart.Show(); this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            User_Reviews reviews = new User_Reviews(CurrentUser!);
+            reviews.Location = this.Location;
+            reviews.StartPosition = FormStartPosition.CenterScreen;
+            reviews.Show(); this.Hide();
         }
     }
 }

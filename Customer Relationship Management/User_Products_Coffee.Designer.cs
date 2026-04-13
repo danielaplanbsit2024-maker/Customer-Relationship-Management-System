@@ -33,6 +33,7 @@
             button15 = new Button();
             pictureBox3 = new PictureBox();
             panel3 = new Panel();
+            cartQuantity = new Label();
             button5 = new Button();
             pictureBox1 = new PictureBox();
             btnMinimizeCustomers = new Button();
@@ -52,7 +53,6 @@
             button4 = new Button();
             label2 = new Label();
             panel2 = new Panel();
-            label9 = new Label();
             button10 = new Button();
             pictureBox8 = new PictureBox();
             label1 = new Label();
@@ -92,11 +92,11 @@
             // 
             label3.BackColor = Color.Transparent;
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(34, 131);
+            label3.Location = new Point(3, 143);
             label3.Name = "label3";
-            label3.Size = new Size(136, 28);
+            label3.Size = new Size(203, 22);
             label3.TabIndex = 40;
-            label3.Text = "CARAMEL";
+            label3.Text = "CARAMEL MACCHIATO";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button15
@@ -110,6 +110,7 @@
             button15.TabIndex = 41;
             button15.Text = "Add to cart";
             button15.UseVisualStyleBackColor = false;
+            button15.Click += button15_Click;
             // 
             // pictureBox3
             // 
@@ -124,6 +125,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(75, 54, 33);
+            panel3.Controls.Add(cartQuantity);
             panel3.Controls.Add(button5);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(btnMinimizeCustomers);
@@ -137,6 +139,17 @@
             panel3.Size = new Size(1160, 74);
             panel3.TabIndex = 55;
             // 
+            // cartQuantity
+            // 
+            cartQuantity.AutoSize = true;
+            cartQuantity.BackColor = Color.Transparent;
+            cartQuantity.ForeColor = Color.Red;
+            cartQuantity.Location = new Point(956, 13);
+            cartQuantity.Name = "cartQuantity";
+            cartQuantity.Size = new Size(21, 22);
+            cartQuantity.TabIndex = 56;
+            cartQuantity.Text = "0";
+            // 
             // button5
             // 
             button5.BackColor = Color.FromArgb(75, 54, 33);
@@ -149,6 +162,7 @@
             button5.TabIndex = 55;
             button5.Text = "REVIEWS";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // pictureBox1
             // 
@@ -197,6 +211,7 @@
             button2.TabIndex = 46;
             button2.Text = "HOME";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -210,6 +225,7 @@
             button1.TabIndex = 45;
             button1.Text = "PRODUCTS";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button3
             // 
@@ -223,6 +239,7 @@
             button3.TabIndex = 47;
             button3.Text = "CART";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // label8
             // 
@@ -256,6 +273,7 @@
             button11.TabIndex = 41;
             button11.Text = "Add to cart";
             button11.UseVisualStyleBackColor = false;
+            button11.Click += button11_Click;
             // 
             // label4
             // 
@@ -290,6 +308,7 @@
             button9.TabIndex = 58;
             button9.Text = "BROSTY";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += button9_Click;
             // 
             // button8
             // 
@@ -304,6 +323,7 @@
             button8.TabIndex = 59;
             button8.Text = "FRUIT TEA";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // button7
             // 
@@ -332,6 +352,7 @@
             button6.TabIndex = 57;
             button6.Text = "PRAF";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button4
             // 
@@ -346,6 +367,7 @@
             button4.TabIndex = 56;
             button4.Text = "MILK TEA";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label2
             // 
@@ -362,7 +384,6 @@
             // 
             panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel2.BackColor = Color.FromArgb(194, 122, 47);
-            panel2.Controls.Add(label9);
             panel2.Controls.Add(button10);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(pictureBox3);
@@ -370,17 +391,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(203, 212);
             panel2.TabIndex = 58;
-            // 
-            // label9
-            // 
-            label9.BackColor = Color.Transparent;
-            label9.ForeColor = SystemColors.ActiveCaptionText;
-            label9.Location = new Point(34, 152);
-            label9.Name = "label9";
-            label9.Size = new Size(136, 28);
-            label9.TabIndex = 42;
-            label9.Text = "MACCHIATO";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button10
             // 
@@ -393,6 +403,7 @@
             button10.TabIndex = 41;
             button10.Text = "Add to cart";
             button10.UseVisualStyleBackColor = false;
+            button10.Click += button10_Click;
             // 
             // pictureBox8
             // 
@@ -438,6 +449,7 @@
             button12.TabIndex = 41;
             button12.Text = "Add to cart";
             button12.UseVisualStyleBackColor = false;
+            button12.Click += button12_Click;
             // 
             // label5
             // 
@@ -483,6 +495,7 @@
             button13.TabIndex = 41;
             button13.Text = "Add to cart";
             button13.UseVisualStyleBackColor = false;
+            button13.Click += button13_Click;
             // 
             // label6
             // 
@@ -526,6 +539,7 @@
             button14.TabIndex = 41;
             button14.Text = "Add to cart";
             button14.UseVisualStyleBackColor = false;
+            button14.Click += button14_Click;
             // 
             // label7
             // 
@@ -591,6 +605,7 @@
             Text = "User_Products_Coffee";
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel4.ResumeLayout(false);
@@ -633,7 +648,6 @@
         private Button button4;
         private Label label2;
         private Panel panel2;
-        private Label label9;
         private Button button10;
         private PictureBox pictureBox8;
         private Label label1;
@@ -651,5 +665,6 @@
         private PictureBox pictureBox7;
         private Panel panel6;
         private Panel panel8;
+        private Label cartQuantity;
     }
 }

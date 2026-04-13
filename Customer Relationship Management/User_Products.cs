@@ -198,7 +198,7 @@ namespace Customer_Relationship_Management
 
         private void coffee_Click(object sender, EventArgs e)
         {
-            User_Products_Coffee coffee = new User_Products_Coffee();
+            User_Products_Coffee coffee = new User_Products_Coffee(CurrentUser!);
             coffee.Location = this.Location;
             coffee.Show();
             this.Hide();
@@ -206,7 +206,7 @@ namespace Customer_Relationship_Management
 
         private void fruittea_Click(object sender, EventArgs e)
         {
-            User_Products_FruitTea fruitTea = new User_Products_FruitTea();
+            User_Products_FruitTea fruitTea = new User_Products_FruitTea(CurrentUser!);
             fruitTea.Location = this.Location;
             fruitTea.Show();
             this.Hide();
@@ -214,7 +214,7 @@ namespace Customer_Relationship_Management
 
         private void brosty_Click(object sender, EventArgs e)
         {
-            User_Products_Brosty brosty = new User_Products_Brosty();
+            User_Products_Brosty brosty = new User_Products_Brosty(CurrentUser!);
             brosty.Location = this.Location;
             brosty.Show();
             this.Hide();
