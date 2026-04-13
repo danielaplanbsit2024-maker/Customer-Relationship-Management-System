@@ -11,8 +11,6 @@ namespace Customer_Relationship_Management
     public partial class User_Products : Form
     {
         private string? CurrentUser;
-        private object id;
-
         public string ConStr { get; private set; }
 
         public User_Products()
@@ -21,37 +19,32 @@ namespace Customer_Relationship_Management
             ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         }
 
-        // Optional constructor so caller can pass the logged-in username
         public User_Products(string username) : this()
         {
             CurrentUser = username;
+            this.Load += (s, e) => UpdateCartCounter();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
+        // --- REUSABLE METHOD ---
+        private void AddToCart(string productDesc, string category)
         {
             try
             {
+                if (string.IsNullOrEmpty(productDesc))
+                {
+                    MessageBox.Show("Product description is missing.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(CurrentUser))
+                {
+                    MessageBox.Show("No logged-in user available.");
+                    return;
+                }
+
                 using (DBconnection db = new DBconnection(ConStr))
                 {
-                    var productDesc = label3.Text?.Trim();
-                    if (string.IsNullOrEmpty(productDesc))
-                    {
-                        MessageBox.Show("Product description cannot be empty.");
-                        return;
-                    }
-
-                    if (string.IsNullOrEmpty(CurrentUser))
-                    {
-                        MessageBox.Show("No logged-in user available. Make sure you pass the username when opening this form.");
-                        return;
-                    }
-
-                    // get the user's Id
+                    // 1. Get User Id
                     var userIdObj = db.ExecuteScalar(
                         "SELECT Id FROM Users WHERE username = @username",
                         new Dictionary<string, object> { ["@username"] = CurrentUser }
@@ -59,23 +52,27 @@ namespace Customer_Relationship_Management
 
                     if (userIdObj == null || userIdObj == DBNull.Value)
                     {
-                        MessageBox.Show("Unable to find current user in database.");
+                        MessageBox.Show("User not found.");
                         return;
                     }
 
-                    int id = Convert.ToInt32(userIdObj);
+                    int userId = Convert.ToInt32(userIdObj);
 
-                    // insert product and user id (do not insert identity column)
-                    // Use a dedicated UserId column to track which user added the product  
-                    string SQL = "INSERT INTO Products (prdDescription, id) VALUES (@product, @id)";
+                    // 2. Insert Product
+                    string SQL = "INSERT INTO Products (prdDescription, prdCategory, id) VALUES (@product, @category, @id)";
                     var parameters = new Dictionary<string, object>
                     {
                         ["@product"] = productDesc,
-                        ["@id"] = id
+                        ["@category"] = category,
+                        ["@id"] = userId
                     };
 
                     db.CRUD(SQL, parameters);
-                    MessageBox.Show("Product added successfully!");
+
+                    MessageBox.Show($"{productDesc} added to cart!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // 3. Update the UI counter
+                    UpdateCartCounter();
                 }
             }
             catch (Exception ex)
@@ -84,45 +81,53 @@ namespace Customer_Relationship_Management
             }
         }
 
-        private void cartQuantity_Click(object sender, EventArgs e)
+        private void UpdateCartCounter()
         {
             try
             {
+                if (string.IsNullOrEmpty(CurrentUser)) return;
+
                 using (DBconnection db = new DBconnection(ConStr))
                 {
-
-                    // get the user's Id
                     var userIdObj = db.ExecuteScalar(
-                         "SELECT Id FROM Users WHERE username = @username",
-                         new Dictionary<string, object> { ["@username"] = CurrentUser }
-                     );
+                        "SELECT Id FROM Users WHERE username = @username",
+                        new Dictionary<string, object> { ["@username"] = CurrentUser }
+                    );
 
-                    if (userIdObj == null || userIdObj == DBNull.Value)
+                    if (userIdObj != null && userIdObj != DBNull.Value)
                     {
-                        return;
+                        int userId = Convert.ToInt32(userIdObj);
+                        string SQL = "SELECT COUNT(*) FROM Products WHERE id = @id";
+                        var countObj = db.ExecuteScalar(SQL, new Dictionary<string, object> { ["@id"] = userId });
+                        cartQuantity.Text = countObj?.ToString() ?? "0";
                     }
-
-                    int id = Convert.ToInt32(userIdObj);
-
-                    // Count products that belong to this user (assumes Products has a UserId column)
-                    string SQL = "SELECT COUNT(*) FROM Products WHERE id = @id";
-                    var countObj = db.ExecuteScalar(SQL, new Dictionary<string, object> { ["@id"] = id });
-                    cartQuantity.Text = SQL;
-
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                Console.WriteLine("Counter refresh failed: " + ex.Message);
             }
         }
 
+        // --- BUTTON CLICKS ---
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // Assuming label3 is the name for product 1
+            AddToCart(label3.Text, "Milktea");
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            // Update labelX to whatever label matches this product button
+            AddToCart(label4.Text, "Milktea");
+        }
+
+        // --- NAVIGATION ---
         private void button2_Click(object sender, EventArgs e)
         {
             User_Home home = new User_Home(CurrentUser!);
             home.Location = this.Location;
-            home.Name = this.Name;
-            home.StartPosition = FormStartPosition.CenterScreen;
             home.Show();
             this.Hide();
         }
@@ -131,7 +136,6 @@ namespace Customer_Relationship_Management
         {
             User_Cart cart = new User_Cart(CurrentUser!);
             cart.Location = this.Location;
-            cart.StartPosition = FormStartPosition.CenterScreen;
             cart.Show();
             this.Hide();
         }
@@ -140,10 +144,79 @@ namespace Customer_Relationship_Management
         {
             User_Reviews reviews = new User_Reviews(CurrentUser!);
             reviews.Location = this.Location;
-            reviews.StartPosition = FormStartPosition.CenterScreen;
             reviews.Show();
             this.Hide();
         }
-    }
 
+        private void cartQuantity_Click(object sender, EventArgs e) => UpdateCartCounter();
+        private void panel1_Paint(object sender, PaintEventArgs e) { }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            User_Reviews reviews = new User_Reviews(CurrentUser!);
+            reviews.Location = this.Location;
+            reviews.Show();
+            this.Hide();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            User_Home home = new User_Home(CurrentUser!);
+            home.Location = this.Location;
+            home.Show();
+            this.Hide();
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            AddToCart(label5.Text, "Milktea");
+        }
+
+        private void button15_Click_1(object sender, EventArgs e)
+        {
+            AddToCart(label8.Text, "Milktea");
+        }
+
+        private void button14_Click_1(object sender, EventArgs e)
+        {
+            AddToCart(label7.Text, "Milktea");
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            AddToCart(label6.Text, "Milktea");
+        }
+
+        private void praf_Click(object sender, EventArgs e)
+        {
+            User_Products_Praf praf = new User_Products_Praf(CurrentUser!);
+            praf.Location = this.Location;
+            praf.Show();
+            this.Hide();
+        }
+
+        private void coffee_Click(object sender, EventArgs e)
+        {
+            User_Products_Coffee coffee = new User_Products_Coffee();
+            coffee.Location = this.Location;
+            coffee.Show();
+            this.Hide();
+        }
+
+        private void fruittea_Click(object sender, EventArgs e)
+        {
+            User_Products_FruitTea fruitTea = new User_Products_FruitTea();
+            fruitTea.Location = this.Location;
+            fruitTea.Show();
+            this.Hide();
+        }
+
+        private void brosty_Click(object sender, EventArgs e)
+        {
+            User_Products_Brosty brosty = new User_Products_Brosty();
+            brosty.Location = this.Location;
+            brosty.Show();
+            this.Hide();
+        }
+    }
 }

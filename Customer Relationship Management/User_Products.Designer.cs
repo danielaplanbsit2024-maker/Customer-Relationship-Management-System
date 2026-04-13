@@ -39,10 +39,10 @@
             button1 = new Button();
             button3 = new Button();
             panel1 = new Panel();
-            button9 = new Button();
-            button8 = new Button();
-            button7 = new Button();
-            button6 = new Button();
+            brosty = new Button();
+            fruittea = new Button();
+            coffee = new Button();
+            praf = new Button();
             button4 = new Button();
             label2 = new Label();
             label1 = new Label();
@@ -114,7 +114,6 @@
             cartQuantity.Name = "cartQuantity";
             cartQuantity.Size = new Size(0, 25);
             cartQuantity.TabIndex = 56;
-            cartQuantity.Click += cartQuantity_Click;
             // 
             // button5
             // 
@@ -128,7 +127,7 @@
             button5.TabIndex = 55;
             button5.Text = "REVIEWS";
             button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
+            button5.Click += button5_Click_1;
             // 
             // pictureBox1
             // 
@@ -177,7 +176,7 @@
             button2.TabIndex = 46;
             button2.Text = "HOME";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            button2.Click += button2_Click_1;
             // 
             // button1
             // 
@@ -209,73 +208,76 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(76, 48, 28);
-            panel1.Controls.Add(button9);
-            panel1.Controls.Add(button8);
-            panel1.Controls.Add(button7);
-            panel1.Controls.Add(button6);
+            panel1.Controls.Add(brosty);
+            panel1.Controls.Add(fruittea);
+            panel1.Controls.Add(coffee);
+            panel1.Controls.Add(praf);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(12, 163);
             panel1.Name = "panel1";
             panel1.Size = new Size(327, 409);
             panel1.TabIndex = 37;
-            panel1.Paint += panel1_Paint;
             // 
-            // button9
+            // brosty
             // 
-            button9.BackColor = Color.FromArgb(76, 48, 28);
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button9.ForeColor = SystemColors.Info;
-            button9.Location = new Point(65, 329);
-            button9.Name = "button9";
-            button9.Size = new Size(190, 56);
-            button9.TabIndex = 58;
-            button9.Text = "BROSTY";
-            button9.UseVisualStyleBackColor = false;
+            brosty.BackColor = Color.FromArgb(76, 48, 28);
+            brosty.FlatAppearance.BorderSize = 0;
+            brosty.FlatStyle = FlatStyle.Flat;
+            brosty.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            brosty.ForeColor = SystemColors.Info;
+            brosty.Location = new Point(65, 329);
+            brosty.Name = "brosty";
+            brosty.Size = new Size(190, 56);
+            brosty.TabIndex = 58;
+            brosty.Text = "BROSTY";
+            brosty.UseVisualStyleBackColor = false;
+            brosty.Click += brosty_Click;
             // 
-            // button8
+            // fruittea
             // 
-            button8.BackColor = Color.FromArgb(76, 48, 28);
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button8.ForeColor = SystemColors.Info;
-            button8.Location = new Point(65, 267);
-            button8.Name = "button8";
-            button8.Size = new Size(190, 56);
-            button8.TabIndex = 59;
-            button8.Text = "FRUIT TEA";
-            button8.UseVisualStyleBackColor = false;
+            fruittea.BackColor = Color.FromArgb(76, 48, 28);
+            fruittea.FlatAppearance.BorderSize = 0;
+            fruittea.FlatStyle = FlatStyle.Flat;
+            fruittea.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            fruittea.ForeColor = SystemColors.Info;
+            fruittea.Location = new Point(65, 267);
+            fruittea.Name = "fruittea";
+            fruittea.Size = new Size(190, 56);
+            fruittea.TabIndex = 59;
+            fruittea.Text = "FRUIT TEA";
+            fruittea.UseVisualStyleBackColor = false;
+            fruittea.Click += fruittea_Click;
             // 
-            // button7
+            // coffee
             // 
-            button7.BackColor = Color.FromArgb(76, 48, 28);
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.ForeColor = SystemColors.Info;
-            button7.Location = new Point(65, 207);
-            button7.Name = "button7";
-            button7.Size = new Size(190, 56);
-            button7.TabIndex = 58;
-            button7.Text = "COFFEE";
-            button7.UseVisualStyleBackColor = false;
+            coffee.BackColor = Color.FromArgb(76, 48, 28);
+            coffee.FlatAppearance.BorderSize = 0;
+            coffee.FlatStyle = FlatStyle.Flat;
+            coffee.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            coffee.ForeColor = SystemColors.Info;
+            coffee.Location = new Point(65, 207);
+            coffee.Name = "coffee";
+            coffee.Size = new Size(190, 56);
+            coffee.TabIndex = 58;
+            coffee.Text = "COFFEE";
+            coffee.UseVisualStyleBackColor = false;
+            coffee.Click += coffee_Click;
             // 
-            // button6
+            // praf
             // 
-            button6.BackColor = Color.FromArgb(76, 48, 28);
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button6.ForeColor = SystemColors.Info;
-            button6.Location = new Point(65, 148);
-            button6.Name = "button6";
-            button6.Size = new Size(190, 56);
-            button6.TabIndex = 57;
-            button6.Text = "PRAF";
-            button6.UseVisualStyleBackColor = false;
+            praf.BackColor = Color.FromArgb(76, 48, 28);
+            praf.FlatAppearance.BorderSize = 0;
+            praf.FlatStyle = FlatStyle.Flat;
+            praf.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            praf.ForeColor = SystemColors.Info;
+            praf.Location = new Point(65, 148);
+            praf.Name = "praf";
+            praf.Size = new Size(190, 56);
+            praf.TabIndex = 57;
+            praf.Text = "PRAF";
+            praf.UseVisualStyleBackColor = false;
+            praf.Click += praf_Click;
             // 
             // button4
             // 
@@ -381,6 +383,7 @@
             button11.TabIndex = 41;
             button11.Text = "Add to cart";
             button11.UseVisualStyleBackColor = false;
+            button11.Click += button11_Click;
             // 
             // label4
             // 
@@ -426,6 +429,7 @@
             button12.TabIndex = 41;
             button12.Text = "Add to cart";
             button12.UseVisualStyleBackColor = false;
+            button12.Click += button12_Click_1;
             // 
             // label5
             // 
@@ -470,6 +474,7 @@
             button13.TabIndex = 41;
             button13.Text = "Add to cart";
             button13.UseVisualStyleBackColor = false;
+            button13.Click += button13_Click_1;
             // 
             // label6
             // 
@@ -514,6 +519,7 @@
             button14.TabIndex = 41;
             button14.Text = "Add to cart";
             button14.UseVisualStyleBackColor = false;
+            button14.Click += button14_Click_1;
             // 
             // label7
             // 
@@ -559,6 +565,7 @@
             button15.TabIndex = 41;
             button15.Text = "Add to cart";
             button15.UseVisualStyleBackColor = false;
+            button15.Click += button15_Click_1;
             // 
             // label8
             // 
@@ -633,10 +640,10 @@
         private Label label1;
         private Label label2;
         private Button button4;
-        private Button button9;
-        private Button button8;
-        private Button button7;
-        private Button button6;
+        private Button brosty;
+        private Button fruittea;
+        private Button coffee;
+        private Button praf;
         private Panel panel2;
         private PictureBox pictureBox3;
         private Label label3;

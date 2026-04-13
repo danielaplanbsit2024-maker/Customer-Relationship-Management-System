@@ -10,38 +10,44 @@ namespace Customer_Relationship_Management
 {
     public partial class User_Reviews : Form
     {
-        public string currentuser { get; private set; }
+        // Property to store the logged-in user's name
+        public string CurrentUser { get; private set; }
 
-        public User_Reviews(string v)
+        public User_Reviews(string username)
         {
             InitializeComponent();
+            // SAVE the username passed from the previous form
+            this.CurrentUser = username;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            User_Home home = new User_Home();
+            // Pass CurrentUser to Home
+            User_Home home = new User_Home(CurrentUser);
             home.Location = this.Location;
             home.StartPosition = FormStartPosition.CenterScreen;
             home.Show();
-            this.Hide();
+            this.Close(); // Use Close instead of Hide to save memory
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            User_Products products = new User_Products(currentuser);
+            // Pass CurrentUser to Products
+            User_Products products = new User_Products(CurrentUser);
             products.Location = this.Location;
             products.StartPosition = FormStartPosition.CenterScreen;
             products.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            User_Cart cart = new User_Cart(currentuser);
+            // Pass CurrentUser to Cart
+            User_Cart cart = new User_Cart(CurrentUser);
             cart.Location = this.Location;
             cart.StartPosition = FormStartPosition.CenterScreen;
             cart.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

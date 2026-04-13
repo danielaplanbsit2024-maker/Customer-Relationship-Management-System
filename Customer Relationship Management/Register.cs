@@ -69,7 +69,7 @@ namespace Customer_Relationship_Management
 
                 using (DBconnection db = new DBconnection(ConStr))
                 {
-                    string sql = "INSERT INTO Users (Username, Password) VALUES (@username, @password)";
+                    string sql = "INSERT INTO Users (username, password) VALUES (@username, @password)";
                     var parameters = new System.Collections.Generic.Dictionary<string, object>
                     {
                         { "@username", username },

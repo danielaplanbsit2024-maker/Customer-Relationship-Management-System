@@ -39,11 +39,6 @@
             button3 = new Button();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            col_item = new DataGridViewTextBoxColumn();
-            colPrice = new DataGridViewTextBoxColumn();
-            colQty = new DataGridViewTextBoxColumn();
-            colSubtotal = new DataGridViewTextBoxColumn();
-            btnDelete = new DataGridViewButtonColumn();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -181,50 +176,11 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { col_item, colPrice, colQty, colSubtotal, btnDelete });
             dataGridView1.Location = new Point(12, 159);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(794, 469);
+            dataGridView1.Size = new Size(804, 469);
             dataGridView1.TabIndex = 38;
-            // 
-            // col_item
-            // 
-            col_item.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            col_item.HeaderText = "ITEM";
-            col_item.MinimumWidth = 8;
-            col_item.Name = "col_item";
-            // 
-            // colPrice
-            // 
-            colPrice.HeaderText = "PRICE ";
-            colPrice.MinimumWidth = 8;
-            colPrice.Name = "colPrice";
-            colPrice.Width = 150;
-            // 
-            // colQty
-            // 
-            colQty.HeaderText = "QTY";
-            colQty.MinimumWidth = 8;
-            colQty.Name = "colQty";
-            colQty.Width = 150;
-            // 
-            // colSubtotal
-            // 
-            colSubtotal.HeaderText = "SUBTOTAL";
-            colSubtotal.MinimumWidth = 8;
-            colSubtotal.Name = "colSubtotal";
-            colSubtotal.Width = 150;
-            // 
-            // btnDelete
-            // 
-            btnDelete.HeaderText = "ACTIONS";
-            btnDelete.MinimumWidth = 8;
-            btnDelete.Name = "btnDelete";
-            btnDelete.Text = "Delete";
-            btnDelete.ToolTipText = "Delete";
-            btnDelete.UseColumnTextForButtonValue = true;
-            btnDelete.Width = 150;
             // 
             // label2
             // 
@@ -301,6 +257,7 @@
             button6.TabIndex = 46;
             button6.Text = "CLEAR CART";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // label7
             // 
@@ -395,11 +352,6 @@
         private Label label6;
         private Button button4;
         private Button button6;
-        private DataGridViewTextBoxColumn col_item;
-        private DataGridViewTextBoxColumn colPrice;
-        private DataGridViewTextBoxColumn colQty;
-        private DataGridViewTextBoxColumn colSubtotal;
-        private DataGridViewButtonColumn btnDelete;
         private Label label7;
         private Label label8;
         private Label label9;

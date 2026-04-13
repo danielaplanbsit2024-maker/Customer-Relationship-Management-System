@@ -53,6 +53,7 @@
             pictureBox3 = new PictureBox();
             label1 = new Label();
             panel3 = new Panel();
+            cartQuantity = new Label();
             button5 = new Button();
             pictureBox1 = new PictureBox();
             btnMinimizeCustomers = new Button();
@@ -61,15 +62,15 @@
             button1 = new Button();
             button3 = new Button();
             panel4 = new Panel();
-            button9 = new Button();
-            button8 = new Button();
-            button7 = new Button();
-            button6 = new Button();
+            brosty = new Button();
+            fruittea = new Button();
+            coffee = new Button();
+            praf = new Button();
             button4 = new Button();
             label2 = new Label();
             panel2 = new Panel();
-            panel1 = new Panel();
             label9 = new Label();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -340,6 +341,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(75, 54, 33);
+            panel3.Controls.Add(cartQuantity);
             panel3.Controls.Add(button5);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(btnMinimizeCustomers);
@@ -352,6 +354,15 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1160, 74);
             panel3.TabIndex = 46;
+            // 
+            // cartQuantity
+            // 
+            cartQuantity.AutoSize = true;
+            cartQuantity.ForeColor = Color.Red;
+            cartQuantity.Location = new Point(955, 12);
+            cartQuantity.Name = "cartQuantity";
+            cartQuantity.Size = new Size(0, 22);
+            cartQuantity.TabIndex = 56;
             // 
             // button5
             // 
@@ -452,61 +463,63 @@
             panel4.Size = new Size(203, 212);
             panel4.TabIndex = 51;
             // 
-            // button9
+            // brosty
             // 
-            button9.BackColor = Color.FromArgb(76, 48, 28);
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button9.ForeColor = SystemColors.Info;
-            button9.Location = new Point(65, 329);
-            button9.Name = "button9";
-            button9.Size = new Size(190, 56);
-            button9.TabIndex = 58;
-            button9.Text = "BROSTY";
-            button9.UseVisualStyleBackColor = false;
+            brosty.BackColor = Color.FromArgb(76, 48, 28);
+            brosty.FlatAppearance.BorderSize = 0;
+            brosty.FlatStyle = FlatStyle.Flat;
+            brosty.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            brosty.ForeColor = SystemColors.Info;
+            brosty.Location = new Point(65, 329);
+            brosty.Name = "brosty";
+            brosty.Size = new Size(190, 56);
+            brosty.TabIndex = 58;
+            brosty.Text = "BROSTY";
+            brosty.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // fruittea
             // 
-            button8.BackColor = Color.FromArgb(76, 48, 28);
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button8.ForeColor = SystemColors.Info;
-            button8.Location = new Point(65, 267);
-            button8.Name = "button8";
-            button8.Size = new Size(190, 56);
-            button8.TabIndex = 59;
-            button8.Text = "FRUIT TEA";
-            button8.UseVisualStyleBackColor = false;
+            fruittea.BackColor = Color.FromArgb(76, 48, 28);
+            fruittea.FlatAppearance.BorderSize = 0;
+            fruittea.FlatStyle = FlatStyle.Flat;
+            fruittea.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            fruittea.ForeColor = SystemColors.Info;
+            fruittea.Location = new Point(65, 267);
+            fruittea.Name = "fruittea";
+            fruittea.Size = new Size(190, 56);
+            fruittea.TabIndex = 59;
+            fruittea.Text = "FRUIT TEA";
+            fruittea.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // coffee
             // 
-            button7.BackColor = Color.FromArgb(76, 48, 28);
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.ForeColor = SystemColors.Info;
-            button7.Location = new Point(65, 207);
-            button7.Name = "button7";
-            button7.Size = new Size(190, 56);
-            button7.TabIndex = 58;
-            button7.Text = "COFFEE";
-            button7.UseVisualStyleBackColor = false;
+            coffee.BackColor = Color.FromArgb(76, 48, 28);
+            coffee.FlatAppearance.BorderSize = 0;
+            coffee.FlatStyle = FlatStyle.Flat;
+            coffee.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            coffee.ForeColor = SystemColors.Info;
+            coffee.Location = new Point(65, 207);
+            coffee.Name = "coffee";
+            coffee.Size = new Size(190, 56);
+            coffee.TabIndex = 58;
+            coffee.Text = "COFFEE";
+            coffee.UseVisualStyleBackColor = false;
+            coffee.Click += coffee_Click;
             // 
-            // button6
+            // praf
             // 
-            button6.BackColor = Color.FromArgb(76, 48, 28);
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button6.ForeColor = Color.DarkOrange;
-            button6.Location = new Point(65, 148);
-            button6.Name = "button6";
-            button6.Size = new Size(190, 56);
-            button6.TabIndex = 57;
-            button6.Text = "PRAF";
-            button6.UseVisualStyleBackColor = false;
+            praf.BackColor = Color.FromArgb(76, 48, 28);
+            praf.FlatAppearance.BorderSize = 0;
+            praf.FlatStyle = FlatStyle.Flat;
+            praf.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            praf.ForeColor = Color.DarkOrange;
+            praf.Location = new Point(65, 148);
+            praf.Name = "praf";
+            praf.Size = new Size(190, 56);
+            praf.TabIndex = 57;
+            praf.Text = "PRAF";
+            praf.UseVisualStyleBackColor = false;
+            praf.Click += praf_Click;
             // 
             // button4
             // 
@@ -521,6 +534,7 @@
             button4.TabIndex = 56;
             button4.Text = "MILK TEA";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // label2
             // 
@@ -546,20 +560,6 @@
             panel2.Size = new Size(203, 212);
             panel2.TabIndex = 49;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(76, 48, 28);
-            panel1.Controls.Add(button9);
-            panel1.Controls.Add(button8);
-            panel1.Controls.Add(button7);
-            panel1.Controls.Add(button6);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(label2);
-            panel1.Location = new Point(12, 178);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(327, 409);
-            panel1.TabIndex = 47;
-            // 
             // label9
             // 
             label9.BackColor = Color.Transparent;
@@ -570,6 +570,20 @@
             label9.TabIndex = 42;
             label9.Text = "MACCHIATO";
             label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(76, 48, 28);
+            panel1.Controls.Add(brosty);
+            panel1.Controls.Add(fruittea);
+            panel1.Controls.Add(coffee);
+            panel1.Controls.Add(praf);
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(12, 178);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(327, 409);
+            panel1.TabIndex = 47;
             // 
             // User_Products_Praf
             // 
@@ -600,6 +614,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel4.ResumeLayout(false);
@@ -642,14 +657,15 @@
         private Button button1;
         private Button button3;
         private Panel panel4;
-        private Button button9;
-        private Button button8;
-        private Button button7;
-        private Button button6;
+        private Button brosty;
+        private Button fruittea;
+        private Button coffee;
+        private Button praf;
         private Button button4;
         private Label label2;
         private Panel panel2;
         private Panel panel1;
         private Label label9;
+        private Label cartQuantity;
     }
 }
