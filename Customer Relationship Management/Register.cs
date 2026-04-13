@@ -15,7 +15,7 @@ namespace Customer_Relationship_Management
         public Register()
         {
             InitializeComponent();
-            ConStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\joaqu\\source\\repos\\Customer-Relationship-Management-System\\Customer Relationship Management\\Database.mdf\";Integrated Security=True";
+            ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         }
 
         private void Register_Load(object sender, EventArgs e)

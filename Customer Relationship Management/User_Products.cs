@@ -18,7 +18,7 @@ namespace Customer_Relationship_Management
         public User_Products()
         {
             InitializeComponent();
-            ConStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\joaqu\\source\\repos\\Customer-Relationship-Management-System\\Customer Relationship Management\\Database.mdf\";Integrated Security=True";
+            ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         }
 
         // Optional constructor so caller can pass the logged-in username
