@@ -69,7 +69,6 @@
             button4 = new Button();
             label2 = new Label();
             panel2 = new Panel();
-            label9 = new Label();
             panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel5.SuspendLayout();
@@ -100,18 +99,20 @@
             button11.TabIndex = 41;
             button11.Text = "Add to cart";
             button11.UseVisualStyleBackColor = false;
+            button11.Click += button11_Click;
             // 
             // button10
             // 
             button10.BackColor = Color.Tan;
             button10.FlatStyle = FlatStyle.Flat;
             button10.ForeColor = Color.SaddleBrown;
-            button10.Location = new Point(35, 178);
+            button10.Location = new Point(32, 173);
             button10.Name = "button10";
             button10.Size = new Size(138, 29);
             button10.TabIndex = 41;
             button10.Text = "Add to cart";
             button10.UseVisualStyleBackColor = false;
+            button10.Click += button10_Click;
             // 
             // label4
             // 
@@ -156,6 +157,7 @@
             button12.TabIndex = 41;
             button12.Text = "Add to cart";
             button12.UseVisualStyleBackColor = false;
+            button12.Click += button12_Click;
             // 
             // label5
             // 
@@ -199,6 +201,7 @@
             button13.TabIndex = 41;
             button13.Text = "Add to cart";
             button13.UseVisualStyleBackColor = false;
+            button13.Click += button13_Click;
             // 
             // label6
             // 
@@ -242,6 +245,7 @@
             button14.TabIndex = 41;
             button14.Text = "Add to cart";
             button14.UseVisualStyleBackColor = false;
+            button14.Click += button14_Click;
             // 
             // label7
             // 
@@ -286,6 +290,7 @@
             button15.TabIndex = 41;
             button15.Text = "Add to cart";
             button15.UseVisualStyleBackColor = false;
+            button15.Click += button15_Click;
             // 
             // label8
             // 
@@ -308,14 +313,16 @@
             // 
             // label3
             // 
+            label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(34, 131);
+            label3.Location = new Point(3, 143);
             label3.Name = "label3";
-            label3.Size = new Size(136, 28);
+            label3.Size = new Size(200, 22);
             label3.TabIndex = 40;
-            label3.Text = "CARAMEL";
+            label3.Text = "CARAMEL MACHIATO";
             label3.TextAlign = ContentAlignment.MiddleCenter;
+            label3.Click += label3_Click;
             // 
             // pictureBox3
             // 
@@ -476,6 +483,7 @@
             brosty.TabIndex = 58;
             brosty.Text = "BROSTY";
             brosty.UseVisualStyleBackColor = false;
+            brosty.Click += brosty_Click_1;
             // 
             // fruittea
             // 
@@ -490,6 +498,7 @@
             fruittea.TabIndex = 59;
             fruittea.Text = "FRUIT TEA";
             fruittea.UseVisualStyleBackColor = false;
+            fruittea.Click += fruittea_Click_1;
             // 
             // coffee
             // 
@@ -551,7 +560,6 @@
             // 
             panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel2.BackColor = Color.FromArgb(194, 122, 47);
-            panel2.Controls.Add(label9);
             panel2.Controls.Add(button10);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(pictureBox3);
@@ -559,17 +567,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(203, 212);
             panel2.TabIndex = 49;
-            // 
-            // label9
-            // 
-            label9.BackColor = Color.Transparent;
-            label9.ForeColor = SystemColors.ActiveCaptionText;
-            label9.Location = new Point(34, 152);
-            label9.Name = "label9";
-            label9.Size = new Size(136, 28);
-            label9.TabIndex = 42;
-            label9.Text = "MACCHIATO";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -619,6 +616,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -665,7 +663,6 @@
         private Label label2;
         private Panel panel2;
         private Panel panel1;
-        private Label label9;
         private Label cartQuantity;
     }
 }

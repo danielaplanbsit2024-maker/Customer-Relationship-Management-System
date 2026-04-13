@@ -25,6 +25,7 @@ namespace Customer_Relationship_Management
             this.Load += (s, e) => UpdateCartCounter();
         }
 
+
         // --- REUSABLE METHOD ---
         private void AddToCart(string productDesc, string category)
         {
