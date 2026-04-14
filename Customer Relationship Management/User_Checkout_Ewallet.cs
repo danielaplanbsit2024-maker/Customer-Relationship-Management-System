@@ -44,7 +44,7 @@ namespace Customer_Relationship_Management
                     db.CRUD("INSERT INTO EWallet (Id, walletName, phoneNo, amount) VALUES (@uid, @wn, @ph, @am)",
                         new Dictionary<string, object> { ["@uid"] = uid, ["@wn"] = name.Text.Trim(), ["@ph"] = phoneNo.Text.Trim(), ["@am"] = paidAmount });
 
-                    string custSql = @"INSERT INTO Customers (id, firstName, lastName, deliveryAdd, [phoneNo.], paymentMethod, orderSummary) 
+                    string custSql = @"INSERT INTO Customers (id, firstName, lastName, deliveryAdd, [phoneNo], paymentMethod, orderSummary) 
                                        VALUES (@uid, @fn, @ln, @ad, @ph, 'Gcash', @os)";
 
                     db.CRUD(custSql, new Dictionary<string, object>

@@ -53,7 +53,7 @@ namespace Customer_Relationship_Management
                 {
                     var uid = db.ExecuteScalar("SELECT Id FROM Users WHERE username = @u", new Dictionary<string, object> { ["@u"] = CurrentUser });
 
-                    string sql = @"INSERT INTO Customers (id, firstName, lastName, deliveryAdd, [phoneNo.], paymentMethod, orderSummary) 
+                    string sql = @"INSERT INTO Customers (id, firstName, lastName, deliveryAdd, [phoneNo], paymentMethod, orderSummary) 
                                    VALUES (@uid, @fn, @ln, @ad, @ph, @pm, @os)";
 
                     db.CRUD(sql, new Dictionary<string, object>

@@ -34,7 +34,7 @@ namespace Customer_Relationship_Management
 
                     if (uid != null)
                     {
-                        db.CRUD("INSERT INTO Reviews (id, reviewDescriptio) VALUES (@uid, @desc)",
+                        db.CRUD("INSERT INTO Reviews (id, reviewDescription) VALUES (@uid, @desc)",
                             new Dictionary<string, object> { ["@uid"] = uid, ["@desc"] = feedback });
 
                         MessageBox.Show("Thank you for your feedback!", "Review Submitted");

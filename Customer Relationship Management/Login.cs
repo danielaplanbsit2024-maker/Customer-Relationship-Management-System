@@ -15,7 +15,7 @@ namespace Customer_Relationship_Management
         public Login()
         {
             InitializeComponent();
-            ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+            ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;";
         }
 
         private void Login_Load(object sender, EventArgs e)
