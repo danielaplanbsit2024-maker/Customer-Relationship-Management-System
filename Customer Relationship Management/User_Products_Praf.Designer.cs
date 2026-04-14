@@ -322,7 +322,6 @@
             label3.TabIndex = 40;
             label3.Text = "CARAMEL MACHIATO";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-            label3.Click += label3_Click;
             // 
             // pictureBox3
             // 
@@ -532,7 +531,6 @@
             praf.TabIndex = 57;
             praf.Text = "PRAF";
             praf.UseVisualStyleBackColor = false;
-            praf.Click += praf_Click;
             // 
             // button4
             // 

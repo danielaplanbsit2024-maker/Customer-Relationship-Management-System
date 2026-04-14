@@ -176,8 +176,6 @@
             label1.TabIndex = 51;
             label1.Text = "WELCOME BACK!";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
-            // 
             // label2
             // 
             label2.BackColor = Color.Transparent;
@@ -187,7 +185,6 @@
             label2.Size = new Size(514, 64);
             label2.TabIndex = 52;
             label2.Text = "TIME FOR A BREW?";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -222,7 +219,6 @@
             homeUsername.Size = new Size(276, 38);
             homeUsername.TabIndex = 55;
             homeUsername.TextAlign = ContentAlignment.MiddleCenter;
-            homeUsername.Click += homeUsername_Click;
             // 
             // User_Home
             // 

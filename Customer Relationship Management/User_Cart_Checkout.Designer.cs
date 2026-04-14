@@ -202,7 +202,6 @@
             firstName.Name = "firstName";
             firstName.Size = new Size(391, 40);
             firstName.TabIndex = 56;
-            firstName.TextChanged += firstName_TextChanged;
             // 
             // label4
             // 

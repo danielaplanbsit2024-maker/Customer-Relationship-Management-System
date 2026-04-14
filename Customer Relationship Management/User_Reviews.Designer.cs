@@ -184,7 +184,6 @@
             reviewDescription.PlaceholderText = "FEEDBACK";
             reviewDescription.Size = new Size(567, 244);
             reviewDescription.TabIndex = 68;
-            reviewDescription.TextChanged += reviewDescription_TextChanged;
             // 
             // btnSubmit
             // 

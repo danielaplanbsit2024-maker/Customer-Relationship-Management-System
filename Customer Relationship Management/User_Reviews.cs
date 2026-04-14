@@ -12,12 +12,14 @@ namespace Customer_Relationship_Management
         public User_Reviews(string username)
         {
             InitializeComponent();
-            this.CurrentUser = username;
+            CurrentUser = username;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(reviewDescription.Text) || reviewDescription.Text == "FEEDBACK")
+            string feedback = reviewDescription.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(feedback) || feedback == "FEEDBACK")
             {
                 MessageBox.Show("Please enter your feedback before submitting.", "Empty Review");
                 return;
@@ -27,58 +29,36 @@ namespace Customer_Relationship_Management
             {
                 using (DBconnection db = new DBconnection(ConStr))
                 {
-                    var userIdObj = db.ExecuteScalar("SELECT Id FROM Users WHERE username = @user",
-                        new Dictionary<string, object> { ["@user"] = CurrentUser });
+                    var uid = db.ExecuteScalar("SELECT Id FROM Users WHERE username = @u",
+                        new Dictionary<string, object> { ["@u"] = CurrentUser });
 
-                    if (userIdObj != null)
+                    if (uid != null)
                     {
-                        string sql = "INSERT INTO Reviews (id, reviewDescriptio) VALUES (@uid, @desc)";
-
-                        db.CRUD(sql, new Dictionary<string, object>
-                        {
-                            ["@uid"] = userIdObj,
-                            ["@desc"] = reviewDescription.Text.Trim()
-                        });
+                        db.CRUD("INSERT INTO Reviews (id, reviewDescriptio) VALUES (@uid, @desc)",
+                            new Dictionary<string, object> { ["@uid"] = uid, ["@desc"] = feedback });
 
                         MessageBox.Show("Thank you for your feedback!", "Review Submitted");
-
                         reviewDescription.Clear();
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error submitting review: " + ex.Message);
-            }
+            catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        // --- NAVIGATION HELPER ---
+        private void Navigate<T>(Func<string, T> factory) where T : Form
         {
-            User_Home home = new User_Home(CurrentUser);
-            home.Location = this.Location;
-            home.StartPosition = FormStartPosition.Manual; // Use Manual to stay at current Location
-            home.Show();
+            T nextForm = factory(CurrentUser);
+            nextForm.Location = this.Location;
+            nextForm.StartPosition = FormStartPosition.Manual;
+            nextForm.Show();
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e) => btnHome_Click(sender, e);
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            User_Products products = new User_Products(CurrentUser);
-            products.Location = this.Location;
-            products.Show();
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            User_Cart cart = new User_Cart(CurrentUser);
-            cart.Location = this.Location;
-            cart.Show();
-            this.Close();
-        }
-
-        private void reviewDescription_TextChanged(object sender, EventArgs e) { }
+        // --- NAVIGATION BUTTONS ---
+        private void btnHome_Click(object sender, EventArgs e) => Navigate(u => new User_Home(u));
+        private void button2_Click(object sender, EventArgs e) => Navigate(u => new User_Home(u));
+        private void button1_Click(object sender, EventArgs e) => Navigate(u => new User_Products(u));
+        private void button3_Click(object sender, EventArgs e) => Navigate(u => new User_Cart(u));
     }
 }

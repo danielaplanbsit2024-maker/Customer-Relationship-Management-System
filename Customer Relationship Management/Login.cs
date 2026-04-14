@@ -36,12 +36,13 @@ namespace Customer_Relationship_Management
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            if (txtLoginUsername.Text == "admin" || txtLoginPassword.Text == "admin123") { 
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.Location = this.Location;
-                    dashboard.StartPosition = FormStartPosition.Manual;
-                    dashboard.Show();
-                    this.Hide();
+            if (txtLoginUsername.Text == "admin" || txtLoginPassword.Text == "admin123")
+            {
+                Dashboard dashboard = new Dashboard();
+                dashboard.Location = this.Location;
+                dashboard.StartPosition = FormStartPosition.Manual;
+                dashboard.Show();
+                this.Hide();
             }
 
             try
@@ -91,6 +92,11 @@ namespace Customer_Relationship_Management
             registerForm.StartPosition = FormStartPosition.Manual;
             registerForm.Show();
             this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

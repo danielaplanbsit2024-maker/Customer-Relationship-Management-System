@@ -100,6 +100,7 @@
             txtRegisterUsername.Name = "txtRegisterUsername";
             txtRegisterUsername.Size = new Size(415, 37);
             txtRegisterUsername.TabIndex = 12;
+            txtRegisterUsername.TextChanged += txtRegisterUsername_TextChanged;
             // 
             // lblRegisterUsername
             // 

@@ -80,7 +80,7 @@ namespace Customer_Relationship_Management
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Registration successful! You can now log in.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        btnRegisterLogin_Click(sender, e); // Redirect to login form
+                        btnRegisterLogin_Click(sender, e);
                     }
                     else
                     {
@@ -92,6 +92,11 @@ namespace Customer_Relationship_Management
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtRegisterUsername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
