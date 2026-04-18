@@ -38,16 +38,16 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
-            btnMinimizeSales = new Button();
-            btnSalesLogout = new Button();
             panel1 = new Panel();
-            button1 = new Button();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
             panel2 = new Panel();
             button2 = new Button();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
+            button1 = new Button();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            btnMinimizeSales = new Button();
+            btnSalesLogout = new Button();
             label9 = new Label();
             label1 = new Label();
             dateTimePicker1 = new DateTimePicker();
@@ -70,11 +70,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -190,33 +190,6 @@
             panel3.Size = new Size(1160, 68);
             panel3.TabIndex = 2;
             // 
-            // btnMinimizeSales
-            // 
-            btnMinimizeSales.BackColor = Color.FromArgb(75, 54, 33);
-            btnMinimizeSales.FlatAppearance.BorderSize = 0;
-            btnMinimizeSales.FlatStyle = FlatStyle.Flat;
-            btnMinimizeSales.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnMinimizeSales.ForeColor = SystemColors.Info;
-            btnMinimizeSales.Location = new Point(1094, 0);
-            btnMinimizeSales.Name = "btnMinimizeSales";
-            btnMinimizeSales.Size = new Size(54, 65);
-            btnMinimizeSales.TabIndex = 28;
-            btnMinimizeSales.Text = "_";
-            btnMinimizeSales.UseVisualStyleBackColor = false;
-            // 
-            // btnSalesLogout
-            // 
-            btnSalesLogout.BackColor = Color.FromArgb(85, 61, 30);
-            btnSalesLogout.FlatAppearance.BorderSize = 0;
-            btnSalesLogout.FlatStyle = FlatStyle.Flat;
-            btnSalesLogout.ForeColor = SystemColors.Info;
-            btnSalesLogout.Location = new Point(1026, 68);
-            btnSalesLogout.Name = "btnSalesLogout";
-            btnSalesLogout.Size = new Size(134, 35);
-            btnSalesLogout.TabIndex = 33;
-            btnSalesLogout.Text = "Logout";
-            btnSalesLogout.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(75, 54, 33);
@@ -229,41 +202,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1160, 68);
             panel1.TabIndex = 29;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(75, 54, 33);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.Info;
-            button1.Location = new Point(1094, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(54, 65);
-            button1.TabIndex = 28;
-            button1.Text = "_";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(3, -14);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(98, 98);
-            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackgroundImageLayout = ImageLayout.None;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(105, -2);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(301, 70);
-            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox4.TabIndex = 4;
-            pictureBox4.TabStop = false;
             // 
             // panel2
             // 
@@ -312,6 +250,68 @@
             pictureBox6.TabIndex = 4;
             pictureBox6.TabStop = false;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(75, 54, 33);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.Info;
+            button1.Location = new Point(1094, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(54, 65);
+            button1.TabIndex = 28;
+            button1.Text = "_";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(3, -14);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(98, 98);
+            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackgroundImageLayout = ImageLayout.None;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(105, -2);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(301, 70);
+            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox4.TabIndex = 4;
+            pictureBox4.TabStop = false;
+            // 
+            // btnMinimizeSales
+            // 
+            btnMinimizeSales.BackColor = Color.FromArgb(75, 54, 33);
+            btnMinimizeSales.FlatAppearance.BorderSize = 0;
+            btnMinimizeSales.FlatStyle = FlatStyle.Flat;
+            btnMinimizeSales.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMinimizeSales.ForeColor = SystemColors.Info;
+            btnMinimizeSales.Location = new Point(1094, 0);
+            btnMinimizeSales.Name = "btnMinimizeSales";
+            btnMinimizeSales.Size = new Size(54, 65);
+            btnMinimizeSales.TabIndex = 28;
+            btnMinimizeSales.Text = "_";
+            btnMinimizeSales.UseVisualStyleBackColor = false;
+            // 
+            // btnSalesLogout
+            // 
+            btnSalesLogout.BackColor = Color.FromArgb(85, 61, 30);
+            btnSalesLogout.FlatAppearance.BorderSize = 0;
+            btnSalesLogout.FlatStyle = FlatStyle.Flat;
+            btnSalesLogout.ForeColor = SystemColors.Info;
+            btnSalesLogout.Location = new Point(1026, 68);
+            btnSalesLogout.Name = "btnSalesLogout";
+            btnSalesLogout.Size = new Size(134, 35);
+            btnSalesLogout.TabIndex = 33;
+            btnSalesLogout.Text = "Logout";
+            btnSalesLogout.UseVisualStyleBackColor = false;
+            // 
             // label9
             // 
             label9.BackColor = Color.Tan;
@@ -331,7 +331,7 @@
             label1.ForeColor = Color.Black;
             label1.Location = new Point(17, 119);
             label1.Name = "label1";
-            label1.Size = new Size(138, 23);
+            label1.Size = new Size(98, 16);
             label1.TabIndex = 36;
             label1.Text = "START DATE";
             // 
@@ -343,7 +343,7 @@
             dateTimePicker1.MaxDate = new DateTime(9000, 12, 31, 0, 0, 0, 0);
             dateTimePicker1.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(201, 29);
+            dateTimePicker1.Size = new Size(201, 22);
             dateTimePicker1.TabIndex = 37;
             dateTimePicker1.Value = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
@@ -355,7 +355,7 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(232, 119);
             label2.Name = "label2";
-            label2.Size = new Size(117, 23);
+            label2.Size = new Size(80, 16);
             label2.TabIndex = 38;
             label2.Text = "END DATE";
             // 
@@ -381,7 +381,7 @@
             dateTimePicker2.MaxDate = new DateTime(9000, 12, 31, 0, 0, 0, 0);
             dateTimePicker2.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(201, 29);
+            dateTimePicker2.Size = new Size(201, 22);
             dateTimePicker2.TabIndex = 41;
             dateTimePicker2.Value = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
@@ -389,7 +389,7 @@
             // 
             textBox1.Location = new Point(616, 150);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(270, 32);
+            textBox1.Size = new Size(270, 24);
             textBox1.TabIndex = 42;
             // 
             // button3
@@ -428,7 +428,7 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(615, 123);
             label3.Name = "label3";
-            label3.Size = new Size(267, 18);
+            label3.Size = new Size(182, 12);
             label3.TabIndex = 45;
             label3.Text = "SEARCH INVOICE / CUSTOMER";
             // 
@@ -459,7 +459,7 @@
             label16.ForeColor = Color.White;
             label16.Location = new Point(478, 272);
             label16.Name = "label16";
-            label16.Size = new Size(191, 34);
+            label16.Size = new Size(128, 23);
             label16.TabIndex = 48;
             label16.Text = "[database]";
             // 
@@ -471,7 +471,7 @@
             label5.ForeColor = Color.White;
             label5.Location = new Point(38, 341);
             label5.Name = "label5";
-            label5.Size = new Size(1079, 25);
+            label5.Size = new Size(752, 17);
             label5.TabIndex = 49;
             label5.Text = "InvoiceID | Date and Time | Customer Name | OrderID | CAtegory | Subtotal | Add-ons | Total";
             // 
@@ -483,7 +483,7 @@
             label17.ForeColor = Color.Black;
             label17.Location = new Point(7, 599);
             label17.Name = "label17";
-            label17.Size = new Size(495, 29);
+            label17.Size = new Size(328, 18);
             label17.TabIndex = 50;
             label17.Text = "TOTAL FOR PERIOD: PHP 45,200.00";
             // 
@@ -495,7 +495,7 @@
             label6.ForeColor = Color.Black;
             label6.Location = new Point(513, 600);
             label6.Name = "label6";
-            label6.Size = new Size(192, 25);
+            label6.Size = new Size(135, 17);
             label6.TabIndex = 51;
             label6.Text = "Transactions: 345";
             label6.Click += label6_Click;
@@ -530,7 +530,7 @@
             // 
             // Sales
             // 
-            AutoScaleDimensions = new SizeF(13F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(1160, 650);
@@ -571,12 +571,12 @@
             panel3.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

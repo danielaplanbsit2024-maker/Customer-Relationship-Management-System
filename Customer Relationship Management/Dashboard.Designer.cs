@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel3 = new Panel();
             btnMinimizeDashboard = new Button();
             pictureBox2 = new PictureBox();
@@ -60,20 +52,10 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            panel5 = new Panel();
-            label10 = new Label();
-            label11 = new Label();
             label12 = new Label();
-            dataGridView1 = new DataGridView();
-            dataGridView2 = new DataGridView();
-            label13 = new Label();
-            label14 = new Label();
-            dataGridView3 = new DataGridView();
-            dataGridView4 = new DataGridView();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            panel5 = new Panel();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -81,10 +63,6 @@
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
             SuspendLayout();
             // 
             // panel3
@@ -98,6 +76,7 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1160, 68);
             panel3.TabIndex = 1;
+            panel3.Paint += panel3_Paint;
             // 
             // btnMinimizeDashboard
             // 
@@ -245,7 +224,7 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(31, 85);
             label3.Name = "label3";
-            label3.Size = new Size(209, 22);
+            label3.Size = new Size(142, 14);
             label3.TabIndex = 6;
             label3.Text = "vs. Yesterday: +8.5%";
             // 
@@ -256,9 +235,10 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(11, 43);
             label2.Name = "label2";
-            label2.Size = new Size(250, 34);
+            label2.Size = new Size(173, 23);
             label2.TabIndex = 5;
             label2.Text = "PHP 12,500.00";
+            label2.Click += label2_Click;
             // 
             // label1
             // 
@@ -267,7 +247,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(42, 8);
             label1.Name = "label1";
-            label1.Size = new Size(190, 25);
+            label1.Size = new Size(132, 17);
             label1.TabIndex = 4;
             label1.Text = "TODAY'S SALES";
             // 
@@ -291,7 +271,7 @@
             label6.ForeColor = Color.Black;
             label6.Location = new Point(67, 85);
             label6.Name = "label6";
-            label6.Size = new Size(130, 22);
+            label6.Size = new Size(91, 14);
             label6.TabIndex = 7;
             label6.Text = "Orders Today";
             // 
@@ -302,7 +282,7 @@
             label5.ForeColor = Color.Black;
             label5.Location = new Point(96, 43);
             label5.Name = "label5";
-            label5.Size = new Size(75, 34);
+            label5.Size = new Size(52, 23);
             label5.TabIndex = 7;
             label5.Text = "115";
             // 
@@ -313,7 +293,7 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(41, 8);
             label4.Name = "label4";
-            label4.Size = new Size(192, 25);
+            label4.Size = new Size(134, 17);
             label4.TabIndex = 7;
             label4.Text = "TRANSACTIONS";
             // 
@@ -336,7 +316,7 @@
             label7.ForeColor = Color.Black;
             label7.Location = new Point(100, 86);
             label7.Name = "label7";
-            label7.Size = new Size(63, 22);
+            label7.Size = new Size(44, 14);
             label7.TabIndex = 8;
             label7.Text = "Today";
             // 
@@ -347,7 +327,7 @@
             label8.ForeColor = Color.Black;
             label8.Location = new Point(104, 44);
             label8.Name = "label8";
-            label8.Size = new Size(55, 34);
+            label8.Size = new Size(38, 23);
             label8.TabIndex = 9;
             label8.Text = "18";
             // 
@@ -358,9 +338,43 @@
             label9.ForeColor = Color.Black;
             label9.Location = new Point(31, 9);
             label9.Name = "label9";
-            label9.Size = new Size(211, 25);
+            label9.Size = new Size(148, 17);
             label9.TabIndex = 10;
             label9.Text = "NEW CUSTOMERS";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(49, 8);
+            label12.Name = "label12";
+            label12.Size = new Size(113, 17);
+            label12.TabIndex = 7;
+            label12.Text = "TOP SELLING";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(43, 43);
+            label11.Name = "label11";
+            label11.Size = new Size(124, 23);
+            label11.TabIndex = 8;
+            label11.Text = "PHP 2,150";
+            label11.Click += label11_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(66, 85);
+            label10.Name = "label10";
+            label10.Size = new Size(87, 14);
+            label10.TabIndex = 9;
+            label10.Text = "Best Product";
             // 
             // panel5
             // 
@@ -374,228 +388,12 @@
             panel5.Size = new Size(274, 124);
             panel5.TabIndex = 29;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(66, 85);
-            label10.Name = "label10";
-            label10.Size = new Size(123, 22);
-            label10.TabIndex = 9;
-            label10.Text = "Best Product";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(43, 43);
-            label11.Name = "label11";
-            label11.Size = new Size(180, 34);
-            label11.TabIndex = 8;
-            label11.Text = "PHP 2,150";
-            label11.Click += label11_Click;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(49, 8);
-            label12.Name = "label12";
-            label12.Size = new Size(163, 25);
-            label12.TabIndex = 7;
-            label12.Text = "TOP SELLING";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(245, 241, 218);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.BackgroundColor = Color.FromArgb(75, 54, 33);
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(74, 53, 26);
-            dataGridViewCellStyle2.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(254, 254, 225);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(16, 244);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(558, 186);
-            dataGridView1.TabIndex = 30;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(245, 241, 218);
-            dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView2.BackgroundColor = Color.FromArgb(75, 54, 33);
-            dataGridView2.BorderStyle = BorderStyle.None;
-            dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(74, 53, 26);
-            dataGridViewCellStyle4.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(254, 254, 225);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(585, 244);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            dataGridView2.RowHeadersWidth = 62;
-            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(558, 186);
-            dataGridView2.TabIndex = 31;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.BackColor = Color.FromArgb(75, 54, 33);
-            label13.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.White;
-            label13.Location = new Point(171, 258);
-            label13.Name = "label13";
-            label13.Size = new Size(251, 34);
-            label13.TabIndex = 7;
-            label13.Text = "SALES TRENDS";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.BackColor = Color.FromArgb(75, 54, 33);
-            label14.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(715, 258);
-            label14.Name = "label14";
-            label14.Size = new Size(295, 34);
-            label14.TabIndex = 32;
-            label14.Text = "SALES PIE CHART";
-            // 
-            // dataGridView3
-            // 
-            dataGridView3.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(245, 241, 218);
-            dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView3.BackgroundColor = Color.Gray;
-            dataGridView3.BorderStyle = BorderStyle.None;
-            dataGridView3.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(74, 53, 26);
-            dataGridViewCellStyle6.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(254, 254, 225);
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(16, 436);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.ReadOnly = true;
-            dataGridView3.RowHeadersWidth = 62;
-            dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView3.Size = new Size(558, 202);
-            dataGridView3.TabIndex = 33;
-            // 
-            // dataGridView4
-            // 
-            dataGridView4.AllowUserToAddRows = false;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(245, 241, 218);
-            dataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridView4.BackgroundColor = Color.NavajoWhite;
-            dataGridView4.BorderStyle = BorderStyle.None;
-            dataGridView4.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(74, 53, 26);
-            dataGridViewCellStyle8.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(254, 254, 225);
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(585, 436);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.ReadOnly = true;
-            dataGridView4.RowHeadersWidth = 62;
-            dataGridView4.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView4.Size = new Size(558, 202);
-            dataGridView4.TabIndex = 34;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.BackColor = Color.Gray;
-            label15.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.White;
-            label15.Location = new Point(108, 445);
-            label15.Name = "label15";
-            label15.Size = new Size(396, 34);
-            label15.TabIndex = 35;
-            label15.Text = "TOP LOYAL CUSTOMERS";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.BackColor = Color.Gray;
-            label16.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.ForeColor = Color.White;
-            label16.Location = new Point(198, 540);
-            label16.Name = "label16";
-            label16.Size = new Size(191, 34);
-            label16.TabIndex = 36;
-            label16.Text = "[database]";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.BackColor = Color.NavajoWhite;
-            label17.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.ForeColor = Color.Black;
-            label17.Location = new Point(629, 449);
-            label17.Name = "label17";
-            label17.Size = new Size(466, 29);
-            label17.TabIndex = 37;
-            label17.Text = "QUICK ACTIONS AND INVENTORY";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.BackColor = Color.NavajoWhite;
-            label18.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.ForeColor = Color.Black;
-            label18.Location = new Point(639, 545);
-            label18.Name = "label18";
-            label18.Size = new Size(447, 29);
-            label18.TabIndex = 38;
-            label18.Text = "[top 3 low stocks(database(?))]";
-            // 
             // Dashboard
             // 
-            AutoScaleDimensions = new SizeF(13F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(1160, 650);
-            Controls.Add(label18);
-            Controls.Add(label17);
-            Controls.Add(label16);
-            Controls.Add(label15);
-            Controls.Add(dataGridView4);
-            Controls.Add(dataGridView3);
-            Controls.Add(label14);
-            Controls.Add(label13);
-            Controls.Add(dataGridView2);
-            Controls.Add(dataGridView1);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel2);
@@ -625,12 +423,7 @@
             panel4.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -648,7 +441,6 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel4;
-        private Panel panel5;
         private Label label3;
         private Label label2;
         private Label label1;
@@ -658,18 +450,9 @@
         private Label label7;
         private Label label8;
         private Label label9;
-        private Label label10;
-        private Label label11;
         private Label label12;
-        private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
-        private Label label13;
-        private Label label14;
-        private DataGridView dataGridView3;
-        private DataGridView dataGridView4;
-        private Label label15;
-        private Label label16;
-        private Label label17;
-        private Label label18;
+        private Label label11;
+        private Label label10;
+        private Panel panel5;
     }
 }

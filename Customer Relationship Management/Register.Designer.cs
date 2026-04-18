@@ -53,7 +53,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(300, 600);
+            panel1.Size = new Size(300, 641);
             panel1.TabIndex = 0;
             // 
             // pictureBox2
@@ -61,7 +61,7 @@
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(0, 3);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(300, 594);
+            pictureBox2.Size = new Size(300, 638);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -81,7 +81,7 @@
             // 
             txtRegisterPassword.Location = new Point(353, 331);
             txtRegisterPassword.Name = "txtRegisterPassword";
-            txtRegisterPassword.Size = new Size(415, 37);
+            txtRegisterPassword.Size = new Size(415, 27);
             txtRegisterPassword.TabIndex = 14;
             // 
             // lblRegisterPassword
@@ -90,7 +90,7 @@
             lblRegisterPassword.ForeColor = Color.FromArgb(75, 54, 33);
             lblRegisterPassword.Location = new Point(353, 295);
             lblRegisterPassword.Name = "lblRegisterPassword";
-            lblRegisterPassword.Size = new Size(128, 29);
+            lblRegisterPassword.Size = new Size(85, 18);
             lblRegisterPassword.TabIndex = 13;
             lblRegisterPassword.Text = "password";
             // 
@@ -98,7 +98,7 @@
             // 
             txtRegisterUsername.Location = new Point(353, 252);
             txtRegisterUsername.Name = "txtRegisterUsername";
-            txtRegisterUsername.Size = new Size(415, 37);
+            txtRegisterUsername.Size = new Size(415, 27);
             txtRegisterUsername.TabIndex = 12;
             txtRegisterUsername.TextChanged += txtRegisterUsername_TextChanged;
             // 
@@ -108,7 +108,7 @@
             lblRegisterUsername.ForeColor = Color.FromArgb(75, 54, 33);
             lblRegisterUsername.Location = new Point(353, 216);
             lblRegisterUsername.Name = "lblRegisterUsername";
-            lblRegisterUsername.Size = new Size(131, 29);
+            lblRegisterUsername.Size = new Size(88, 18);
             lblRegisterUsername.TabIndex = 11;
             lblRegisterUsername.Text = "username";
             // 
@@ -116,7 +116,7 @@
             // 
             txtRegisterConfirmPass.Location = new Point(353, 410);
             txtRegisterConfirmPass.Name = "txtRegisterConfirmPass";
-            txtRegisterConfirmPass.Size = new Size(415, 37);
+            txtRegisterConfirmPass.Size = new Size(415, 27);
             txtRegisterConfirmPass.TabIndex = 16;
             // 
             // lblRegisterConfirmPass
@@ -125,7 +125,7 @@
             lblRegisterConfirmPass.ForeColor = Color.FromArgb(75, 54, 33);
             lblRegisterConfirmPass.Location = new Point(353, 374);
             lblRegisterConfirmPass.Name = "lblRegisterConfirmPass";
-            lblRegisterConfirmPass.Size = new Size(226, 29);
+            lblRegisterConfirmPass.Size = new Size(151, 18);
             lblRegisterConfirmPass.TabIndex = 15;
             lblRegisterConfirmPass.Text = "confirm password";
             lblRegisterConfirmPass.Click += label2_Click;
@@ -166,7 +166,7 @@
             btnRegisterExit.FlatStyle = FlatStyle.Flat;
             btnRegisterExit.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRegisterExit.ForeColor = Color.FromArgb(75, 54, 33);
-            btnRegisterExit.Location = new Point(792, 0);
+            btnRegisterExit.Location = new Point(844, 0);
             btnRegisterExit.Name = "btnRegisterExit";
             btnRegisterExit.Size = new Size(38, 34);
             btnRegisterExit.TabIndex = 21;
@@ -176,10 +176,10 @@
             // 
             // Register
             // 
-            AutoScaleDimensions = new SizeF(15F, 29F);
+            AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(831, 600);
+            ClientSize = new Size(879, 641);
             Controls.Add(btnRegisterExit);
             Controls.Add(btnRegisterLogin);
             Controls.Add(btnRegister);

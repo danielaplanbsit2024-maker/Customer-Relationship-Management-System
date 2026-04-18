@@ -63,7 +63,6 @@
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(btnMinimizeCustomers);
             panel3.Controls.Add(pictureBox2);
-            panel3.Controls.Add(button2);
             panel3.Controls.Add(button1);
             panel3.Controls.Add(button3);
             panel3.Dock = DockStyle.Top;
@@ -127,7 +126,7 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.ForeColor = SystemColors.Info;
-            button2.Location = new Point(552, 12);
+            button2.Location = new Point(911, 565);
             button2.Name = "button2";
             button2.Size = new Size(146, 47);
             button2.TabIndex = 46;
@@ -181,12 +180,12 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(804, 469);
             dataGridView1.TabIndex = 38;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // label2
             // 
             label2.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(875, 167);
+            label2.Location = new Point(875, 137);
             label2.Name = "label2";
             label2.Size = new Size(221, 67);
             label2.TabIndex = 40;
@@ -196,7 +195,7 @@
             // label3
             // 
             label3.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(822, 258);
+            label3.Location = new Point(822, 228);
             label3.Name = "label3";
             label3.Size = new Size(151, 35);
             label3.TabIndex = 41;
@@ -206,7 +205,7 @@
             // label4
             // 
             label4.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(822, 304);
+            label4.Location = new Point(822, 274);
             label4.Name = "label4";
             label4.Size = new Size(123, 35);
             label4.TabIndex = 42;
@@ -216,7 +215,7 @@
             // label5
             // 
             label5.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(826, 353);
+            label5.Location = new Point(826, 323);
             label5.Name = "label5";
             label5.Size = new Size(151, 35);
             label5.TabIndex = 43;
@@ -226,7 +225,7 @@
             // label6
             // 
             label6.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(836, 399);
+            label6.Location = new Point(836, 369);
             label6.Name = "label6";
             label6.Size = new Size(141, 55);
             label6.TabIndex = 44;
@@ -239,7 +238,7 @@
             button4.BackgroundImageLayout = ImageLayout.None;
             button4.FlatStyle = FlatStyle.Flat;
             button4.ForeColor = SystemColors.ButtonFace;
-            button4.Location = new Point(836, 475);
+            button4.Location = new Point(836, 445);
             button4.Name = "button4";
             button4.Size = new Size(291, 60);
             button4.TabIndex = 45;
@@ -253,7 +252,7 @@
             button6.BackgroundImageLayout = ImageLayout.None;
             button6.FlatStyle = FlatStyle.Flat;
             button6.ForeColor = SystemColors.ControlLightLight;
-            button6.Location = new Point(853, 541);
+            button6.Location = new Point(853, 511);
             button6.Name = "button6";
             button6.Size = new Size(260, 48);
             button6.TabIndex = 46;
@@ -266,7 +265,7 @@
             label7.BackColor = SystemColors.ControlDark;
             label7.FlatStyle = FlatStyle.System;
             label7.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(979, 256);
+            label7.Location = new Point(979, 226);
             label7.Name = "label7";
             label7.Size = new Size(165, 35);
             label7.TabIndex = 47;
@@ -277,7 +276,7 @@
             label8.BackColor = SystemColors.ControlDark;
             label8.FlatStyle = FlatStyle.System;
             label8.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(979, 302);
+            label8.Location = new Point(979, 272);
             label8.Name = "label8";
             label8.Size = new Size(165, 35);
             label8.TabIndex = 48;
@@ -288,7 +287,7 @@
             label9.BackColor = SystemColors.ControlDark;
             label9.FlatStyle = FlatStyle.System;
             label9.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(979, 350);
+            label9.Location = new Point(979, 320);
             label9.Name = "label9";
             label9.Size = new Size(165, 35);
             label9.TabIndex = 49;
@@ -299,7 +298,7 @@
             label10.BackColor = SystemColors.ControlDark;
             label10.FlatStyle = FlatStyle.System;
             label10.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(958, 405);
+            label10.Location = new Point(958, 375);
             label10.Name = "label10";
             label10.Size = new Size(165, 43);
             label10.TabIndex = 50;
@@ -307,13 +306,14 @@
             // 
             // User_Cart
             // 
-            AutoScaleDimensions = new SizeF(11F, 22F);
+            AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1160, 650);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
+            Controls.Add(button2);
             Controls.Add(button6);
             Controls.Add(button4);
             Controls.Add(label6);
@@ -328,6 +328,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "User_Cart";
             Text = "User_Cart";
+            Load += User_Cart_Load;
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

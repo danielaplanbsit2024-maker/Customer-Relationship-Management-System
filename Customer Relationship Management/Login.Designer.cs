@@ -46,7 +46,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(300, 600);
+            panel1.Size = new Size(300, 641);
             panel1.TabIndex = 0;
             // 
             // pictureBox2
@@ -54,7 +54,7 @@
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(-1, -1);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(300, 594);
+            pictureBox2.Size = new Size(300, 641);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
@@ -78,7 +78,7 @@
             lblLoginUsername.ForeColor = Color.FromArgb(75, 54, 33);
             lblLoginUsername.Location = new Point(357, 259);
             lblLoginUsername.Name = "lblLoginUsername";
-            lblLoginUsername.Size = new Size(131, 29);
+            lblLoginUsername.Size = new Size(88, 18);
             lblLoginUsername.TabIndex = 3;
             lblLoginUsername.Text = "username";
             // 
@@ -86,14 +86,14 @@
             // 
             txtLoginUsername.Location = new Point(357, 295);
             txtLoginUsername.Name = "txtLoginUsername";
-            txtLoginUsername.Size = new Size(415, 37);
+            txtLoginUsername.Size = new Size(415, 27);
             txtLoginUsername.TabIndex = 4;
             // 
             // txtLoginPassword
             // 
             txtLoginPassword.Location = new Point(357, 386);
             txtLoginPassword.Name = "txtLoginPassword";
-            txtLoginPassword.Size = new Size(415, 37);
+            txtLoginPassword.Size = new Size(415, 27);
             txtLoginPassword.TabIndex = 6;
             // 
             // lblLoginPassword
@@ -102,7 +102,7 @@
             lblLoginPassword.ForeColor = Color.FromArgb(75, 54, 33);
             lblLoginPassword.Location = new Point(357, 350);
             lblLoginPassword.Name = "lblLoginPassword";
-            lblLoginPassword.Size = new Size(128, 29);
+            lblLoginPassword.Size = new Size(85, 18);
             lblLoginPassword.TabIndex = 5;
             lblLoginPassword.Text = "password";
             // 
@@ -142,7 +142,7 @@
             btnLoginExit.FlatStyle = FlatStyle.Flat;
             btnLoginExit.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLoginExit.ForeColor = Color.FromArgb(75, 54, 33);
-            btnLoginExit.Location = new Point(790, 2);
+            btnLoginExit.Location = new Point(843, 0);
             btnLoginExit.Name = "btnLoginExit";
             btnLoginExit.Size = new Size(38, 34);
             btnLoginExit.TabIndex = 11;
@@ -152,10 +152,10 @@
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(15F, 29F);
+            AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(830, 600);
+            ClientSize = new Size(879, 641);
             Controls.Add(btnLoginExit);
             Controls.Add(btnLoginRegister);
             Controls.Add(btnLogin);

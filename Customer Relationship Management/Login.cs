@@ -10,12 +10,11 @@ namespace Customer_Relationship_Management
 {
     public partial class Login : Form
     {
-        public string ConStr { get; private set; }
+        public string ConStr { get; private set; } = DBconnection.ConnectionString;
 
         public Login()
         {
             InitializeComponent();
-            ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;";
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -35,14 +34,15 @@ namespace Customer_Relationship_Management
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            if (txtLoginUsername.Text == "admin" || txtLoginPassword.Text == "admin123")
+            if (txtLoginUsername.Text == "admin" && txtLoginPassword.Text == "admin123")
             {
+                DBconnection.Log("Admin", "Login Success", "Auth", "Administrator accessed the dashboard.");
                 Dashboard dashboard = new Dashboard();
                 dashboard.Location = this.Location;
                 dashboard.StartPosition = FormStartPosition.Manual;
                 dashboard.Show();
                 this.Hide();
+                return; // Prevent running database check for admin
             }
 
             try
@@ -67,6 +67,7 @@ namespace Customer_Relationship_Management
 
                     if (result != null && Convert.ToInt32(result) == 1)
                     {
+                        DBconnection.Log(username, "Login Success", "Auth", "Customer logged in.");
                         User_Home home = new User_Home(username!);
                         home.Location = this.Location;
                         home.StartPosition = FormStartPosition.Manual;
@@ -75,6 +76,7 @@ namespace Customer_Relationship_Management
                     }
                     else
                     {
+                        DBconnection.Log(username ?? "Unknown", "Login Failed", "Auth", "Invalid credentials provided.");
                         MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }

@@ -8,7 +8,7 @@ namespace Customer_Relationship_Management
     {
         private string CurrentUser, OrderDetails;
         private double TotalAmount;
-        private readonly string ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+        private string ConStr = DBconnection.ConnectionString;
 
         public User_Cart_Checkout(string username, string summary, double total)
         {
@@ -17,8 +17,16 @@ namespace Customer_Relationship_Management
             OrderDetails = summary;
             TotalAmount = total;
 
+            double displayTotal = string.IsNullOrWhiteSpace(summary) ? 0 : total;
+
             orderSummary.Text = $"\n - - - - - - YOUR ITEMS - - - - - -\n\n{summary}" +
-                                $"\n-------------------------------------\nTOTAL TO PAY: P{total:N2}";
+                                $"\n-------------------------------------\nTOTAL TO PAY: P{displayTotal:N2}";
+            
+            // Update TotalAmount if summary is empty to prevent charging delivery fee on empty cart
+            if (string.IsNullOrWhiteSpace(summary))
+            {
+                TotalAmount = 0;
+            }
         }
 
         private void checkout_Click(object sender, EventArgs e)
@@ -39,10 +47,15 @@ namespace Customer_Relationship_Management
                     Location = this.Location
                 }.Show();
                 this.Hide();
-                return;
             }
-
-            ProcessOrder(payMethod);
+            else if (payMethod == "COD")
+            {
+                new User_Checkout_COD(CurrentUser, OrderDetails, TotalAmount, firstName.Text, lastName.Text, address.Text, phoneNo.Text)
+                {
+                    Location = this.Location
+                }.Show();
+                this.Hide();
+            }
         }
 
         private void ProcessOrder(string payMethod)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -7,7 +7,7 @@ namespace Customer_Relationship_Management
     public partial class User_Products_FruitTea : Form
     {
         private string CurrentUser;
-        private readonly string ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+        private string ConStr = DBconnection.ConnectionString;
 
         public User_Products_FruitTea(string username)
         {
@@ -41,18 +41,7 @@ namespace Customer_Relationship_Management
 
         private void UpdateCartCounter()
         {
-            if (string.IsNullOrEmpty(CurrentUser)) return;
-            try
-            {
-                using (DBconnection db = new DBconnection(ConStr))
-                {
-                    var count = db.ExecuteScalar("SELECT COUNT(*) FROM Products WHERE id = (SELECT Id FROM Users WHERE username = @u)",
-                        new Dictionary<string, object> { ["@u"] = CurrentUser });
-
-                    cartQuantity.Text = count?.ToString() ?? "0";
-                }
-            }
-            catch { cartQuantity.Text = "0"; }
+            cartQuantity.Text = DBconnection.GetCartCount(CurrentUser).ToString();
         }
 
         // --- PRODUCT CLICKS ---

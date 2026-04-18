@@ -10,12 +10,11 @@ namespace Customer_Relationship_Management
 {
     public partial class Register : Form
     {
-        private readonly string ConStr;
+        private readonly string ConStr = DBconnection.ConnectionString;
 
         public Register()
         {
             InitializeComponent();
-            ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -79,6 +78,7 @@ namespace Customer_Relationship_Management
                     int rowsAffected = db.CRUD(sql, parameters);
                     if (rowsAffected > 0)
                     {
+                        DBconnection.Log(username, "Registration", "Auth", "New customer account created.");
                         MessageBox.Show("Registration successful! You can now log in.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnRegisterLogin_Click(sender, e);
                     }

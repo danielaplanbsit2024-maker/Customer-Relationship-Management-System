@@ -193,10 +193,11 @@
             button4.TabIndex = 56;
             button4.Text = "BACK TO HOME";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // User_Checkout_COD
             // 
-            AutoScaleDimensions = new SizeF(11F, 22F);
+            AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1160, 650);
             Controls.Add(button4);

@@ -37,7 +37,7 @@
             button2 = new Button();
             button1 = new Button();
             button3 = new Button();
-            button4 = new Button();
+            Backtohome = new Button();
             label3 = new Label();
             label1 = new Label();
             pictureBox3 = new PictureBox();
@@ -150,18 +150,18 @@
             button3.Text = "CART";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // Backtohome
             // 
-            button4.BackColor = Color.Tan;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Impact", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.Sienna;
-            button4.Location = new Point(451, 557);
-            button4.Name = "button4";
-            button4.Size = new Size(280, 43);
-            button4.TabIndex = 61;
-            button4.Text = "BACK TO HOME";
-            button4.UseVisualStyleBackColor = false;
+            Backtohome.BackColor = Color.Tan;
+            Backtohome.FlatStyle = FlatStyle.Flat;
+            Backtohome.Font = new Font("Impact", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Backtohome.ForeColor = Color.Sienna;
+            Backtohome.Location = new Point(451, 557);
+            Backtohome.Name = "Backtohome";
+            Backtohome.Size = new Size(280, 43);
+            Backtohome.TabIndex = 61;
+            Backtohome.Text = "BACK TO HOME";
+            Backtohome.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -196,11 +196,11 @@
             // 
             // User_Confirm_Ewallet
             // 
-            AutoScaleDimensions = new SizeF(11F, 22F);
+            AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1160, 650);
             Controls.Add(panel3);
-            Controls.Add(button4);
+            Controls.Add(Backtohome);
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(pictureBox3);
@@ -225,7 +225,7 @@
         private Button button2;
         private Button button1;
         private Button button3;
-        private Button button4;
+        private Button Backtohome;
         private Label label3;
         private Label label1;
         private PictureBox pictureBox3;

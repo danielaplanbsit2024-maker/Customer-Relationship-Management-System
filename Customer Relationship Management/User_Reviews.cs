@@ -7,12 +7,30 @@ namespace Customer_Relationship_Management
     public partial class User_Reviews : Form
     {
         public string CurrentUser { get; private set; }
-        private readonly string ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+        private string ConStr = DBconnection.ConnectionString;
+        private Label cartQuantityBadge;
 
         public User_Reviews(string username)
         {
             InitializeComponent();
             CurrentUser = username;
+            this.Load += (s, e) => UpdateCartCounter();
+        }
+
+        private void UpdateCartCounter()
+        {
+            if (cartQuantityBadge == null)
+            {
+                cartQuantityBadge = new Label();
+                cartQuantityBadge.AutoSize = true;
+                cartQuantityBadge.Font = new Font("Verdana", 10F, FontStyle.Bold);
+                cartQuantityBadge.ForeColor = Color.Red;
+                cartQuantityBadge.BackColor = Color.Transparent;
+                cartQuantityBadge.Location = new Point(954, 13);
+                panel3.Controls.Add(cartQuantityBadge);
+                cartQuantityBadge.BringToFront();
+            }
+            cartQuantityBadge.Text = DBconnection.GetCartCount(CurrentUser).ToString();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

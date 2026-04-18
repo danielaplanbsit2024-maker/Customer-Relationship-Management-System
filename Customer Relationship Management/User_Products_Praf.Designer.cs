@@ -318,7 +318,7 @@
             label3.ForeColor = SystemColors.ActiveCaptionText;
             label3.Location = new Point(3, 143);
             label3.Name = "label3";
-            label3.Size = new Size(200, 22);
+            label3.Size = new Size(134, 14);
             label3.TabIndex = 40;
             label3.Text = "CARAMEL MACHIATO";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -358,7 +358,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1160, 74);
+            panel3.Size = new Size(1280, 74);
             panel3.TabIndex = 46;
             // 
             // cartQuantity
@@ -367,7 +367,7 @@
             cartQuantity.ForeColor = Color.Red;
             cartQuantity.Location = new Point(955, 12);
             cartQuantity.Name = "cartQuantity";
-            cartQuantity.Size = new Size(0, 22);
+            cartQuantity.Size = new Size(0, 14);
             cartQuantity.TabIndex = 56;
             // 
             // button5
@@ -586,9 +586,9 @@
             // 
             // User_Products_Praf
             // 
-            AutoScaleDimensions = new SizeF(11F, 22F);
+            AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1160, 650);
+            ClientSize = new Size(1280, 785);
             Controls.Add(panel5);
             Controls.Add(panel6);
             Controls.Add(panel7);

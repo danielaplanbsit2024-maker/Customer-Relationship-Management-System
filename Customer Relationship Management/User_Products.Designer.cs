@@ -102,7 +102,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1160, 74);
+            panel3.Size = new Size(1280, 74);
             panel3.TabIndex = 36;
             // 
             // cartQuantity
@@ -112,7 +112,7 @@
             cartQuantity.ForeColor = Color.Red;
             cartQuantity.Location = new Point(954, 13);
             cartQuantity.Name = "cartQuantity";
-            cartQuantity.Size = new Size(0, 25);
+            cartQuantity.Size = new Size(0, 17);
             cartQuantity.TabIndex = 56;
             // 
             // button5
@@ -589,10 +589,10 @@
             // 
             // User_Products
             // 
-            AutoScaleDimensions = new SizeF(11F, 22F);
+            AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1160, 650);
+            ClientSize = new Size(1280, 785);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel7);

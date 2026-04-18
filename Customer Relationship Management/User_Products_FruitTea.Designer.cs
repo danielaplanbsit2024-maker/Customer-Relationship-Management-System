@@ -423,7 +423,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1160, 74);
+            panel3.Size = new Size(1280, 74);
             panel3.TabIndex = 64;
             // 
             // cartQuantity
@@ -433,7 +433,7 @@
             cartQuantity.ForeColor = Color.Red;
             cartQuantity.Location = new Point(956, 11);
             cartQuantity.Name = "cartQuantity";
-            cartQuantity.Size = new Size(21, 22);
+            cartQuantity.Size = new Size(15, 14);
             cartQuantity.TabIndex = 56;
             cartQuantity.Text = "0";
             // 
@@ -586,9 +586,9 @@
             // 
             // User_Products_FruitTea
             // 
-            AutoScaleDimensions = new SizeF(11F, 22F);
+            AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1160, 650);
+            ClientSize = new Size(1280, 785);
             Controls.Add(panel2);
             Controls.Add(label1);
             Controls.Add(panel5);

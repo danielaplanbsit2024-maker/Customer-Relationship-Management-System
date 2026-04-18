@@ -8,7 +8,7 @@ namespace Customer_Relationship_Management
     {
         private string CurrentUser, OrderDetails, FName, LName, Addr, PNo;
         private double TotalAmount;
-        private readonly string ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True";
+        private string ConStr = DBconnection.ConnectionString;
 
         public User_Checkout_Ewallet(string user, string summary, double total, string fn, string ln, string ad, string ph)
         {
@@ -39,28 +39,54 @@ namespace Customer_Relationship_Management
             {
                 using (DBconnection db = new DBconnection(ConStr))
                 {
-                    var uid = db.ExecuteScalar("SELECT Id FROM Users WHERE username = @u", new Dictionary<string, object> { ["@u"] = CurrentUser });
+                    var uidObj = db.ExecuteScalar("SELECT Id FROM Users WHERE username = @u", new Dictionary<string, object> { ["@u"] = CurrentUser });
+                    int uid = Convert.ToInt32(uidObj);
 
                     db.CRUD("INSERT INTO EWallet (Id, walletName, phoneNo, amount) VALUES (@uid, @wn, @ph, @am)",
                         new Dictionary<string, object> { ["@uid"] = uid, ["@wn"] = name.Text.Trim(), ["@ph"] = phoneNo.Text.Trim(), ["@am"] = paidAmount });
 
-                    string custSql = @"INSERT INTO Customers (id, firstName, lastName, deliveryAdd, [phoneNo], paymentMethod, orderSummary) 
-                                       VALUES (@uid, @fn, @ln, @ad, @ph, 'Gcash', @os)";
+                    // 1. UPSERT Customer Profile (Normalization & Integrity)
+                    string profileSql = @"
+                        IF EXISTS (SELECT 1 FROM CustomerProfiles WHERE id = @uid)
+                        BEGIN
+                            UPDATE CustomerProfiles SET firstName=@fn, lastName=@ln, phoneNo=@ph, deliveryAdd=@ad, LoyaltyPoints = LoyaltyPoints + 1
+                            WHERE id = @uid;
+                        END
+                        ELSE
+                        BEGIN
+                            INSERT INTO CustomerProfiles (id, firstName, lastName, phoneNo, deliveryAdd, LoyaltyPoints)
+                            VALUES (@uid, @fn, @ln, @ph, @ad, 1);
+                        END";
 
-                    db.CRUD(custSql, new Dictionary<string, object>
+                    db.CRUD(profileSql, new Dictionary<string, object>
+                    {
+                        ["@uid"] = uid, ["@fn"] = FName, ["@ln"] = LName, ["@ph"] = PNo, ["@ad"] = Addr
+                    });
+
+                    // 2. Always INSERT into Customers (Order History Integrity)
+                    string custSql = @"INSERT INTO Customers (id, firstName, lastName, deliveryAdd, [phoneNo], paymentMethod, orderSummary, TotalAmount, OrderDate) 
+                                       VALUES (@uid, @fn, @ln, @ad, @ph, 'Gcash', @os, @total, GETDATE());
+                                       SELECT SCOPE_IDENTITY();";
+
+                    object result = db.ExecuteScalar(custSql, new Dictionary<string, object>
                     {
                         ["@uid"] = uid,
                         ["@fn"] = FName,
                         ["@ln"] = LName,
                         ["@ad"] = Addr,
                         ["@ph"] = PNo,
-                        ["@os"] = OrderDetails
+                        ["@os"] = OrderDetails,
+                        ["@total"] = TotalAmount
                     });
+
+                    int customerID = result != null && result != DBNull.Value ? Convert.ToInt32(result) : uid;
+
+                    DBconnection.Log(CurrentUser, "Order Placed", "Checkout", $"GCash Order Ref {customerID} for P{TotalAmount:N2}");
 
                     db.CRUD("DELETE FROM Products WHERE id = @uid", new Dictionary<string, object> { ["@uid"] = uid });
 
-                    MessageBox.Show("Payment Successful! Order Confirmed.");
-                    Navigate(u => new User_Home(u));
+                    new User_Confirm_Ewallet(CurrentUser, customerID) { Location = this.Location }.Show();
+                    this.Close();
                 }
             }
             catch (Exception ex) { MessageBox.Show("Payment Error: " + ex.Message); }
