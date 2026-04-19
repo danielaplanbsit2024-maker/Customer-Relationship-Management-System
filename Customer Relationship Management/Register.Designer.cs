@@ -47,6 +47,7 @@
             // 
             // txtRegisterPassword
             // 
+            txtRegisterPassword.Anchor = AnchorStyles.None;
             txtRegisterPassword.Location = new Point(679, 529);
             txtRegisterPassword.Name = "txtRegisterPassword";
             txtRegisterPassword.Size = new Size(632, 37);
@@ -54,6 +55,7 @@
             // 
             // lblRegisterPassword
             // 
+            lblRegisterPassword.Anchor = AnchorStyles.None;
             lblRegisterPassword.AutoSize = true;
             lblRegisterPassword.Font = new Font("Verdana", 20F);
             lblRegisterPassword.ForeColor = Color.FromArgb(75, 54, 33);
@@ -65,6 +67,7 @@
             // 
             // txtRegisterUsername
             // 
+            txtRegisterUsername.Anchor = AnchorStyles.None;
             txtRegisterUsername.Location = new Point(679, 415);
             txtRegisterUsername.Name = "txtRegisterUsername";
             txtRegisterUsername.Size = new Size(632, 37);
@@ -73,6 +76,7 @@
             // 
             // lblRegisterUsername
             // 
+            lblRegisterUsername.Anchor = AnchorStyles.None;
             lblRegisterUsername.AutoSize = true;
             lblRegisterUsername.Font = new Font("Verdana", 20F);
             lblRegisterUsername.ForeColor = Color.FromArgb(75, 54, 33);
@@ -84,6 +88,7 @@
             // 
             // txtRegisterConfirmPass
             // 
+            txtRegisterConfirmPass.Anchor = AnchorStyles.None;
             txtRegisterConfirmPass.Location = new Point(679, 645);
             txtRegisterConfirmPass.Name = "txtRegisterConfirmPass";
             txtRegisterConfirmPass.Size = new Size(632, 37);
@@ -91,6 +96,7 @@
             // 
             // lblRegisterConfirmPass
             // 
+            lblRegisterConfirmPass.Anchor = AnchorStyles.None;
             lblRegisterConfirmPass.AutoSize = true;
             lblRegisterConfirmPass.Font = new Font("Verdana", 20F);
             lblRegisterConfirmPass.ForeColor = Color.FromArgb(75, 54, 33);
@@ -103,6 +109,7 @@
             // 
             // btnRegister
             // 
+            btnRegister.Anchor = AnchorStyles.None;
             btnRegister.BackColor = Color.FromArgb(75, 54, 33);
             btnRegister.FlatAppearance.BorderSize = 0;
             btnRegister.FlatStyle = FlatStyle.Flat;
@@ -118,6 +125,7 @@
             // 
             // btnRegisterLogin
             // 
+            btnRegisterLogin.Anchor = AnchorStyles.None;
             btnRegisterLogin.BackColor = SystemColors.Info;
             btnRegisterLogin.FlatAppearance.BorderSize = 0;
             btnRegisterLogin.FlatStyle = FlatStyle.Flat;
