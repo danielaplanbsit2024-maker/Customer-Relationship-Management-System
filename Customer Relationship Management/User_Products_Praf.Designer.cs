@@ -127,9 +127,10 @@
             // pictureBox4
             // 
             pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.Location = new Point(20, 3);
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(20, -40);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(164, 131);
+            pictureBox4.Size = new Size(164, 194);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 0;
             pictureBox4.TabStop = false;
@@ -171,9 +172,10 @@
             // pictureBox5
             // 
             pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.Location = new Point(20, 3);
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(20, -40);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(164, 131);
+            pictureBox5.Size = new Size(164, 192);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 0;
             pictureBox5.TabStop = false;
@@ -215,9 +217,10 @@
             // pictureBox6
             // 
             pictureBox6.BackColor = Color.Transparent;
-            pictureBox6.Location = new Point(20, 3);
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(20, -26);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(164, 131);
+            pictureBox6.Size = new Size(164, 193);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
@@ -260,9 +263,10 @@
             // pictureBox7
             // 
             pictureBox7.BackColor = Color.Transparent;
-            pictureBox7.Location = new Point(20, 3);
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(0, -24);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(164, 131);
+            pictureBox7.Size = new Size(159, 173);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 0;
             pictureBox7.TabStop = false;
@@ -304,9 +308,10 @@
             // pictureBox8
             // 
             pictureBox8.BackColor = Color.Transparent;
-            pictureBox8.Location = new Point(20, 3);
+            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
+            pictureBox8.Location = new Point(20, -33);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(164, 131);
+            pictureBox8.Size = new Size(164, 185);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
@@ -318,7 +323,7 @@
             label3.ForeColor = SystemColors.ActiveCaptionText;
             label3.Location = new Point(3, 143);
             label3.Name = "label3";
-            label3.Size = new Size(134, 14);
+            label3.Size = new Size(200, 22);
             label3.TabIndex = 40;
             label3.Text = "CARAMEL MACHIATO";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -326,9 +331,10 @@
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Location = new Point(20, 3);
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(26, -30);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(164, 131);
+            pictureBox3.Size = new Size(154, 197);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
@@ -367,7 +373,7 @@
             cartQuantity.ForeColor = Color.Red;
             cartQuantity.Location = new Point(955, 12);
             cartQuantity.Name = "cartQuantity";
-            cartQuantity.Size = new Size(0, 14);
+            cartQuantity.Size = new Size(0, 22);
             cartQuantity.TabIndex = 56;
             // 
             // button5
@@ -478,7 +484,7 @@
             brosty.BackColor = Color.FromArgb(76, 48, 28);
             brosty.FlatAppearance.BorderSize = 0;
             brosty.FlatStyle = FlatStyle.Flat;
-            brosty.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            brosty.Font = new Font("Gabriola", 16F);
             brosty.ForeColor = SystemColors.Info;
             brosty.Location = new Point(65, 329);
             brosty.Name = "brosty";
@@ -493,7 +499,7 @@
             fruittea.BackColor = Color.FromArgb(76, 48, 28);
             fruittea.FlatAppearance.BorderSize = 0;
             fruittea.FlatStyle = FlatStyle.Flat;
-            fruittea.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            fruittea.Font = new Font("Gabriola", 16F);
             fruittea.ForeColor = SystemColors.Info;
             fruittea.Location = new Point(65, 267);
             fruittea.Name = "fruittea";
@@ -508,7 +514,7 @@
             coffee.BackColor = Color.FromArgb(76, 48, 28);
             coffee.FlatAppearance.BorderSize = 0;
             coffee.FlatStyle = FlatStyle.Flat;
-            coffee.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            coffee.Font = new Font("Gabriola", 16F);
             coffee.ForeColor = SystemColors.Info;
             coffee.Location = new Point(65, 207);
             coffee.Name = "coffee";
@@ -523,7 +529,7 @@
             praf.BackColor = Color.FromArgb(76, 48, 28);
             praf.FlatAppearance.BorderSize = 0;
             praf.FlatStyle = FlatStyle.Flat;
-            praf.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            praf.Font = new Font("Gabriola", 16F);
             praf.ForeColor = Color.DarkOrange;
             praf.Location = new Point(65, 148);
             praf.Name = "praf";
@@ -537,7 +543,7 @@
             button4.BackColor = Color.FromArgb(76, 48, 28);
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.Font = new Font("Gabriola", 16F);
             button4.ForeColor = SystemColors.Info;
             button4.Location = new Point(65, 86);
             button4.Name = "button4";
@@ -549,7 +555,7 @@
             // 
             // label2
             // 
-            label2.Font = new Font("Verdana", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Courier New", 16F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(3, 16);
             label2.Name = "label2";
@@ -586,7 +592,7 @@
             // 
             // User_Products_Praf
             // 
-            AutoScaleDimensions = new SizeF(8F, 14F);
+            AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1280, 785);
             Controls.Add(panel5);

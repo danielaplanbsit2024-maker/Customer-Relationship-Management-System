@@ -112,7 +112,7 @@
             cartQuantity.ForeColor = Color.Red;
             cartQuantity.Location = new Point(954, 13);
             cartQuantity.Name = "cartQuantity";
-            cartQuantity.Size = new Size(0, 17);
+            cartQuantity.Size = new Size(0, 25);
             cartQuantity.TabIndex = 56;
             // 
             // button5
@@ -224,7 +224,7 @@
             brosty.BackColor = Color.FromArgb(76, 48, 28);
             brosty.FlatAppearance.BorderSize = 0;
             brosty.FlatStyle = FlatStyle.Flat;
-            brosty.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            brosty.Font = new Font("Gabriola", 16F);
             brosty.ForeColor = SystemColors.Info;
             brosty.Location = new Point(65, 329);
             brosty.Name = "brosty";
@@ -239,7 +239,7 @@
             fruittea.BackColor = Color.FromArgb(76, 48, 28);
             fruittea.FlatAppearance.BorderSize = 0;
             fruittea.FlatStyle = FlatStyle.Flat;
-            fruittea.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            fruittea.Font = new Font("Gabriola", 16F);
             fruittea.ForeColor = SystemColors.Info;
             fruittea.Location = new Point(65, 267);
             fruittea.Name = "fruittea";
@@ -254,7 +254,7 @@
             coffee.BackColor = Color.FromArgb(76, 48, 28);
             coffee.FlatAppearance.BorderSize = 0;
             coffee.FlatStyle = FlatStyle.Flat;
-            coffee.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            coffee.Font = new Font("Gabriola", 16F);
             coffee.ForeColor = SystemColors.Info;
             coffee.Location = new Point(65, 207);
             coffee.Name = "coffee";
@@ -269,7 +269,7 @@
             praf.BackColor = Color.FromArgb(76, 48, 28);
             praf.FlatAppearance.BorderSize = 0;
             praf.FlatStyle = FlatStyle.Flat;
-            praf.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            praf.Font = new Font("Gabriola", 16F);
             praf.ForeColor = SystemColors.Info;
             praf.Location = new Point(65, 148);
             praf.Name = "praf";
@@ -284,7 +284,7 @@
             button4.BackColor = Color.FromArgb(76, 48, 28);
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Verdana", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.Font = new Font("Gabriola", 16F);
             button4.ForeColor = Color.DarkOrange;
             button4.Location = new Point(65, 86);
             button4.Name = "button4";
@@ -295,7 +295,7 @@
             // 
             // label2
             // 
-            label2.Font = new Font("Verdana", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Courier New", 16F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(3, 16);
             label2.Name = "label2";
@@ -589,7 +589,7 @@
             // 
             // User_Products
             // 
-            AutoScaleDimensions = new SizeF(8F, 14F);
+            AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(1280, 785);
