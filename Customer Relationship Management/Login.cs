@@ -100,5 +100,10 @@ namespace Customer_Relationship_Management
         {
 
         }
+
+        private void txtLoginUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
