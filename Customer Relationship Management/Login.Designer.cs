@@ -65,7 +65,7 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(677, 114);
+            pictureBox1.Location = new Point(677, 104);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(632, 177);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
