@@ -17,7 +17,7 @@ namespace Customer_Relationship_Management
             InitializeComponent();
             WireNavigation();
             HighlightActiveTab();
-            
+
             // Grid UI Setup
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
@@ -27,7 +27,7 @@ namespace Customer_Relationship_Management
 
             this.Load += (s, e) => LoadCustomerData();
             dataGridView1.SelectionChanged += (s, e) => OnCustomerSelected();
-            
+
             // Filters and Actions
             textBox1.TextChanged += (s, e) => LoadCustomerData();
             comboBox1.SelectedIndexChanged += (s, e) => LoadCustomerData();
@@ -58,9 +58,13 @@ namespace Customer_Relationship_Management
             // Create a quick dynamic dialog for editing
             Form editForm = new Form()
             {
-                Width = 400, Height = 300, Text = "Edit Customer Profile",
-                FormBorderStyle = FormBorderStyle.FixedDialog, StartPosition = FormStartPosition.CenterParent,
-                BackColor = Color.Tan, Font = new Font("Verdana", 9)
+                Width = 400,
+                Height = 300,
+                Text = "Edit Customer Profile",
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                StartPosition = FormStartPosition.CenterParent,
+                BackColor = Color.Tan,
+                Font = new Font("Verdana", 9)
             };
 
             Label lblF = new Label() { Text = "First Name:", Left = 20, Top = 20, Width = 100 };
@@ -104,7 +108,7 @@ namespace Customer_Relationship_Management
             };
 
             editForm.Controls.AddRange(new Control[] { lblF, txtF, lblL, txtL, lblP, txtP, btnSave });
-            
+
             if (editForm.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Profile updated successfully!");
@@ -159,15 +163,15 @@ namespace Customer_Relationship_Management
             {
                 var row = dataGridView1.SelectedRows[0];
                 string name = row.Cells["FullName"].Value?.ToString() ?? "N/A";
-                
+
                 object pointsObj = row.Cells["LoyaltyPoints"].Value;
                 int points = (pointsObj == null || pointsObj == DBNull.Value) ? 0 : Convert.ToInt32(pointsObj);
 
                 label3.Text = $"CURRENTLY SELECTED: {name}";
-                
+
                 string status = points >= 50 ? "GOLD" : points >= 20 ? "SILVER" : "BRONZE";
                 label4.Text = $"LOYALTY STATUS: {status}";
-                
+
                 button2.Text = $"REDEEM REWARDS ({points} pts)";
                 button2.Enabled = points >= 25;
             }
@@ -193,7 +197,7 @@ namespace Customer_Relationship_Management
 
             var row = dataGridView1.SelectedRows[0];
             string cid = row.Cells["CustomerID"].Value?.ToString() ?? "";
-            
+
             object pointsObj = row.Cells["LoyaltyPoints"].Value;
             int currentPoints = (pointsObj == null || pointsObj == DBNull.Value) ? 0 : Convert.ToInt32(pointsObj);
 
@@ -209,7 +213,7 @@ namespace Customer_Relationship_Management
                 {
                     using (DBconnection db = new DBconnection(ConStr))
                     {
-                        db.CRUD("UPDATE CustomerProfiles SET LoyaltyPoints = LoyaltyPoints - 25 WHERE id = @id", 
+                        db.CRUD("UPDATE CustomerProfiles SET LoyaltyPoints = LoyaltyPoints - 25 WHERE id = @id",
                             new Dictionary<string, object> { ["@id"] = cid });
                     }
                     MessageBox.Show("Rewards redeemed successfully!");
@@ -222,29 +226,26 @@ namespace Customer_Relationship_Management
         private void WireNavigation()
         {
             // Hide and Reposition
-            btnCustomersToItems.Visible = false;
-            btnCustomersToCategories.Visible = false;
 
             btnCustomersToSales.Left = btnCustomersToDashboard.Right;
-            btnCustomers.Left = btnCustomersToSales.Right;
-            btnCustomersToHistory.Left = btnCustomers.Right;
+            btnDashboardToCustomers.Left = btnCustomersToSales.Right;
+            btnCustomersToHistory.Left = btnDashboardToCustomers.Right;
             btnCustomersLogout.Left = 1026;
 
             btnCustomersToDashboard.Click += (s, e) => Navigate(new Dashboard());
             btnCustomersToSales.Click += (s, e) => Navigate(new Sales());
             btnCustomersToHistory.Click += (s, e) => Navigate(new History());
 
-            btnCustomersLogout.Click += (s, e) => {
+            btnCustomersLogout.Click += (s, e) =>
+            {
                 new Login() { Location = this.Location, StartPosition = FormStartPosition.Manual }.Show();
                 this.Close();
             };
-
-            btnMinimizeCustomers.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
         }
 
         private void HighlightActiveTab()
         {
-            btnCustomers.BackColor = Color.FromArgb(75, 54, 33);
+            btnDashboardToCustomers.BackColor = Color.FromArgb(75, 54, 33);
         }
 
         private void Navigate(Form target)
@@ -256,6 +257,21 @@ namespace Customer_Relationship_Management
         }
 
         private void Customers_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDashboardToCustomers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCustomersToSales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

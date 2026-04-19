@@ -17,7 +17,7 @@ namespace Customer_Relationship_Management
             InitializeComponent();
             WireNavigation();
             HighlightActiveTab();
-            
+
             // UI Setup
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.MultiSelect = false;
@@ -30,7 +30,7 @@ namespace Customer_Relationship_Management
             dateTimePicker2.Value = DateTime.Today;
 
             this.Load += (s, e) => LoadSalesData();
-            
+
             btnDashboardLogout.Click += (s, e) => LoadSalesData(); // Apply Filters
             button3.Click += (s, e) => ClearFilters();
             btnExportToExcel.Click += (s, e) => ExportToExcel();
@@ -89,7 +89,7 @@ namespace Customer_Relationship_Management
             string invoice = row.Cells["InvoiceID"].Value.ToString();
             string customer = row.Cells["Customer Name"].Value.ToString();
 
-            var confirm = MessageBox.Show($"Are you sure you want to refund this order?\n\nInvoice: {invoice}\nCustomer: {customer}", 
+            var confirm = MessageBox.Show($"Are you sure you want to refund this order?\n\nInvoice: {invoice}\nCustomer: {customer}",
                 "Confirm Refund", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (confirm == DialogResult.Yes)
@@ -174,8 +174,6 @@ namespace Customer_Relationship_Management
         private void WireNavigation()
         {
             // Hide and Reposition
-            btnSalesToItems.Visible = false;
-            btnSalesToCategories.Visible = false;
 
             btnSales.Left = btnSalesToDashboard.Right;
             btnSalesToCustomers.Left = btnSales.Right;
@@ -186,12 +184,11 @@ namespace Customer_Relationship_Management
             btnSalesToCustomers.Click += (s, e) => Navigate(new Customers());
             btnSalesToHistory.Click += (s, e) => Navigate(new History());
 
-            btnSalesLogout.Click += (s, e) => {
+            btnSalesLogout.Click += (s, e) =>
+            {
                 new Login() { Location = this.Location, StartPosition = FormStartPosition.Manual }.Show();
                 this.Close();
             };
-
-            btnMinimizeSales.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
         }
 
         private void HighlightActiveTab()
@@ -213,6 +210,11 @@ namespace Customer_Relationship_Management
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalesToCustomers_Click(object sender, EventArgs e)
         {
 
         }

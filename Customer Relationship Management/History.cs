@@ -299,8 +299,6 @@ namespace Customer_Relationship_Management
         private void WireNavigation()
         {
             // Hide and Reposition for a clean sequence
-            btnHistoryToItems.Visible = false;
-            btnHistoryToCategories.Visible = false;
 
             btnHistoryToSales.Left = btnHistoryToDashboard.Right;
             btnHistoryToCustomers.Left = btnHistoryToSales.Right;
@@ -316,8 +314,6 @@ namespace Customer_Relationship_Management
                 new Login() { Location = this.Location, StartPosition = FormStartPosition.Manual }.Show();
                 this.Close();
             };
-
-            btnMinimizeHistory.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
         }
 
         private void HighlightActiveTab()
@@ -331,6 +327,16 @@ namespace Customer_Relationship_Management
             target.StartPosition = FormStartPosition.Manual;
             target.Show();
             this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHistoryToCustomers_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

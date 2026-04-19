@@ -22,16 +22,15 @@ namespace Customer_Relationship_Management
         private void WireNavigation()
         {
             // Hide and Reposition
-            btnDashboardToItems.Visible = false;
-            btnDashboardToCategories.Visible = false;
-            
+
             btnDashboardToSales.Left = 0;
             btnDashboardToCustomers.Left = btnDashboardToSales.Right;
             btnDashboardToHistory.Left = btnDashboardToCustomers.Right;
             btnDashboardLogout.Left = 1026;
 
             // Logout
-            btnDashboardLogout.Click += (s, e) => {
+            btnDashboardLogout.Click += (s, e) =>
+            {
                 new Login() { Location = this.Location, StartPosition = FormStartPosition.Manual }.Show();
                 this.Close();
             };
@@ -40,9 +39,6 @@ namespace Customer_Relationship_Management
             btnDashboardToSales.Click += (s, e) => Navigate(new Sales());
             btnDashboardToCustomers.Click += (s, e) => Navigate(new Customers());
             btnDashboardToHistory.Click += (s, e) => Navigate(new History());
-
-            // Minimize
-            btnMinimizeDashboard.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
         }
 
         private void Navigate(Form target)
@@ -69,7 +65,7 @@ namespace Customer_Relationship_Management
                     string yesterdaySql = "SELECT SUM(TotalAmount) FROM Customers WHERE CAST(OrderDate AS DATE) = CAST(DATEADD(day, -1, GETDATE()) AS DATE)";
                     object ySales = db.ExecuteScalar(yesterdaySql);
                     decimal yesterdaySales = ySales != DBNull.Value ? Convert.ToDecimal(ySales) : 0;
-                    
+
                     if (yesterdaySales > 0)
                     {
                         decimal diff = ((totalSales - yesterdaySales) / yesterdaySales) * 100;
@@ -125,6 +121,16 @@ namespace Customer_Relationship_Management
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDashboardLogout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
 
         }
