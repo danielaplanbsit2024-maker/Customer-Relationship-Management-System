@@ -23,7 +23,7 @@ namespace Customer_Relationship_Management
             button1.Click += (s, e) => Navigate(u => new User_Products(u));
             button3.Click += (s, e) => Navigate(u => new User_Cart(u));
             button5.Click += (s, e) => Navigate(u => new User_Reviews(u));
-            
+
             // Process the order immediately when this confirmation screen is shown
             this.Load += (s, e) => PlaceOrder();
         }
@@ -52,7 +52,11 @@ namespace Customer_Relationship_Management
 
                     db.CRUD(profileSql, new Dictionary<string, object>
                     {
-                        ["@uid"] = uid, ["@fn"] = FName, ["@ln"] = LName, ["@ph"] = PNo, ["@ad"] = Addr
+                        ["@uid"] = uid,
+                        ["@fn"] = FName,
+                        ["@ln"] = LName,
+                        ["@ph"] = PNo,
+                        ["@ad"] = Addr
                     });
 
                     // 2. Always INSERT into Customers (Order History Integrity)
@@ -62,7 +66,13 @@ namespace Customer_Relationship_Management
 
                     object result = db.ExecuteScalar(orderSql, new Dictionary<string, object>
                     {
-                        ["@uid"] = uid, ["@fn"] = FName, ["@ln"] = LName, ["@ad"] = Addr, ["@ph"] = PNo, ["@os"] = OrderDetails, ["@total"] = TotalAmount
+                        ["@uid"] = uid,
+                        ["@fn"] = FName,
+                        ["@ln"] = LName,
+                        ["@ad"] = Addr,
+                        ["@ph"] = PNo,
+                        ["@os"] = OrderDetails,
+                        ["@total"] = TotalAmount
                     });
 
                     // Note: Scope_Identity might fail if no identity col, using uid for customerID as a fallback for the display
@@ -99,6 +109,11 @@ namespace Customer_Relationship_Management
         private void button4_Click(object sender, EventArgs e)
         {
             Navigate(u => new User_Home(u));
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
