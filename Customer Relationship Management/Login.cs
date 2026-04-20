@@ -47,39 +47,53 @@ namespace Customer_Relationship_Management
                         return;
                     }
 
-                    var adminResult = db.ExecuteScalar("SELECT COUNT(1) FROM AdminUsers WHERE Username = @username AND [Password] = @password",
+                    var hashedPassword = DBconnection.HashPassword(password);
+
+                    // 1. Check Admin (supporting both hashed and plain for old 'admin123' account)
+                    var adminResult = db.ExecuteScalar("SELECT COUNT(1) FROM AdminUsers WHERE Username = @username AND ([Password] = @password OR [Password] = @hashed)",
                         new Dictionary<string, object>
                         {
                             ["@username"] = username,
-                            ["@password"] = password
+                            ["@password"] = password,
+                            ["@hashed"] = hashedPassword
                         });
 
                     if (adminResult != null && Convert.ToInt32(adminResult) == 1)
                     {
+                        // Upgrade admin password to hash if it was plain
+                        db.CRUD("UPDATE AdminUsers SET [Password] = @hashed WHERE Username = @username AND [Password] = @password",
+                            new Dictionary<string, object> { ["@username"] = username, ["@password"] = password, ["@hashed"] = hashedPassword });
+
                         DBconnection.Log(username, "Login Success", "Auth", "Administrator accessed the dashboard.");
                         Dashboard dashboard = new Dashboard();
                         dashboard.Location = this.Location;
                         dashboard.StartPosition = FormStartPosition.Manual;
-                        dashboard.WindowState = FormWindowState.Normal;
+                        dashboard.FormClosed += (s, args) => this.Close(); 
                         dashboard.Show();
                         this.Hide();
                         return;
                     }
 
-                    var result = db.ExecuteScalar("SELECT COUNT(1) FROM Users WHERE Username = @username AND Password = @password",
+                    // 2. Check Users (supporting both hashed and plain)
+                    var result = db.ExecuteScalar("SELECT COUNT(1) FROM Users WHERE Username = @username AND (Password = @password OR Password = @hashed)",
                         new Dictionary<string, object>
                         {
                             ["@username"] = username,
-                            ["@password"] = password
+                            ["@password"] = password,
+                            ["@hashed"] = hashedPassword
                         });
 
                     if (result != null && Convert.ToInt32(result) == 1)
                     {
+                        // Upgrade user password to hash if it was plain
+                        db.CRUD("UPDATE Users SET Password = @hashed WHERE Username = @username AND Password = @password",
+                            new Dictionary<string, object> { ["@username"] = username, ["@password"] = password, ["@hashed"] = hashedPassword });
+
                         DBconnection.Log(username, "Login Success", "Auth", "Customer logged in.");
                         User_Home home = new User_Home(username!);
                         home.Location = this.Location;
                         home.StartPosition = FormStartPosition.Manual;
-                        home.WindowState = FormWindowState.Normal;
+                        home.FormClosed += (s, args) => this.Close();
                         home.Show();
                         this.Hide();
                     }

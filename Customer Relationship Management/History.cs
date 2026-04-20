@@ -34,6 +34,7 @@ namespace Customer_Relationship_Management
             button3.Click += (s, e) => ClearLogs();
             button1.Click += (s, e) => ExportLogs();
             btnAddadmin.Click += (s, e) => ShowAdminManager();
+            btnMonitor.Click += (s, e) => ShowUserMonitor();
         }
 
         private void ConfigureGrid()
@@ -140,6 +141,7 @@ namespace Customer_Relationship_Management
             {
                 using (DBconnection db = new DBconnection(ConStr))
                 {
+                    // Filter to show only Admin/System logs (exclude customer logins and orders)
                     string sql = @"SELECT LogID AS [Log ID],
                                           TimeStamp AS [Timestamp],
                                           [User],
@@ -147,7 +149,8 @@ namespace Customer_Relationship_Management
                                           Module,
                                           Details AS [Description / Notes]
                                    FROM AuditLogs
-                                   WHERE 1 = 1";
+                                   WHERE (Action NOT LIKE 'Customer logged in%' AND Module <> 'Checkout')
+                                     AND (Module <> 'User' OR Action LIKE 'Admin%')";
                     var parameters = new Dictionary<string, object>();
 
                     string selectedUser = comboBox1.SelectedItem?.ToString() ?? "All";
@@ -229,62 +232,7 @@ namespace Customer_Relationship_Management
 
         private void ExportLogs()
         {
-            if (currentHistoryData.Rows.Count == 0)
-            {
-                MessageBox.Show("There are no logs to export.");
-                return;
-            }
-
-            using (SaveFileDialog dialog = new SaveFileDialog())
-            {
-                dialog.Filter = "CSV Files (*.csv)|*.csv|All Files (*.*)|*.*";
-                dialog.FileName = $"audit-logs-{DateTime.Now:yyyyMMdd-HHmmss}.csv";
-                dialog.Title = "Export Audit Logs";
-
-                if (dialog.ShowDialog() != DialogResult.OK)
-                {
-                    return;
-                }
-
-                try
-                {
-                    using (StreamWriter writer = new StreamWriter(dialog.FileName, false, Encoding.UTF8))
-                    {
-                        for (int columnIndex = 0; columnIndex < currentHistoryData.Columns.Count; columnIndex++)
-                        {
-                            if (columnIndex > 0)
-                            {
-                                writer.Write(",");
-                            }
-
-                            writer.Write(EscapeCsvValue(currentHistoryData.Columns[columnIndex].ColumnName));
-                        }
-
-                        writer.WriteLine();
-
-                        foreach (DataRow row in currentHistoryData.Rows)
-                        {
-                            for (int columnIndex = 0; columnIndex < currentHistoryData.Columns.Count; columnIndex++)
-                            {
-                                if (columnIndex > 0)
-                                {
-                                    writer.Write(",");
-                                }
-
-                                writer.Write(EscapeCsvValue(row[columnIndex]?.ToString() ?? string.Empty));
-                            }
-
-                            writer.WriteLine();
-                        }
-                    }
-
-                    MessageBox.Show("Logs exported successfully.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error exporting logs: " + ex.Message);
-                }
-            }
+            ExportDataGridToCsv(dataGridView1, "admin-audit-logs");
         }
 
         private string EscapeCsvValue(string value)
@@ -395,7 +343,7 @@ namespace Customer_Relationship_Management
                                      CreatedAt AS [Created At]
                               FROM AdminUsers
                               ORDER BY Username",
-                            new Dictionary<string, object>());
+                            new Dictionary<string, object> { });
                         adminGrid.DataSource = admins;
 
                         if (adminGrid.Columns["Created At"] != null)
@@ -449,7 +397,7 @@ namespace Customer_Relationship_Management
                             new Dictionary<string, object>
                             {
                                 ["@username"] = username,
-                                ["@password"] = password,
+                                ["@password"] = DBconnection.HashPassword(password),
                                 ["@displayName"] = string.IsNullOrWhiteSpace(displayName) ? DBNull.Value : displayName
                             });
                     }
@@ -559,7 +507,7 @@ namespace Customer_Relationship_Management
                                     {
                                         ["@username"] = newUsername,
                                         ["@displayName"] = string.IsNullOrWhiteSpace(newDisplayName) ? DBNull.Value : newDisplayName,
-                                        ["@password"] = newPassword,
+                                        ["@password"] = DBconnection.HashPassword(newPassword),
                                         ["@id"] = adminId
                                     });
                             }
@@ -636,6 +584,126 @@ namespace Customer_Relationship_Management
             managerForm.ShowDialog(this);
         }
 
+        private void ShowUserMonitor()
+        {
+            Form monitorForm = new Form
+            {
+                Width = 1000,
+                Height = 700,
+                Text = "User Activity Monitor",
+                StartPosition = FormStartPosition.CenterParent,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                MaximizeBox = false,
+                MinimizeBox = false,
+                BackColor = Color.FromArgb(245, 236, 224),
+                Font = new Font("Verdana", 9F)
+            };
+
+            TabControl tabs = new TabControl { Dock = DockStyle.Fill };
+            TabPage loginTab = new TabPage("User Sign-Ins") { BackColor = Color.WhiteSmoke };
+            TabPage orderTab = new TabPage("User Orders") { BackColor = Color.WhiteSmoke };
+
+            // --- TAB 1: USER SIGN-INS ---
+            DataGridView loginGrid = CreateMonitorGrid();
+            Panel loginActions = new Panel { Dock = DockStyle.Bottom, Height = 80 };
+            Button btnExportLogins = CreateAdminActionButton("EXPORT SIGN-INS", 20, 15, Color.SaddleBrown, Color.White);
+            btnExportLogins.Width = 220;
+            loginActions.Controls.Add(btnExportLogins);
+            loginTab.Controls.Add(loginGrid);
+            loginTab.Controls.Add(loginActions);
+
+            // --- TAB 2: USER ORDERS ---
+            DataGridView orderGrid = CreateMonitorGrid();
+            Panel orderActions = new Panel { Dock = DockStyle.Bottom, Height = 80 };
+            Button btnExportOrders = CreateAdminActionButton("EXPORT ORDERS", 20, 15, Color.SaddleBrown, Color.White);
+            btnExportOrders.Width = 220;
+            orderActions.Controls.Add(btnExportOrders);
+            orderTab.Controls.Add(orderGrid);
+            orderTab.Controls.Add(orderActions);
+
+            tabs.TabPages.Add(loginTab);
+            tabs.TabPages.Add(orderTab);
+            monitorForm.Controls.Add(tabs);
+
+            void LoadLoginData()
+            {
+                using (DBconnection db = new DBconnection(ConStr))
+                {
+                    DataTable dt = db.Select(
+                        @"SELECT LogID AS [ID], TimeStamp AS [Time], [User], Details 
+                          FROM AuditLogs 
+                          WHERE Action LIKE 'Customer logged in%' 
+                          ORDER BY TimeStamp DESC", new Dictionary<string, object>());
+                    loginGrid.DataSource = dt;
+                    if (loginGrid.Columns["Time"] != null) loginGrid.Columns["Time"].DefaultCellStyle.Format = "MMM dd, hh:mm tt";
+                }
+            }
+
+            void LoadOrderData()
+            {
+                using (DBconnection db = new DBconnection(ConStr))
+                {
+                    DataTable dt = db.Select(
+                        @"SELECT OrderDate AS [Date], firstName + ' ' + lastName AS [Customer], 
+                                 paymentMethod AS [Payment], TotalAmount AS [Total], orderSummary AS [Details]
+                          FROM Customers ORDER BY OrderDate DESC", new Dictionary<string, object>());
+                    orderGrid.DataSource = dt;
+                    if (orderGrid.Columns["Date"] != null) orderGrid.Columns["Date"].DefaultCellStyle.Format = "MMM dd, hh:mm tt";
+                    if (orderGrid.Columns["Total"] != null) orderGrid.Columns["Total"].DefaultCellStyle.Format = "P 0.00";
+                }
+            }
+
+            btnExportLogins.Click += (s, e) => ExportDataGridToCsv(loginGrid, "user-signins");
+            btnExportOrders.Click += (s, e) => ExportDataGridToCsv(orderGrid, "user-orders");
+
+            monitorForm.Load += (s, e) => { LoadLoginData(); LoadOrderData(); };
+            monitorForm.ShowDialog(this);
+        }
+
+        private DataGridView CreateMonitorGrid()
+        {
+            return new DataGridView
+            {
+                Dock = DockStyle.Fill,
+                ReadOnly = true,
+                AllowUserToAddRows = false,
+                SelectionMode = DataGridViewSelectionMode.FullRowSelect,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+                RowHeadersVisible = false,
+                BackgroundColor = Color.White,
+                BorderStyle = BorderStyle.None
+            };
+        }
+
+        private void ExportDataGridToCsv(DataGridView grid, string prefix)
+        {
+            if (grid.Rows.Count == 0) { MessageBox.Show("No data to export."); return; }
+            using (SaveFileDialog sfd = new SaveFileDialog { Filter = "CSV|*.csv", FileName = $"{prefix}-{DateTime.Now:yyyyMMdd}.csv" })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                        {
+                            var headers = new List<string>();
+                            foreach (DataGridViewColumn col in grid.Columns) headers.Add(EscapeCsvValue(col.HeaderText));
+                            sw.WriteLine(string.Join(",", headers));
+
+                            foreach (DataGridViewRow row in grid.Rows)
+                            {
+                                var cells = new List<string>();
+                                foreach (DataGridViewCell cell in row.Cells) cells.Add(EscapeCsvValue(cell.Value?.ToString() ?? ""));
+                                sw.WriteLine(string.Join(",", cells));
+                            }
+                        }
+                        MessageBox.Show("Export successful!");
+                    }
+                    catch (Exception ex) { MessageBox.Show("Export failed: " + ex.Message); }
+                }
+            }
+        }
+
         private Button CreateAdminActionButton(string text, int left, int top, Color backColor, Color foreColor)
         {
             Button button = new Button
@@ -656,16 +724,26 @@ namespace Customer_Relationship_Management
 
         private void WireNavigation()
         {
-            // Hide and Reposition for a clean sequence
+            // Set consistent widths for the top navigation buttons.
+            int btnWidth = 230;
+            btnHistoryToDashboard.Size = new Size(btnWidth, 60);
+            btnHistoryToSales.Size = new Size(btnWidth, 60);
+            btnHistoryToCustomers.Size = new Size(btnWidth, 60);
+            btnHistory.Size = new Size(btnWidth, 60);
+            btnHistoryLogout.Size = new Size(130, 60);
 
+            // Set positions in sequence
             btnHistoryToSales.Left = btnHistoryToDashboard.Right;
             btnHistoryToCustomers.Left = btnHistoryToSales.Right;
             btnHistory.Left = btnHistoryToCustomers.Right;
-            btnHistoryLogout.Left = 1026; // Far right
+            btnHistoryLogout.Left = btnHistory.Right;
 
             btnHistoryToDashboard.Click += (s, e) => Navigate(new Dashboard());
             btnHistoryToSales.Click += (s, e) => Navigate(new Sales());
             btnHistoryToCustomers.Click += (s, e) => Navigate(new Customers());
+            
+            // Highlight the current tab
+            btnHistory.BackColor = Color.FromArgb(75, 54, 33);
 
             btnHistoryLogout.Click += (s, e) =>
             {
@@ -676,7 +754,7 @@ namespace Customer_Relationship_Management
 
         private void HighlightActiveTab()
         {
-            btnHistory.BackColor = Color.FromArgb(75, 54, 33);
+            // Already handled in WireNavigation for consistency
         }
 
         private void Navigate(Form target)

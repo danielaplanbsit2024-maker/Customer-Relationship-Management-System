@@ -136,7 +136,7 @@ namespace Customer_Relationship_Management
             nextForm.Location = this.Location;
             nextForm.StartPosition = FormStartPosition.Manual;
             nextForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         // Home Buttons

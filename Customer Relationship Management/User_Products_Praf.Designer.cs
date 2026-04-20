@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Products_Praf
     {
@@ -599,7 +599,6 @@
             Name = "User_Products_Praf";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Products_Praf";
-            WindowState = FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();

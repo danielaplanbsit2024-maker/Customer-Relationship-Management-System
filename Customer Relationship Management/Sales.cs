@@ -168,7 +168,52 @@ namespace Customer_Relationship_Management
 
         private void ExportToExcel()
         {
-            MessageBox.Show("Exporting to Excel... (Feature simulation)");
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("No data to export.");
+                return;
+            }
+
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "CSV files (*.csv)|*.csv";
+                sfd.FileName = $"Sales_Export_{DateTime.Now:yyyyMMdd_HHmm}.csv";
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        var sb = new StringBuilder();
+                        // Headers
+                        var headerLine = new List<string>();
+                        foreach (DataGridViewColumn col in dataGridView1.Columns)
+                        {
+                            headerLine.Add($"\"{col.HeaderText}\"");
+                        }
+                        sb.AppendLine(string.Join(",", headerLine));
+
+                        // Rows
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            if (!row.IsNewRow)
+                            {
+                                var rowLine = new List<string>();
+                                foreach (DataGridViewCell cell in row.Cells)
+                                {
+                                    rowLine.Add($"\"{cell.Value?.ToString().Replace("\"", "\"\"")}\"");
+                                }
+                                sb.AppendLine(string.Join(",", rowLine));
+                            }
+                        }
+
+                        System.IO.File.WriteAllText(sfd.FileName, sb.ToString(), Encoding.UTF8);
+                        MessageBox.Show("Sales data exported successfully!", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error exporting data: " + ex.Message);
+                    }
+                }
+            }
         }
 
         private void WireNavigation()

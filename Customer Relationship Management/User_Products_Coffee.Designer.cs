@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Products_Coffee
     {
@@ -600,7 +600,6 @@
             Name = "User_Products_Coffee";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Products_Coffee";
-            WindowState = FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();

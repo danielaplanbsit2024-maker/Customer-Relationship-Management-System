@@ -18,35 +18,36 @@ namespace Customer_Relationship_Management
             ConStr = conStr ?? ConnectionString;
             conn = new SqlConnection(ConStr);
             conn.Open();
-            EnsureSchemaUpdated();
         }
 
-        private void EnsureSchemaUpdated()
+        public static void EnsureSchemaUpdated()
         {
             try
             {
-                // Check and add OrderDate if missing
-                CRUD(@"IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('Customers') AND name = 'OrderDate')
+                using (DBconnection db = new DBconnection())
+                {
+                    // Check and add OrderDate if missing
+                    db.CRUD(@"IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('Customers') AND name = 'OrderDate')
                        ALTER TABLE Customers ADD OrderDate DATETIME DEFAULT GETDATE();");
 
-                // Check and add TotalAmount if missing
-                CRUD(@"IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('Customers') AND name = 'TotalAmount')
+                    // Check and add TotalAmount if missing
+                    db.CRUD(@"IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('Customers') AND name = 'TotalAmount')
                        ALTER TABLE Customers ADD TotalAmount DECIMAL(18, 2) DEFAULT 0;");
 
-                // Check and add LoyaltyPoints if missing
-                CRUD(@"IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('Customers') AND name = 'LoyaltyPoints')
+                    // Check and add LoyaltyPoints if missing
+                    db.CRUD(@"IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('Customers') AND name = 'LoyaltyPoints')
                        ALTER TABLE Customers ADD LoyaltyPoints INT DEFAULT 0;");
 
-                // Check and add LastVisitDate if missing
-                CRUD(@"IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('Customers') AND name = 'LastVisitDate')
+                    // Check and add LastVisitDate if missing
+                    db.CRUD(@"IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('Customers') AND name = 'LastVisitDate')
                        ALTER TABLE Customers ADD LastVisitDate DATETIME NULL;");
 
-                // Initialize existing NULL data to 0
-                CRUD("UPDATE Customers SET LoyaltyPoints = 0 WHERE LoyaltyPoints IS NULL;");
-                CRUD("UPDATE Customers SET TotalAmount = 0 WHERE TotalAmount IS NULL;");
+                    // Initialize existing NULL data to 0
+                    db.CRUD("UPDATE Customers SET LoyaltyPoints = 0 WHERE LoyaltyPoints IS NULL;");
+                    db.CRUD("UPDATE Customers SET TotalAmount = 0 WHERE TotalAmount IS NULL;");
 
-                // Create CustomerProfiles table for Normalization
-                CRUD(@"IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID('CustomerProfiles') AND type = 'U')
+                    // Create CustomerProfiles table for Normalization
+                    db.CRUD(@"IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID('CustomerProfiles') AND type = 'U')
                        CREATE TABLE CustomerProfiles (
                            id INT PRIMARY KEY, 
                            firstName NVARCHAR(50), 
@@ -55,19 +56,19 @@ namespace Customer_Relationship_Management
                            deliveryAdd NVARCHAR(MAX), 
                            LoyaltyPoints INT DEFAULT 0
                        );");
-                
-                // Migrate existing unique customers to the new Profiles table if empty
-                CRUD(@"IF NOT EXISTS (SELECT TOP 1 * FROM CustomerProfiles)
+
+                    // Migrate existing unique customers to the new Profiles table if empty
+                    db.CRUD(@"IF NOT EXISTS (SELECT TOP 1 * FROM CustomerProfiles)
                        INSERT INTO CustomerProfiles (id, firstName, lastName, phoneNo, deliveryAdd, LoyaltyPoints)
                        SELECT id, MAX(firstName), MAX(lastName), MAX(phoneNo), MAX(deliveryAdd), MAX(LoyaltyPoints)
                        FROM Customers GROUP BY id;");
 
-                // Ensure Products (cart) has Price column
-                CRUD(@"IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('Products') AND name = 'Price')
+                    // Ensure Products (cart) has Price column
+                    db.CRUD(@"IF NOT EXISTS (SELECT * FROM sys.columns WHERE object_id = OBJECT_ID('Products') AND name = 'Price')
                        ALTER TABLE Products ADD Price DECIMAL(18, 2) DEFAULT 0;");
 
-                // Create AuditLogs table for History
-                CRUD(@"IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID('AuditLogs') AND type = 'U')
+                    // Create AuditLogs table for History
+                    db.CRUD(@"IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID('AuditLogs') AND type = 'U')
                        CREATE TABLE AuditLogs (
                            LogID INT IDENTITY(1,1) PRIMARY KEY,
                            TimeStamp DATETIME DEFAULT GETDATE(),
@@ -77,8 +78,8 @@ namespace Customer_Relationship_Management
                            Details NVARCHAR(MAX)
                        );");
 
-                // Create AdminUsers table for maintainable admin authentication and CRUD.
-                CRUD(@"IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID('AdminUsers') AND type = 'U')
+                    // Create AdminUsers table for maintainable admin authentication and CRUD.
+                    db.CRUD(@"IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID('AdminUsers') AND type = 'U')
                        CREATE TABLE AdminUsers (
                            AdminId INT IDENTITY(1,1) PRIMARY KEY,
                            Username NVARCHAR(50) NOT NULL UNIQUE,
@@ -87,9 +88,35 @@ namespace Customer_Relationship_Management
                            CreatedAt DATETIME NOT NULL DEFAULT GETDATE()
                        );");
 
-                CRUD(@"IF NOT EXISTS (SELECT 1 FROM AdminUsers WHERE Username = 'admin')
+                    // Create EWallet table for digital payments
+                    db.CRUD(@"IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID('EWallet') AND type = 'U')
+                       CREATE TABLE EWallet (
+                           EWalletId INT IDENTITY(1,1) PRIMARY KEY,
+                           Id INT,
+                           walletName NVARCHAR(100),
+                           phoneNo NVARCHAR(20),
+                           amount DECIMAL(18, 2),
+                           TransactionDate DATETIME DEFAULT GETDATE()
+                       );");
+
+                    db.CRUD(@"IF NOT EXISTS (SELECT 1 FROM AdminUsers WHERE Username = 'admin')
                        INSERT INTO AdminUsers (Username, [Password], DisplayName)
-                       VALUES ('admin', 'admin123', 'Default Administrator');");
+                       VALUES ('admin', '" + HashPassword("admin123") + @"', 'Default Administrator');");
+
+                    // Ensure Users table exists and password column is long enough for hashes (SHA-256 is 64 hex chars)
+                    db.CRUD(@"IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID('Users') AND type = 'U')
+                       CREATE TABLE Users (
+                           Id INT IDENTITY(1,1) PRIMARY KEY,
+                           username NVARCHAR(50) NOT NULL UNIQUE,
+                           password NVARCHAR(100) NOT NULL,
+                           userType NVARCHAR(20) DEFAULT 'Customer'
+                       );
+                       ELSE
+                       BEGIN
+                           IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users' AND COLUMN_NAME = 'password' AND (CHARACTER_MAXIMUM_LENGTH < 64 AND CHARACTER_MAXIMUM_LENGTH <> -1))
+                               ALTER TABLE Users ALTER COLUMN password NVARCHAR(100) NOT NULL;
+                       END");
+                }
             }
             catch { /* Silently handle if already exists or table locked */ }
         }
@@ -155,6 +182,66 @@ namespace Customer_Relationship_Management
                 }
             }
             catch { return 0; }
+        }
+
+        public static string HashPassword(string password)
+        {
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                var builder = new System.Text.StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Prevents non-numeric input in a textbox.
+        /// </summary>
+        public static void BindNumericOnly(System.Windows.Forms.TextBox txt, bool allowDecimal = false)
+        {
+            txt.KeyPress += (s, e) =>
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (!allowDecimal || e.KeyChar != '.'))
+                {
+                    e.Handled = true;
+                }
+
+                // only allow one decimal point
+                if (allowDecimal && e.KeyChar == '.' && txt.Text.IndexOf('.') > -1)
+                {
+                    e.Handled = true;
+                }
+            };
+        }
+
+        public static void SaveReceipt(string invoiceId, string customerName, string paymentMethod, string summary, decimal total)
+        {
+            try
+            {
+                string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string folder = Path.Combine(appData, "BigBrewCRM", "Receipts");
+                
+                if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
+
+                string fileName = Path.Combine(folder, $"Receipt_{invoiceId}.txt");
+                string content = $"\n - - - - - BIG BREW RECEIPT - - - - -\n\n" +
+                                 $"INVOICE ID: {invoiceId}\n" +
+                                 $"DATE: {DateTime.Now:yyyy-MM-dd HH:mm:ss}\n" +
+                                 $"CUSTOMER: {customerName}\n" +
+                                 $"PAYMENT: {paymentMethod}\n" +
+                                 $"\n-------------------------------------\n" +
+                                 $"ITEMS:\n{summary}\n" +
+                                 $"-------------------------------------\n" +
+                                 $"TOTAL PAID: P{total:N2}\n\n" +
+                                 $" - - - - - THANK YOU! - - - - - ";
+
+                File.WriteAllText(fileName, content);
+            }
+            catch { /* non-critical */ }
         }
 
         public void Dispose()

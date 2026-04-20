@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Reviews
     {
@@ -362,7 +362,6 @@
             Name = "User_Reviews";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Reviews";
-            WindowState = FormWindowState.Minimized;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

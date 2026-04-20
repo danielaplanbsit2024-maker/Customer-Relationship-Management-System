@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Products_FruitTea
     {
@@ -601,7 +601,6 @@
             Name = "User_Products_FruitTea";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Products_FruitTea";
-            WindowState = FormWindowState.Minimized;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();

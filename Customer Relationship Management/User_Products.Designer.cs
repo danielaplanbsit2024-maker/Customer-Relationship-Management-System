@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Products
     {
@@ -597,7 +597,6 @@
             Name = "User_Products";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Products";
-            WindowState = FormWindowState.Minimized;
             Load += User_Products_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();

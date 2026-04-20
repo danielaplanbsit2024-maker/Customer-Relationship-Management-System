@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Products_Brosty
     {
@@ -600,7 +600,6 @@
             Name = "User_Products_Brosty";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Products_Brosty";
-            WindowState = FormWindowState.Minimized;
             panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel8.ResumeLayout(false);

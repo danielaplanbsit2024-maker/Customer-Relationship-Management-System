@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Cart
     {
@@ -344,7 +344,6 @@
             Name = "User_Cart";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Cart";
-            WindowState = FormWindowState.Minimized;
             Load += User_Cart_Load;
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

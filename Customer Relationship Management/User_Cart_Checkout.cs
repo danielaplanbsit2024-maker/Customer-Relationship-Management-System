@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -82,12 +82,22 @@ namespace Customer_Relationship_Management
 
                     db.CRUD("DELETE FROM Products WHERE id = @uid", new Dictionary<string, object> { ["@uid"] = uid });
 
+                    object invoiceIdObj = db.ExecuteScalar("SELECT SCOPE_IDENTITY()");
+                    string invoiceId = invoiceIdObj != null ? invoiceIdObj.ToString() : "N/A";
+
+                    DBconnection.SaveReceipt(invoiceId, firstName.Text + " " + lastName.Text, payMethod, OrderDetails, (decimal)TotalAmount);
+
                     MessageBox.Show("Order Confirmed! Thank you for ordering at BigBrew.");
                     new User_Home(CurrentUser) { Location = this.Location }.Show();
                     this.Close();
                 }
             }
             catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
+        }
+
+        private void User_Cart_Checkout_Load(object sender, EventArgs e)
+        {
+            DBconnection.BindNumericOnly(phoneNo); // Fixed the textbox name here
         }
 
         private bool AnyFieldEmpty()

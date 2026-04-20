@@ -45,8 +45,9 @@ namespace Customer_Relationship_Management
         {
             target.Location = this.Location;
             target.StartPosition = FormStartPosition.Manual;
+            target.FormClosed += (s, args) => { if (!target.Visible && Application.OpenForms.Count == 0) Application.Exit(); };
             target.Show();
-            this.Close(); // Close current for security/memory as requested
+            this.Hide(); // Use Hide but ensure the new form handles the final exit
         }
 
         private void LoadDashboardData()

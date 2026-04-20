@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Checkout_COD
     {
@@ -294,7 +294,6 @@
             Name = "User_Checkout_COD";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Checkout_COD";
-            WindowState = FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

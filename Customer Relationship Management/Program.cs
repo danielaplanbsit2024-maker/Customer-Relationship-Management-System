@@ -8,13 +8,46 @@ namespace Customer_Relationship_Management
         [STAThread]
         static void Main()
         {
-            // Set the data directory to the project folder during development
-            // so we don't have to copy the .mdf file and deal with "file in use" errors.
-#if DEBUG
-            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string projectDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\.."));
-            AppDomain.CurrentDomain.SetData("DataDirectory", projectDirectory);
-#endif
+            // Set the data directory to a stable location in AppData
+            string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string dbFolder = Path.Combine(appData, "BigBrewCRM");
+            
+            if (!Directory.Exists(dbFolder)) 
+            {
+                Directory.CreateDirectory(dbFolder);
+            }
+
+            // During development, if the DB isn't in AppData yet, we can copy it from the project
+            string dbFile = "Database.mdf";
+            string logFile = "Database_log.ldf";
+            string destDbPath = Path.Combine(dbFolder, dbFile);
+
+            if (!File.Exists(destDbPath))
+            {
+                // Try to find the source DB in the project structure
+                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                string projectDir = Path.GetFullPath(Path.Combine(baseDir, @"..\..\.."));
+                string sourceDbPath = Path.Combine(projectDir, dbFile);
+                string sourceLogPath = Path.Combine(projectDir, logFile);
+
+                if (File.Exists(sourceDbPath))
+                {
+                    try 
+                    {
+                        File.Copy(sourceDbPath, destDbPath);
+                        if (File.Exists(sourceLogPath))
+                        {
+                            File.Copy(sourceLogPath, Path.Combine(dbFolder, logFile));
+                        }
+                    }
+                    catch { /* Fallback to local if copy fails */ }
+                }
+            }
+
+            AppDomain.CurrentDomain.SetData("DataDirectory", dbFolder);
+
+            // Ensure database schema is up to date at startup
+            DBconnection.EnsureSchemaUpdated();
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.

@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Home
     {
@@ -226,7 +226,6 @@
             Name = "User_Home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
-            WindowState = FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
