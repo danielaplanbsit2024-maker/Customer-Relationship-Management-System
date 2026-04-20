@@ -42,6 +42,7 @@
             comboBox1 = new ComboBox();
             label2 = new Label();
             panel2 = new Panel();
+            btnAddadmin = new Button();
             button1 = new Button();
             label17 = new Label();
             dataGridView1 = new DataGridView();
@@ -51,7 +52,6 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
-            btnAddadmin = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -63,6 +63,7 @@
             // 
             // btnHistoryLogout
             // 
+            btnHistoryLogout.Anchor = AnchorStyles.None;
             btnHistoryLogout.BackColor = Color.FromArgb(85, 61, 30);
             btnHistoryLogout.FlatAppearance.BorderSize = 0;
             btnHistoryLogout.FlatStyle = FlatStyle.Flat;
@@ -76,6 +77,7 @@
             // 
             // btnHistory
             // 
+            btnHistory.Anchor = AnchorStyles.None;
             btnHistory.BackColor = Color.FromArgb(85, 61, 30);
             btnHistory.FlatAppearance.BorderSize = 0;
             btnHistory.FlatStyle = FlatStyle.Flat;
@@ -89,6 +91,7 @@
             // 
             // btnHistoryToCustomers
             // 
+            btnHistoryToCustomers.Anchor = AnchorStyles.None;
             btnHistoryToCustomers.BackColor = Color.FromArgb(85, 61, 30);
             btnHistoryToCustomers.FlatAppearance.BorderSize = 0;
             btnHistoryToCustomers.FlatStyle = FlatStyle.Flat;
@@ -103,6 +106,7 @@
             // 
             // btnHistoryToSales
             // 
+            btnHistoryToSales.Anchor = AnchorStyles.None;
             btnHistoryToSales.BackColor = Color.FromArgb(85, 61, 30);
             btnHistoryToSales.FlatAppearance.BorderSize = 0;
             btnHistoryToSales.FlatStyle = FlatStyle.Flat;
@@ -116,6 +120,7 @@
             // 
             // btnHistoryToDashboard
             // 
+            btnHistoryToDashboard.Anchor = AnchorStyles.None;
             btnHistoryToDashboard.BackColor = Color.FromArgb(85, 61, 30);
             btnHistoryToDashboard.FlatAppearance.BorderSize = 0;
             btnHistoryToDashboard.FlatStyle = FlatStyle.Flat;
@@ -144,16 +149,18 @@
             // 
             // textBox1
             // 
+            textBox1.Anchor = AnchorStyles.None;
             textBox1.Font = new Font("Verdana", 14F);
             textBox1.ForeColor = Color.Gray;
             textBox1.Location = new Point(1043, 28);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(330, 30);
+            textBox1.Size = new Size(330, 42);
             textBox1.TabIndex = 43;
             textBox1.Text = "SEARCH DETAILS";
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.None;
             button3.BackColor = Color.PeachPuff;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
@@ -168,18 +175,20 @@
             // 
             // dateTimePicker2
             // 
+            dateTimePicker2.Anchor = AnchorStyles.None;
             dateTimePicker2.CalendarFont = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker2.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker2.Location = new Point(533, 32);
             dateTimePicker2.MaxDate = new DateTime(9000, 12, 31, 0, 0, 0, 0);
             dateTimePicker2.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(275, 24);
+            dateTimePicker2.Size = new Size(275, 32);
             dateTimePicker2.TabIndex = 85;
             dateTimePicker2.Value = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.BackColor = Color.Tan;
             label1.Font = new Font("Lucida Sans", 14F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
@@ -192,16 +201,18 @@
             // 
             // comboBox1
             // 
+            comboBox1.Anchor = AnchorStyles.None;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "All", "Admin", "Cashier", "Manager" });
             comboBox1.Location = new Point(191, 32);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(217, 24);
+            comboBox1.Size = new Size(217, 33);
             comboBox1.TabIndex = 83;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.BackColor = Color.Tan;
             label2.Font = new Font("Lucida Sans", 14F, FontStyle.Bold);
             label2.ForeColor = Color.Black;
@@ -224,8 +235,24 @@
             panel2.Size = new Size(1408, 95);
             panel2.TabIndex = 36;
             // 
+            // btnAddadmin
+            // 
+            btnAddadmin.Anchor = AnchorStyles.None;
+            btnAddadmin.BackColor = Color.PeachPuff;
+            btnAddadmin.FlatAppearance.BorderSize = 0;
+            btnAddadmin.FlatStyle = FlatStyle.Flat;
+            btnAddadmin.Font = new Font("Verdana", 14F, FontStyle.Bold);
+            btnAddadmin.ForeColor = Color.FromArgb(85, 61, 30);
+            btnAddadmin.Location = new Point(841, 12);
+            btnAddadmin.Name = "btnAddadmin";
+            btnAddadmin.Size = new Size(257, 71);
+            btnAddadmin.TabIndex = 87;
+            btnAddadmin.Text = "Add Admin";
+            btnAddadmin.UseVisualStyleBackColor = false;
+            // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.None;
             button1.BackColor = Color.PeachPuff;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
@@ -240,13 +267,14 @@
             // 
             // label17
             // 
+            label17.Anchor = AnchorStyles.None;
             label17.AutoSize = true;
             label17.BackColor = Color.Tan;
             label17.Font = new Font("Verdana", 18F, FontStyle.Bold);
             label17.ForeColor = Color.Black;
             label17.Location = new Point(30, 25);
             label17.Name = "label17";
-            label17.Size = new Size(313, 29);
+            label17.Size = new Size(474, 44);
             label17.TabIndex = 84;
             label17.Text = "LOGS AVAILABLE: 100";
             // 
@@ -269,7 +297,7 @@
             label16.ForeColor = SystemColors.ControlDark;
             label16.Location = new Point(606, 439);
             label16.Name = "label16";
-            label16.Size = new Size(128, 23);
+            label16.Size = new Size(191, 34);
             label16.TabIndex = 82;
             label16.Text = "[database]";
             // 
@@ -282,7 +310,7 @@
             label5.ForeColor = SystemColors.ControlDark;
             label5.Location = new Point(327, 549);
             label5.Name = "label5";
-            label5.Size = new Size(527, 17);
+            label5.Size = new Size(765, 25);
             label5.TabIndex = 83;
             label5.Text = "LoginID | TimeStamp | User | Action | Module | Description/Notes";
             // 
@@ -334,23 +362,9 @@
             flowLayoutPanel2.Size = new Size(1408, 59);
             flowLayoutPanel2.TabIndex = 85;
             // 
-            // btnAddadmin
-            // 
-            btnAddadmin.BackColor = Color.PeachPuff;
-            btnAddadmin.FlatAppearance.BorderSize = 0;
-            btnAddadmin.FlatStyle = FlatStyle.Flat;
-            btnAddadmin.Font = new Font("Verdana", 14F, FontStyle.Bold);
-            btnAddadmin.ForeColor = Color.FromArgb(85, 61, 30);
-            btnAddadmin.Location = new Point(841, 12);
-            btnAddadmin.Name = "btnAddadmin";
-            btnAddadmin.Size = new Size(257, 71);
-            btnAddadmin.TabIndex = 87;
-            btnAddadmin.Text = "Add Admin";
-            btnAddadmin.UseVisualStyleBackColor = false;
-            // 
             // History
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(1407, 914);
