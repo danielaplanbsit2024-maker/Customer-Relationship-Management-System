@@ -27,7 +27,6 @@ namespace Customer_Relationship_Management
                 cartQuantityBadge.ForeColor = Color.Red;
                 cartQuantityBadge.BackColor = Color.Transparent;
                 cartQuantityBadge.Location = new Point(954, 13);
-                panel3.Controls.Add(cartQuantityBadge);
                 cartQuantityBadge.BringToFront();
             }
             cartQuantityBadge.Text = DBconnection.GetCartCount(CurrentUser).ToString();
