@@ -58,6 +58,7 @@
             // 
             // Reviews
             // 
+            Reviews.Anchor = AnchorStyles.None;
             Reviews.BackColor = Color.FromArgb(75, 54, 33);
             Reviews.FlatAppearance.BorderSize = 0;
             Reviews.FlatStyle = FlatStyle.Flat;
@@ -73,6 +74,7 @@
             // 
             // btnMinimizeCustomers
             // 
+            btnMinimizeCustomers.Anchor = AnchorStyles.None;
             btnMinimizeCustomers.BackColor = Color.FromArgb(75, 54, 33);
             btnMinimizeCustomers.FlatAppearance.BorderSize = 0;
             btnMinimizeCustomers.FlatStyle = FlatStyle.Flat;
@@ -87,6 +89,7 @@
             // 
             // btnhome
             // 
+            btnhome.Anchor = AnchorStyles.None;
             btnhome.BackColor = Color.FromArgb(75, 54, 33);
             btnhome.FlatAppearance.BorderSize = 0;
             btnhome.FlatStyle = FlatStyle.Flat;
@@ -102,6 +105,7 @@
             // 
             // btnProducts
             // 
+            btnProducts.Anchor = AnchorStyles.None;
             btnProducts.BackColor = Color.FromArgb(75, 54, 33);
             btnProducts.FlatAppearance.BorderSize = 0;
             btnProducts.FlatStyle = FlatStyle.Flat;
@@ -117,6 +121,7 @@
             // 
             // cart
             // 
+            cart.Anchor = AnchorStyles.None;
             cart.BackColor = Color.FromArgb(75, 54, 33);
             cart.FlatAppearance.BorderSize = 0;
             cart.FlatStyle = FlatStyle.Flat;
@@ -132,6 +137,7 @@
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.None;
             label7.BorderStyle = BorderStyle.FixedSingle;
             label7.Font = new Font("Impact", 36F);
             label7.Location = new Point(70, 214);
@@ -143,6 +149,7 @@
             // 
             // amountToBePaid
             // 
+            amountToBePaid.Anchor = AnchorStyles.None;
             amountToBePaid.BackColor = SystemColors.ControlDark;
             amountToBePaid.FlatStyle = FlatStyle.System;
             amountToBePaid.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -154,6 +161,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.Location = new Point(124, 362);
             label6.Name = "label6";
@@ -164,6 +172,7 @@
             // 
             // name
             // 
+            name.Anchor = AnchorStyles.None;
             name.BorderStyle = BorderStyle.FixedSingle;
             name.Location = new Point(668, 503);
             name.Multiline = true;
@@ -173,6 +182,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.BorderStyle = BorderStyle.FixedSingle;
             label3.Font = new Font("Verdana", 14F);
             label3.Location = new Point(124, 503);
@@ -184,6 +194,7 @@
             // 
             // phoneNo
             // 
+            phoneNo.Anchor = AnchorStyles.None;
             phoneNo.BorderStyle = BorderStyle.FixedSingle;
             phoneNo.Location = new Point(668, 560);
             phoneNo.Multiline = true;
@@ -193,6 +204,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Verdana", 14F);
             label1.Location = new Point(124, 560);
@@ -204,6 +216,7 @@
             // 
             // Amount
             // 
+            Amount.Anchor = AnchorStyles.None;
             Amount.BorderStyle = BorderStyle.FixedSingle;
             Amount.Location = new Point(668, 617);
             Amount.Multiline = true;
@@ -213,6 +226,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.BorderStyle = BorderStyle.FixedSingle;
             label2.Font = new Font("Verdana", 14F);
             label2.Location = new Point(124, 617);
@@ -224,6 +238,7 @@
             // 
             // confirmPayment
             // 
+            confirmPayment.Anchor = AnchorStyles.None;
             confirmPayment.BackColor = Color.SeaGreen;
             confirmPayment.BackgroundImageLayout = ImageLayout.None;
             confirmPayment.FlatStyle = FlatStyle.Flat;

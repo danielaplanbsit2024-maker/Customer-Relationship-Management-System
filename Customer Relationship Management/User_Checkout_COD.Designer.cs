@@ -53,6 +53,7 @@
             // 
             // button5
             // 
+            button5.Anchor = AnchorStyles.None;
             button5.BackColor = Color.FromArgb(75, 54, 33);
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
@@ -67,6 +68,7 @@
             // 
             // btnMinimizeCustomers
             // 
+            btnMinimizeCustomers.Anchor = AnchorStyles.None;
             btnMinimizeCustomers.BackColor = Color.FromArgb(75, 54, 33);
             btnMinimizeCustomers.FlatAppearance.BorderSize = 0;
             btnMinimizeCustomers.FlatStyle = FlatStyle.Flat;
@@ -81,6 +83,7 @@
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.None;
             button2.BackColor = Color.FromArgb(75, 54, 33);
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
@@ -95,6 +98,7 @@
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.None;
             button1.BackColor = Color.FromArgb(75, 54, 33);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
@@ -109,6 +113,7 @@
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.None;
             button3.BackColor = Color.FromArgb(75, 54, 33);
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
@@ -123,6 +128,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(496, 172);
             pictureBox3.Name = "pictureBox3";
@@ -133,6 +139,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Gabriola", 28F, FontStyle.Bold);
             label1.Location = new Point(496, 576);
@@ -144,6 +151,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.Font = new Font("Courier New", 12F);
             label3.Location = new Point(324, 667);
             label3.Name = "label3";
@@ -155,6 +163,7 @@
             // 
             // button4
             // 
+            button4.Anchor = AnchorStyles.None;
             button4.BackColor = Color.Tan;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Impact", 18F);

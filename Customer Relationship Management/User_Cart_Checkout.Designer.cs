@@ -65,6 +65,7 @@
             // 
             // button5
             // 
+            button5.Anchor = AnchorStyles.None;
             button5.BackColor = Color.FromArgb(75, 54, 33);
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
@@ -79,6 +80,7 @@
             // 
             // btnLogout
             // 
+            btnLogout.Anchor = AnchorStyles.None;
             btnLogout.BackColor = Color.FromArgb(75, 54, 33);
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
@@ -93,6 +95,7 @@
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.None;
             button2.BackColor = Color.FromArgb(75, 54, 33);
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
@@ -107,6 +110,7 @@
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.None;
             button1.BackColor = Color.FromArgb(75, 54, 33);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
@@ -121,6 +125,7 @@
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.None;
             button3.BackColor = Color.FromArgb(75, 54, 33);
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
@@ -135,6 +140,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Franklin Gothic Medium", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(124, 184);
@@ -146,6 +152,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.BorderStyle = BorderStyle.FixedSingle;
             label2.Font = new Font("Impact", 18F);
             label2.Location = new Point(55, 315);
@@ -157,6 +164,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.BorderStyle = BorderStyle.FixedSingle;
             label3.Font = new Font("Verdana", 12F);
             label3.Location = new Point(55, 369);
@@ -168,6 +176,7 @@
             // 
             // firstName
             // 
+            firstName.Anchor = AnchorStyles.None;
             firstName.BorderStyle = BorderStyle.FixedSingle;
             firstName.Location = new Point(308, 369);
             firstName.Multiline = true;
@@ -177,6 +186,7 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.None;
             label4.BorderStyle = BorderStyle.FixedSingle;
             label4.Font = new Font("Verdana", 12F);
             label4.Location = new Point(55, 427);
@@ -188,6 +198,7 @@
             // 
             // lastName
             // 
+            lastName.Anchor = AnchorStyles.None;
             lastName.BorderStyle = BorderStyle.FixedSingle;
             lastName.Location = new Point(308, 427);
             lastName.Multiline = true;
@@ -197,6 +208,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.None;
             label5.BorderStyle = BorderStyle.FixedSingle;
             label5.Font = new Font("Verdana", 12F);
             label5.Location = new Point(55, 485);
@@ -208,6 +220,7 @@
             // 
             // address
             // 
+            address.Anchor = AnchorStyles.None;
             address.BorderStyle = BorderStyle.FixedSingle;
             address.Location = new Point(308, 485);
             address.Multiline = true;
@@ -217,6 +230,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.BorderStyle = BorderStyle.FixedSingle;
             label6.Font = new Font("Verdana", 12F);
             label6.Location = new Point(55, 560);
@@ -228,6 +242,7 @@
             // 
             // phoneNo
             // 
+            phoneNo.Anchor = AnchorStyles.None;
             phoneNo.BorderStyle = BorderStyle.FixedSingle;
             phoneNo.Location = new Point(308, 560);
             phoneNo.Multiline = true;
@@ -237,6 +252,7 @@
             // 
             // COD
             // 
+            COD.Anchor = AnchorStyles.None;
             COD.AutoSize = true;
             COD.Font = new Font("Verdana", 14F);
             COD.Location = new Point(56, 736);
@@ -249,6 +265,7 @@
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.None;
             label7.BorderStyle = BorderStyle.FixedSingle;
             label7.Font = new Font("Impact", 18F);
             label7.Location = new Point(55, 664);
@@ -260,6 +277,7 @@
             // 
             // Gcash
             // 
+            Gcash.Anchor = AnchorStyles.None;
             Gcash.AutoSize = true;
             Gcash.Font = new Font("Verdana", 14F);
             Gcash.Location = new Point(56, 790);
@@ -272,6 +290,7 @@
             // 
             // label8
             // 
+            label8.Anchor = AnchorStyles.None;
             label8.BorderStyle = BorderStyle.FixedSingle;
             label8.Font = new Font("Impact", 18F);
             label8.Location = new Point(834, 315);
@@ -283,6 +302,7 @@
             // 
             // orderSummary
             // 
+            orderSummary.Anchor = AnchorStyles.None;
             orderSummary.BorderStyle = BorderStyle.FixedSingle;
             orderSummary.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             orderSummary.Location = new Point(834, 370);
@@ -295,6 +315,7 @@
             // 
             // checkout
             // 
+            checkout.Anchor = AnchorStyles.None;
             checkout.BackColor = Color.SeaGreen;
             checkout.BackgroundImageLayout = ImageLayout.None;
             checkout.FlatStyle = FlatStyle.Flat;
@@ -310,6 +331,7 @@
             // 
             // backToCart
             // 
+            backToCart.Anchor = AnchorStyles.None;
             backToCart.BackColor = Color.Firebrick;
             backToCart.BackgroundImageLayout = ImageLayout.None;
             backToCart.FlatStyle = FlatStyle.Flat;
