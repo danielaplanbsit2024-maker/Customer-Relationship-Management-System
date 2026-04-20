@@ -141,7 +141,6 @@
             label1.TabIndex = 54;
             label1.Text = "Thanks for your order!";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += this.label1_Click;
             // 
             // label3
             // 
@@ -287,7 +286,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Checkout_COD";
             WindowState = FormWindowState.Minimized;
-            Load += this.User_Checkout_COD_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

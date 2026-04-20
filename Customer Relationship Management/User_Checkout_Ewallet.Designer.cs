@@ -133,10 +133,10 @@
             // label7
             // 
             label7.BorderStyle = BorderStyle.FixedSingle;
-            label7.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(377, 301);
+            label7.Font = new Font("Impact", 36F);
+            label7.Location = new Point(70, 214);
             label7.Name = "label7";
-            label7.Size = new Size(644, 54);
+            label7.Size = new Size(1260, 107);
             label7.TabIndex = 65;
             label7.Text = "GCASH";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -146,18 +146,18 @@
             amountToBePaid.BackColor = SystemColors.ControlDark;
             amountToBePaid.FlatStyle = FlatStyle.System;
             amountToBePaid.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            amountToBePaid.Location = new Point(724, 379);
+            amountToBePaid.Location = new Point(684, 362);
             amountToBePaid.Name = "amountToBePaid";
-            amountToBePaid.Size = new Size(291, 43);
+            amountToBePaid.Size = new Size(588, 86);
             amountToBePaid.TabIndex = 67;
             amountToBePaid.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
             label6.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(367, 379);
+            label6.Location = new Point(124, 362);
             label6.Name = "label6";
-            label6.Size = new Size(370, 43);
+            label6.Size = new Size(554, 86);
             label6.TabIndex = 66;
             label6.Text = "TOTAL AMOUNT TO BE PAID:";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -165,18 +165,19 @@
             // name
             // 
             name.BorderStyle = BorderStyle.FixedSingle;
-            name.Location = new Point(636, 442);
+            name.Location = new Point(668, 503);
             name.Multiline = true;
             name.Name = "name";
-            name.Size = new Size(391, 40);
+            name.Size = new Size(604, 57);
             name.TabIndex = 69;
             // 
             // label3
             // 
             label3.BorderStyle = BorderStyle.FixedSingle;
-            label3.Location = new Point(383, 442);
+            label3.Font = new Font("Verdana", 14F);
+            label3.Location = new Point(124, 503);
             label3.Name = "label3";
-            label3.Size = new Size(253, 40);
+            label3.Size = new Size(536, 57);
             label3.TabIndex = 68;
             label3.Text = "NAME";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -184,18 +185,19 @@
             // phoneNo
             // 
             phoneNo.BorderStyle = BorderStyle.FixedSingle;
-            phoneNo.Location = new Point(636, 481);
+            phoneNo.Location = new Point(668, 560);
             phoneNo.Multiline = true;
             phoneNo.Name = "phoneNo";
-            phoneNo.Size = new Size(391, 40);
+            phoneNo.Size = new Size(604, 57);
             phoneNo.TabIndex = 71;
             // 
             // label1
             // 
             label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Location = new Point(383, 481);
+            label1.Font = new Font("Verdana", 14F);
+            label1.Location = new Point(124, 560);
             label1.Name = "label1";
-            label1.Size = new Size(253, 40);
+            label1.Size = new Size(536, 57);
             label1.TabIndex = 70;
             label1.Text = "PHONE NUMBER";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -203,18 +205,19 @@
             // Amount
             // 
             Amount.BorderStyle = BorderStyle.FixedSingle;
-            Amount.Location = new Point(636, 520);
+            Amount.Location = new Point(668, 617);
             Amount.Multiline = true;
             Amount.Name = "Amount";
-            Amount.Size = new Size(391, 40);
+            Amount.Size = new Size(604, 57);
             Amount.TabIndex = 73;
             // 
             // label2
             // 
             label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Location = new Point(383, 520);
+            label2.Font = new Font("Verdana", 14F);
+            label2.Location = new Point(124, 617);
             label2.Name = "label2";
-            label2.Size = new Size(253, 40);
+            label2.Size = new Size(536, 57);
             label2.TabIndex = 72;
             label2.Text = "AMOUNT";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -224,10 +227,11 @@
             confirmPayment.BackColor = Color.SeaGreen;
             confirmPayment.BackgroundImageLayout = ImageLayout.None;
             confirmPayment.FlatStyle = FlatStyle.Flat;
+            confirmPayment.Font = new Font("Verdana", 18F);
             confirmPayment.ForeColor = SystemColors.ButtonFace;
-            confirmPayment.Location = new Point(551, 622);
+            confirmPayment.Location = new Point(428, 726);
             confirmPayment.Name = "confirmPayment";
-            confirmPayment.Size = new Size(299, 52);
+            confirmPayment.Size = new Size(540, 94);
             confirmPayment.TabIndex = 74;
             confirmPayment.Text = "CONFIRM PAYMENT";
             confirmPayment.UseVisualStyleBackColor = false;
