@@ -84,6 +84,7 @@
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Courier New", 10F);
             label3.Location = new Point(734, 582);
             label3.Name = "label3";
@@ -167,8 +168,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(pictureBox3);
             Controls.Add(panel3);
+            Controls.Add(pictureBox3);
             Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "User_Home";
