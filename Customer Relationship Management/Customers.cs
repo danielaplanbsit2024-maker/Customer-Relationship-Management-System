@@ -34,7 +34,111 @@ namespace Customer_Relationship_Management
             button5.Click += (s, e) => ClearFilters(); // CLEAR
             button2.Click += (s, e) => RedeemRewards(); // REDEEM
             button1.Click += (s, e) => EditCustomer(); // EDIT PROFILE
-            button6.Click += (s, e) => MessageBox.Show("Opening Add New Customer Form...", "Feature Simulation"); // ADD NEW
+            button6.Click += (s, e) => AddCustomer(); // ADD NEW
+        }
+
+        private void AddCustomer()
+        {
+            Form addForm = new Form()
+            {
+                Width = 430,
+                Height = 390,
+                Text = "Add New Customer",
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                StartPosition = FormStartPosition.CenterParent,
+                BackColor = Color.Tan,
+                Font = new Font("Verdana", 9),
+                MaximizeBox = false,
+                MinimizeBox = false
+            };
+
+            Label lblF = new Label() { Text = "First Name:", Left = 20, Top = 20, Width = 110 };
+            TextBox txtF = new TextBox() { Left = 145, Top = 18, Width = 240 };
+            Label lblL = new Label() { Text = "Last Name:", Left = 20, Top = 60, Width = 110 };
+            TextBox txtL = new TextBox() { Left = 145, Top = 58, Width = 240 };
+            Label lblP = new Label() { Text = "Phone No:", Left = 20, Top = 100, Width = 110 };
+            TextBox txtP = new TextBox() { Left = 145, Top = 98, Width = 240 };
+            Label lblA = new Label() { Text = "Address:", Left = 20, Top = 140, Width = 110 };
+            TextBox txtA = new TextBox() { Left = 145, Top = 138, Width = 240, Height = 70, Multiline = true };
+            Label lblPoints = new Label() { Text = "Loyalty Points:", Left = 20, Top = 225, Width = 110 };
+            NumericUpDown numPoints = new NumericUpDown() { Left = 145, Top = 223, Width = 120, Minimum = 0, Maximum = 1000 };
+
+            Button btnSave = new Button()
+            {
+                Text = "ADD CUSTOMER",
+                Left = 145,
+                Top = 280,
+                Width = 180,
+                Height = 42,
+                BackColor = Color.Sienna,
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat
+            };
+
+            btnSave.Click += (s, e) =>
+            {
+                string firstName = txtF.Text.Trim();
+                string lastName = txtL.Text.Trim();
+                string phone = txtP.Text.Trim();
+                string address = txtA.Text.Trim();
+                int loyaltyPoints = Decimal.ToInt32(numPoints.Value);
+
+                if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) || string.IsNullOrWhiteSpace(phone))
+                {
+                    MessageBox.Show("First name, last name, and phone number are required.");
+                    return;
+                }
+
+                try
+                {
+                    using (DBconnection db = new DBconnection(ConStr))
+                    {
+                        // Manual admin-added customers use negative IDs so they never collide with Users.Id identity values.
+                        object nextIdObj = db.ExecuteScalar(
+                            "SELECT ISNULL(MIN(CASE WHEN id <= 0 THEN id END), 0) - 1 FROM CustomerProfiles");
+                        int nextCustomerId = Convert.ToInt32(nextIdObj);
+
+                        db.CRUD(
+                            @"INSERT INTO CustomerProfiles (id, firstName, lastName, phoneNo, deliveryAdd, LoyaltyPoints)
+                              VALUES (@id, @fn, @ln, @ph, @ad, @lp)",
+                            new Dictionary<string, object>
+                            {
+                                ["@id"] = nextCustomerId,
+                                ["@fn"] = firstName,
+                                ["@ln"] = lastName,
+                                ["@ph"] = phone,
+                                ["@ad"] = address,
+                                ["@lp"] = loyaltyPoints
+                            });
+
+                        DBconnection.Log("Admin", "Customer Added", "Customers",
+                            $"Added customer profile {firstName} {lastName} ({phone}).");
+
+                        addForm.Tag = nextCustomerId;
+                    }
+
+                    addForm.DialogResult = DialogResult.OK;
+                    addForm.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error adding customer: " + ex.Message);
+                }
+            };
+
+            addForm.Controls.AddRange(new Control[] { lblF, txtF, lblL, txtL, lblP, txtP, lblA, txtA, lblPoints, numPoints, btnSave });
+
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadCustomerData();
+
+                if (addForm.Tag is int customerId)
+                {
+                    SelectCustomerRow(customerId);
+                }
+
+                MessageBox.Show("Customer added successfully!");
+            }
         }
 
         private void EditCustomer()
@@ -189,6 +293,34 @@ namespace Customer_Relationship_Management
             textBox1.Text = "SEARCH NAME / CONTACT#";
             comboBox1.SelectedIndex = -1;
             LoadCustomerData();
+        }
+
+        private void SelectCustomerRow(int customerId)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["CustomerID"].Value == null || row.Cells["CustomerID"].Value == DBNull.Value)
+                {
+                    continue;
+                }
+
+                if (Convert.ToInt32(row.Cells["CustomerID"].Value) != customerId)
+                {
+                    continue;
+                }
+
+                dataGridView1.ClearSelection();
+                row.Selected = true;
+                dataGridView1.CurrentCell = row.Cells["CustomerID"];
+
+                if (row.Index >= 0)
+                {
+                    dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                }
+
+                OnCustomerSelected();
+                break;
+            }
         }
 
         private void RedeemRewards()
