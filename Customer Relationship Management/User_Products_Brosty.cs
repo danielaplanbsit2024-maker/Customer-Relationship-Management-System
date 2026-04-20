@@ -68,5 +68,18 @@ namespace Customer_Relationship_Management
         private void button7_Click(object sender, EventArgs e) => Navigate(u => new User_Products_Coffee(u));
         private void button8_Click(object sender, EventArgs e) => Navigate(u => new User_Products_FruitTea(u));
         private void button4_Click(object sender, EventArgs e) => Navigate(u => new User_Home(u));
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Login loginForm = new Login();
+                loginForm.Location = this.Location;
+                loginForm.StartPosition = FormStartPosition.Manual;
+                loginForm.Show();
+                this.Close();
+            }
+        }
     }
 }

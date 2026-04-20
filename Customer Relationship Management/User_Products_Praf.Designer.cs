@@ -53,13 +53,12 @@
             pictureBox3 = new PictureBox();
             label1 = new Label();
             panel3 = new Panel();
+            btnlogout = new Button();
             cartQuantity = new Label();
             button5 = new Button();
             pictureBox1 = new PictureBox();
-            btnMinimizeCustomers = new Button();
             pictureBox2 = new PictureBox();
             button2 = new Button();
-            button1 = new Button();
             button3 = new Button();
             panel4 = new Panel();
             brosty = new Button();
@@ -93,7 +92,7 @@
             button11.BackColor = Color.Tan;
             button11.FlatStyle = FlatStyle.Flat;
             button11.ForeColor = Color.SaddleBrown;
-            button11.Location = new Point(32, 169);
+            button11.Location = new Point(79, 228);
             button11.Name = "button11";
             button11.Size = new Size(142, 31);
             button11.TabIndex = 41;
@@ -106,9 +105,9 @@
             button10.BackColor = Color.Tan;
             button10.FlatStyle = FlatStyle.Flat;
             button10.ForeColor = Color.SaddleBrown;
-            button10.Location = new Point(32, 173);
+            button10.Location = new Point(71, 229);
             button10.Name = "button10";
-            button10.Size = new Size(138, 29);
+            button10.Size = new Size(148, 30);
             button10.TabIndex = 41;
             button10.Text = "Add to cart";
             button10.UseVisualStyleBackColor = false;
@@ -117,7 +116,7 @@
             // label4
             // 
             label4.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(0, 137);
+            label4.Location = new Point(52, 204);
             label4.Name = "label4";
             label4.Size = new Size(203, 28);
             label4.TabIndex = 40;
@@ -130,7 +129,7 @@
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(20, -40);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(164, 194);
+            pictureBox4.Size = new Size(253, 266);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 0;
             pictureBox4.TabStop = false;
@@ -142,9 +141,9 @@
             panel5.Controls.Add(button12);
             panel5.Controls.Add(label5);
             panel5.Controls.Add(pictureBox5);
-            panel5.Location = new Point(900, 180);
+            panel5.Location = new Point(1073, 297);
             panel5.Name = "panel5";
-            panel5.Size = new Size(203, 212);
+            panel5.Size = new Size(290, 262);
             panel5.TabIndex = 50;
             // 
             // button12
@@ -152,7 +151,7 @@
             button12.BackColor = Color.Tan;
             button12.FlatStyle = FlatStyle.Flat;
             button12.ForeColor = Color.SaddleBrown;
-            button12.Location = new Point(32, 169);
+            button12.Location = new Point(79, 228);
             button12.Name = "button12";
             button12.Size = new Size(142, 31);
             button12.TabIndex = 41;
@@ -162,7 +161,7 @@
             // 
             // label5
             // 
-            label5.Location = new Point(34, 137);
+            label5.Location = new Point(79, 204);
             label5.Name = "label5";
             label5.Size = new Size(136, 28);
             label5.TabIndex = 40;
@@ -175,7 +174,7 @@
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
             pictureBox5.Location = new Point(20, -40);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(164, 192);
+            pictureBox5.Size = new Size(252, 272);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 0;
             pictureBox5.TabStop = false;
@@ -187,9 +186,9 @@
             panel6.Controls.Add(button13);
             panel6.Controls.Add(label6);
             panel6.Controls.Add(pictureBox6);
-            panel6.Location = new Point(900, 424);
+            panel6.Location = new Point(1073, 600);
             panel6.Name = "panel6";
-            panel6.Size = new Size(203, 212);
+            panel6.Size = new Size(290, 262);
             panel6.TabIndex = 54;
             // 
             // button13
@@ -197,7 +196,7 @@
             button13.BackColor = Color.Tan;
             button13.FlatStyle = FlatStyle.Flat;
             button13.ForeColor = Color.SaddleBrown;
-            button13.Location = new Point(32, 169);
+            button13.Location = new Point(79, 228);
             button13.Name = "button13";
             button13.Size = new Size(142, 31);
             button13.TabIndex = 41;
@@ -207,7 +206,7 @@
             // 
             // label6
             // 
-            label6.Location = new Point(34, 137);
+            label6.Location = new Point(80, 203);
             label6.Name = "label6";
             label6.Size = new Size(136, 28);
             label6.TabIndex = 40;
@@ -220,7 +219,7 @@
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
             pictureBox6.Location = new Point(20, -26);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(164, 193);
+            pictureBox6.Size = new Size(252, 257);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
@@ -232,9 +231,9 @@
             panel7.Controls.Add(button14);
             panel7.Controls.Add(label7);
             panel7.Controls.Add(pictureBox7);
-            panel7.Location = new Point(650, 424);
+            panel7.Location = new Point(750, 600);
             panel7.Name = "panel7";
-            panel7.Size = new Size(203, 212);
+            panel7.Size = new Size(290, 262);
             panel7.TabIndex = 53;
             // 
             // button14
@@ -242,7 +241,7 @@
             button14.BackColor = Color.Tan;
             button14.FlatStyle = FlatStyle.Flat;
             button14.ForeColor = Color.SaddleBrown;
-            button14.Location = new Point(32, 169);
+            button14.Location = new Point(79, 228);
             button14.Name = "button14";
             button14.Size = new Size(142, 31);
             button14.TabIndex = 41;
@@ -253,7 +252,7 @@
             // label7
             // 
             label7.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(0, 137);
+            label7.Location = new Point(52, 204);
             label7.Name = "label7";
             label7.Size = new Size(203, 28);
             label7.TabIndex = 40;
@@ -266,7 +265,7 @@
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
             pictureBox7.Location = new Point(0, -24);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(159, 173);
+            pictureBox7.Size = new Size(255, 256);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 0;
             pictureBox7.TabStop = false;
@@ -278,9 +277,9 @@
             panel8.Controls.Add(button15);
             panel8.Controls.Add(label8);
             panel8.Controls.Add(pictureBox8);
-            panel8.Location = new Point(398, 424);
+            panel8.Location = new Point(427, 600);
             panel8.Name = "panel8";
-            panel8.Size = new Size(203, 212);
+            panel8.Size = new Size(290, 262);
             panel8.TabIndex = 52;
             // 
             // button15
@@ -288,7 +287,7 @@
             button15.BackColor = Color.Tan;
             button15.FlatStyle = FlatStyle.Flat;
             button15.ForeColor = Color.SaddleBrown;
-            button15.Location = new Point(32, 169);
+            button15.Location = new Point(71, 228);
             button15.Name = "button15";
             button15.Size = new Size(142, 31);
             button15.TabIndex = 41;
@@ -298,7 +297,7 @@
             // 
             // label8
             // 
-            label8.Location = new Point(18, 137);
+            label8.Location = new Point(56, 204);
             label8.Name = "label8";
             label8.Size = new Size(171, 28);
             label8.TabIndex = 40;
@@ -311,7 +310,7 @@
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
             pictureBox8.Location = new Point(20, -33);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(164, 185);
+            pictureBox8.Size = new Size(250, 265);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
@@ -321,20 +320,20 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(3, 143);
+            label3.Location = new Point(40, 204);
             label3.Name = "label3";
-            label3.Size = new Size(200, 22);
+            label3.Size = new Size(213, 22);
             label3.TabIndex = 40;
-            label3.Text = "CARAMEL MACHIATO";
+            label3.Text = "CARAMEL MACCHIATO";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(26, -30);
+            pictureBox3.Location = new Point(26, -45);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(154, 197);
+            pictureBox3.Size = new Size(244, 293);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
@@ -342,10 +341,10 @@
             // label1
             // 
             label1.FlatStyle = FlatStyle.Flat;
-            label1.Font = new Font("Franklin Gothic Medium", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(0, 77);
+            label1.Font = new Font("Franklin Gothic Medium", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(0, 170);
             label1.Name = "label1";
-            label1.Size = new Size(1157, 65);
+            label1.Size = new Size(1408, 91);
             label1.TabIndex = 48;
             label1.Text = "PRODUCTS";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -353,27 +352,43 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(75, 54, 33);
+            panel3.Controls.Add(btnlogout);
             panel3.Controls.Add(cartQuantity);
             panel3.Controls.Add(button5);
             panel3.Controls.Add(pictureBox1);
-            panel3.Controls.Add(btnMinimizeCustomers);
             panel3.Controls.Add(pictureBox2);
             panel3.Controls.Add(button2);
-            panel3.Controls.Add(button1);
             panel3.Controls.Add(button3);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1280, 74);
+            panel3.Size = new Size(1408, 133);
             panel3.TabIndex = 46;
+            // 
+            // btnlogout
+            // 
+            btnlogout.Anchor = AnchorStyles.None;
+            btnlogout.BackColor = Color.FromArgb(75, 54, 33);
+            btnlogout.FlatAppearance.BorderSize = 0;
+            btnlogout.FlatStyle = FlatStyle.Flat;
+            btnlogout.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnlogout.ForeColor = SystemColors.Info;
+            btnlogout.Location = new Point(1214, 45);
+            btnlogout.Name = "btnlogout";
+            btnlogout.Size = new Size(155, 43);
+            btnlogout.TabIndex = 58;
+            btnlogout.Text = "LOG OUT";
+            btnlogout.UseVisualStyleBackColor = false;
+            btnlogout.Click += btnlogout_Click;
             // 
             // cartQuantity
             // 
             cartQuantity.AutoSize = true;
+            cartQuantity.Font = new Font("Verdana", 12F);
             cartQuantity.ForeColor = Color.Red;
-            cartQuantity.Location = new Point(955, 12);
+            cartQuantity.Location = new Point(1005, 43);
             cartQuantity.Name = "cartQuantity";
-            cartQuantity.Size = new Size(0, 22);
+            cartQuantity.Size = new Size(0, 29);
             cartQuantity.TabIndex = 56;
             // 
             // button5
@@ -381,8 +396,9 @@
             button5.BackColor = Color.FromArgb(75, 54, 33);
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Verdana", 12F);
             button5.ForeColor = SystemColors.Info;
-            button5.Location = new Point(1010, 13);
+            button5.Location = new Point(1061, 44);
             button5.Name = "button5";
             button5.Size = new Size(147, 46);
             button5.TabIndex = 55;
@@ -394,34 +410,20 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(95, 9);
+            pictureBox1.Location = new Point(137, 9);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(261, 52);
+            pictureBox1.Size = new Size(410, 117);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
-            // btnMinimizeCustomers
-            // 
-            btnMinimizeCustomers.BackColor = Color.FromArgb(75, 54, 33);
-            btnMinimizeCustomers.FlatAppearance.BorderSize = 0;
-            btnMinimizeCustomers.FlatStyle = FlatStyle.Flat;
-            btnMinimizeCustomers.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnMinimizeCustomers.ForeColor = SystemColors.Info;
-            btnMinimizeCustomers.Location = new Point(1203, 0);
-            btnMinimizeCustomers.Name = "btnMinimizeCustomers";
-            btnMinimizeCustomers.Size = new Size(59, 57);
-            btnMinimizeCustomers.TabIndex = 29;
-            btnMinimizeCustomers.Text = "_";
-            btnMinimizeCustomers.UseVisualStyleBackColor = false;
-            // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(-5, -8);
+            pictureBox2.Location = new Point(12, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(108, 86);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.Size = new Size(125, 133);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
@@ -430,8 +432,9 @@
             button2.BackColor = Color.FromArgb(75, 54, 33);
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Verdana", 12F);
             button2.ForeColor = SystemColors.Info;
-            button2.Location = new Point(556, 12);
+            button2.Location = new Point(756, 43);
             button2.Name = "button2";
             button2.Size = new Size(146, 47);
             button2.TabIndex = 46;
@@ -439,27 +442,14 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(75, 54, 33);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = SystemColors.Info;
-            button1.Location = new Point(707, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(146, 47);
-            button1.TabIndex = 45;
-            button1.Text = "PRODUCTS";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(75, 54, 33);
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Verdana", 12F);
             button3.ForeColor = SystemColors.Info;
-            button3.Location = new Point(858, 12);
+            button3.Location = new Point(908, 43);
             button3.Name = "button3";
             button3.Size = new Size(146, 47);
             button3.TabIndex = 47;
@@ -474,9 +464,9 @@
             panel4.Controls.Add(button11);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(pictureBox4);
-            panel4.Location = new Point(650, 180);
+            panel4.Location = new Point(750, 297);
             panel4.Name = "panel4";
-            panel4.Size = new Size(203, 212);
+            panel4.Size = new Size(290, 262);
             panel4.TabIndex = 51;
             // 
             // brosty
@@ -486,7 +476,7 @@
             brosty.FlatStyle = FlatStyle.Flat;
             brosty.Font = new Font("Gabriola", 16F);
             brosty.ForeColor = SystemColors.Info;
-            brosty.Location = new Point(65, 329);
+            brosty.Location = new Point(85, 339);
             brosty.Name = "brosty";
             brosty.Size = new Size(190, 56);
             brosty.TabIndex = 58;
@@ -501,7 +491,7 @@
             fruittea.FlatStyle = FlatStyle.Flat;
             fruittea.Font = new Font("Gabriola", 16F);
             fruittea.ForeColor = SystemColors.Info;
-            fruittea.Location = new Point(65, 267);
+            fruittea.Location = new Point(85, 277);
             fruittea.Name = "fruittea";
             fruittea.Size = new Size(190, 56);
             fruittea.TabIndex = 59;
@@ -516,7 +506,7 @@
             coffee.FlatStyle = FlatStyle.Flat;
             coffee.Font = new Font("Gabriola", 16F);
             coffee.ForeColor = SystemColors.Info;
-            coffee.Location = new Point(65, 207);
+            coffee.Location = new Point(85, 215);
             coffee.Name = "coffee";
             coffee.Size = new Size(190, 56);
             coffee.TabIndex = 58;
@@ -531,7 +521,7 @@
             praf.FlatStyle = FlatStyle.Flat;
             praf.Font = new Font("Gabriola", 16F);
             praf.ForeColor = Color.DarkOrange;
-            praf.Location = new Point(65, 148);
+            praf.Location = new Point(85, 153);
             praf.Name = "praf";
             praf.Size = new Size(190, 56);
             praf.TabIndex = 57;
@@ -545,7 +535,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Gabriola", 16F);
             button4.ForeColor = SystemColors.Info;
-            button4.Location = new Point(65, 86);
+            button4.Location = new Point(85, 91);
             button4.Name = "button4";
             button4.Size = new Size(190, 56);
             button4.TabIndex = 56;
@@ -559,7 +549,7 @@
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(3, 16);
             label2.Name = "label2";
-            label2.Size = new Size(321, 38);
+            label2.Size = new Size(354, 49);
             label2.TabIndex = 0;
             label2.Text = "Our Products";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -571,9 +561,9 @@
             panel2.Controls.Add(button10);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(pictureBox3);
-            panel2.Location = new Point(398, 180);
+            panel2.Location = new Point(427, 297);
             panel2.Name = "panel2";
-            panel2.Size = new Size(203, 212);
+            panel2.Size = new Size(290, 262);
             panel2.TabIndex = 49;
             // 
             // panel1
@@ -585,16 +575,16 @@
             panel1.Controls.Add(praf);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(12, 178);
+            panel1.Location = new Point(27, 361);
             panel1.Name = "panel1";
-            panel1.Size = new Size(327, 409);
+            panel1.Size = new Size(360, 418);
             panel1.TabIndex = 47;
             // 
             // User_Products_Praf
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1280, 785);
+            ClientSize = new Size(1408, 914);
             Controls.Add(panel5);
             Controls.Add(panel6);
             Controls.Add(panel7);
@@ -605,9 +595,11 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "User_Products_Praf";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Products_Praf";
+            WindowState = FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -655,12 +647,9 @@
         private PictureBox pictureBox3;
         private Label label1;
         private Panel panel3;
-        private Button button5;
         private PictureBox pictureBox1;
-        private Button btnMinimizeCustomers;
         private PictureBox pictureBox2;
         private Button button2;
-        private Button button1;
         private Button button3;
         private Panel panel4;
         private Button brosty;
@@ -672,5 +661,7 @@
         private Panel panel2;
         private Panel panel1;
         private Label cartQuantity;
+        private Button button5;
+        private Button btnlogout;
     }
 }
