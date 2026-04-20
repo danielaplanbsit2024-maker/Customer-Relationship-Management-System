@@ -106,9 +106,9 @@ namespace Customer_Relationship_Management
                 {
                     using (DBconnection db = new DBconnection(ConStr))
                     {
-                        var uid = db.ExecuteScalar("SELECT Id FROM Users WHERE username = @u", 
+                        var uid = db.ExecuteScalar("SELECT Id FROM Users WHERE username = @u",
                             new Dictionary<string, object> { ["@u"] = CurrentUser });
-                        
+
                         if (uid == null) return;
 
                         // Remove just ONE instance of the item (decrement)
@@ -150,9 +150,9 @@ namespace Customer_Relationship_Management
                 {
                     using (DBconnection db = new DBconnection(ConStr))
                     {
-                        var uid = db.ExecuteScalar("SELECT Id FROM Users WHERE username = @u", 
+                        var uid = db.ExecuteScalar("SELECT Id FROM Users WHERE username = @u",
                             new Dictionary<string, object> { ["@u"] = CurrentUser });
-                        
+
                         if (uid != null)
                         {
                             db.CRUD("DELETE FROM Products WHERE id = @id", new Dictionary<string, object> { ["@id"] = uid });
@@ -176,6 +176,36 @@ namespace Customer_Relationship_Management
         private void button4_Click(object sender, EventArgs e) => btnProceed_Click(sender, e);
 
         private void User_Cart_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
