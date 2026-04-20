@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Checkout_Ewallet));
-            panel3 = new Panel();
             Reviews = new Button();
-            pictureBox1 = new PictureBox();
             btnMinimizeCustomers = new Button();
-            pictureBox2 = new PictureBox();
             btnhome = new Button();
             btnProducts = new Button();
             cart = new Button();
@@ -47,85 +44,57 @@
             Amount = new TextBox();
             label2 = new Label();
             confirmPayment = new Button();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel1 = new Panel();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            button1 = new Button();
+            button5 = new Button();
+            button3 = new Button();
+            btnLogout = new Button();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(75, 54, 33);
-            panel3.Controls.Add(Reviews);
-            panel3.Controls.Add(pictureBox1);
-            panel3.Controls.Add(btnMinimizeCustomers);
-            panel3.Controls.Add(pictureBox2);
-            panel3.Controls.Add(btnhome);
-            panel3.Controls.Add(btnProducts);
-            panel3.Controls.Add(cart);
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1160, 74);
-            panel3.TabIndex = 53;
             // 
             // Reviews
             // 
             Reviews.BackColor = Color.FromArgb(75, 54, 33);
             Reviews.FlatAppearance.BorderSize = 0;
             Reviews.FlatStyle = FlatStyle.Flat;
+            Reviews.Font = new Font("Microsoft Sans Serif", 14F);
             Reviews.ForeColor = SystemColors.Info;
-            Reviews.Location = new Point(1010, 13);
+            Reviews.Location = new Point(1097, 46);
             Reviews.Name = "Reviews";
-            Reviews.Size = new Size(147, 46);
+            Reviews.Size = new Size(151, 46);
             Reviews.TabIndex = 55;
             Reviews.Text = "REVIEWS";
             Reviews.UseVisualStyleBackColor = false;
             Reviews.Click += Reviews_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(95, 9);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(261, 52);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
             // 
             // btnMinimizeCustomers
             // 
             btnMinimizeCustomers.BackColor = Color.FromArgb(75, 54, 33);
             btnMinimizeCustomers.FlatAppearance.BorderSize = 0;
             btnMinimizeCustomers.FlatStyle = FlatStyle.Flat;
-            btnMinimizeCustomers.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMinimizeCustomers.Font = new Font("Microsoft Sans Serif", 14F);
             btnMinimizeCustomers.ForeColor = SystemColors.Info;
-            btnMinimizeCustomers.Location = new Point(1203, 0);
+            btnMinimizeCustomers.Location = new Point(1248, 46);
             btnMinimizeCustomers.Name = "btnMinimizeCustomers";
-            btnMinimizeCustomers.Size = new Size(59, 57);
+            btnMinimizeCustomers.Size = new Size(148, 46);
             btnMinimizeCustomers.TabIndex = 29;
-            btnMinimizeCustomers.Text = "_";
+            btnMinimizeCustomers.Text = "LOGOUT";
             btnMinimizeCustomers.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(-5, -8);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(108, 86);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
             // 
             // btnhome
             // 
             btnhome.BackColor = Color.FromArgb(75, 54, 33);
             btnhome.FlatAppearance.BorderSize = 0;
             btnhome.FlatStyle = FlatStyle.Flat;
+            btnhome.Font = new Font("Microsoft Sans Serif", 14F);
             btnhome.ForeColor = SystemColors.Info;
-            btnhome.Location = new Point(552, 12);
+            btnhome.Location = new Point(669, 46);
             btnhome.Name = "btnhome";
-            btnhome.Size = new Size(146, 47);
+            btnhome.Size = new Size(115, 46);
             btnhome.TabIndex = 46;
             btnhome.Text = "HOME";
             btnhome.UseVisualStyleBackColor = false;
@@ -136,10 +105,11 @@
             btnProducts.BackColor = Color.FromArgb(75, 54, 33);
             btnProducts.FlatAppearance.BorderSize = 0;
             btnProducts.FlatStyle = FlatStyle.Flat;
+            btnProducts.Font = new Font("Microsoft Sans Serif", 14F);
             btnProducts.ForeColor = SystemColors.Info;
-            btnProducts.Location = new Point(707, 12);
+            btnProducts.Location = new Point(784, 46);
             btnProducts.Name = "btnProducts";
-            btnProducts.Size = new Size(146, 47);
+            btnProducts.Size = new Size(185, 46);
             btnProducts.TabIndex = 45;
             btnProducts.Text = "PRODUCTS";
             btnProducts.UseVisualStyleBackColor = false;
@@ -150,10 +120,11 @@
             cart.BackColor = Color.FromArgb(75, 54, 33);
             cart.FlatAppearance.BorderSize = 0;
             cart.FlatStyle = FlatStyle.Flat;
+            cart.Font = new Font("Microsoft Sans Serif", 14F);
             cart.ForeColor = SystemColors.Info;
-            cart.Location = new Point(857, 12);
+            cart.Location = new Point(969, 46);
             cart.Name = "cart";
-            cart.Size = new Size(146, 47);
+            cart.Size = new Size(128, 46);
             cart.TabIndex = 47;
             cart.Text = "CART";
             cart.UseVisualStyleBackColor = false;
@@ -163,7 +134,7 @@
             // 
             label7.BorderStyle = BorderStyle.FixedSingle;
             label7.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(292, 150);
+            label7.Location = new Point(377, 301);
             label7.Name = "label7";
             label7.Size = new Size(644, 54);
             label7.TabIndex = 65;
@@ -175,7 +146,7 @@
             amountToBePaid.BackColor = SystemColors.ControlDark;
             amountToBePaid.FlatStyle = FlatStyle.System;
             amountToBePaid.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            amountToBePaid.Location = new Point(639, 228);
+            amountToBePaid.Location = new Point(724, 379);
             amountToBePaid.Name = "amountToBePaid";
             amountToBePaid.Size = new Size(291, 43);
             amountToBePaid.TabIndex = 67;
@@ -184,7 +155,7 @@
             // label6
             // 
             label6.Font = new Font("Impact", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(282, 228);
+            label6.Location = new Point(367, 379);
             label6.Name = "label6";
             label6.Size = new Size(370, 43);
             label6.TabIndex = 66;
@@ -194,7 +165,7 @@
             // name
             // 
             name.BorderStyle = BorderStyle.FixedSingle;
-            name.Location = new Point(551, 291);
+            name.Location = new Point(636, 442);
             name.Multiline = true;
             name.Name = "name";
             name.Size = new Size(391, 40);
@@ -203,7 +174,7 @@
             // label3
             // 
             label3.BorderStyle = BorderStyle.FixedSingle;
-            label3.Location = new Point(298, 291);
+            label3.Location = new Point(383, 442);
             label3.Name = "label3";
             label3.Size = new Size(253, 40);
             label3.TabIndex = 68;
@@ -213,7 +184,7 @@
             // phoneNo
             // 
             phoneNo.BorderStyle = BorderStyle.FixedSingle;
-            phoneNo.Location = new Point(551, 330);
+            phoneNo.Location = new Point(636, 481);
             phoneNo.Multiline = true;
             phoneNo.Name = "phoneNo";
             phoneNo.Size = new Size(391, 40);
@@ -222,7 +193,7 @@
             // label1
             // 
             label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Location = new Point(298, 330);
+            label1.Location = new Point(383, 481);
             label1.Name = "label1";
             label1.Size = new Size(253, 40);
             label1.TabIndex = 70;
@@ -232,7 +203,7 @@
             // Amount
             // 
             Amount.BorderStyle = BorderStyle.FixedSingle;
-            Amount.Location = new Point(551, 369);
+            Amount.Location = new Point(636, 520);
             Amount.Multiline = true;
             Amount.Name = "Amount";
             Amount.Size = new Size(391, 40);
@@ -241,7 +212,7 @@
             // label2
             // 
             label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Location = new Point(298, 369);
+            label2.Location = new Point(383, 520);
             label2.Name = "label2";
             label2.Size = new Size(253, 40);
             label2.TabIndex = 72;
@@ -254,7 +225,7 @@
             confirmPayment.BackgroundImageLayout = ImageLayout.None;
             confirmPayment.FlatStyle = FlatStyle.Flat;
             confirmPayment.ForeColor = SystemColors.ButtonFace;
-            confirmPayment.Location = new Point(466, 471);
+            confirmPayment.Location = new Point(551, 622);
             confirmPayment.Name = "confirmPayment";
             confirmPayment.Size = new Size(299, 52);
             confirmPayment.TabIndex = 74;
@@ -262,11 +233,115 @@
             confirmPayment.UseVisualStyleBackColor = false;
             confirmPayment.Click += confirmPayment_Click;
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.None;
+            panel1.BackColor = Color.FromArgb(75, 54, 33);
+            panel1.Controls.Add(Reviews);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(btnMinimizeCustomers);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(btnLogout);
+            panel1.Controls.Add(btnhome);
+            panel1.Controls.Add(cart);
+            panel1.Controls.Add(btnProducts);
+            panel1.Location = new Point(-1, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1468, 137);
+            panel1.TabIndex = 75;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Anchor = AnchorStyles.None;
+            pictureBox3.BackgroundImageLayout = ImageLayout.None;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(161, 9);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(500, 119);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 51;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = AnchorStyles.None;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(12, -6);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(143, 150);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 56;
+            pictureBox4.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.FromArgb(75, 54, 33);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Verdana", 14F);
+            button1.ForeColor = SystemColors.Info;
+            button1.Location = new Point(1394, 65);
+            button1.Name = "button1";
+            button1.Size = new Size(194, 47);
+            button1.TabIndex = 45;
+            button1.Text = "PRODUCTS";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            button5.Anchor = AnchorStyles.None;
+            button5.BackColor = Color.FromArgb(75, 54, 33);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Verdana", 14F);
+            button5.ForeColor = SystemColors.Info;
+            button5.Location = new Point(1725, 65);
+            button5.Name = "button5";
+            button5.Size = new Size(186, 47);
+            button5.TabIndex = 55;
+            button5.Text = "REVIEWS";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.None;
+            button3.BackColor = Color.FromArgb(75, 54, 33);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Verdana", 14F);
+            button3.ForeColor = SystemColors.Info;
+            button3.Location = new Point(1588, 65);
+            button3.Name = "button3";
+            button3.Size = new Size(137, 47);
+            button3.TabIndex = 47;
+            button3.Text = "CART";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // btnLogout
+            // 
+            btnLogout.Anchor = AnchorStyles.None;
+            btnLogout.BackColor = Color.FromArgb(75, 54, 33);
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Verdana", 14F);
+            btnLogout.ForeColor = SystemColors.Info;
+            btnLogout.Location = new Point(1911, 65);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(153, 47);
+            btnLogout.TabIndex = 29;
+            btnLogout.Text = "LOGOUT";
+            btnLogout.UseVisualStyleBackColor = false;
+            // 
             // User_Checkout_Ewallet
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1160, 650);
+            ClientSize = new Size(1408, 914);
+            Controls.Add(panel1);
             Controls.Add(confirmPayment);
             Controls.Add(Amount);
             Controls.Add(label2);
@@ -277,25 +352,20 @@
             Controls.Add(amountToBePaid);
             Controls.Add(label6);
             Controls.Add(label7);
-            Controls.Add(panel3);
             Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "User_Checkout_Ewallet";
             Text = "User_Checkout_Ewallet";
-            panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel3;
         private Button Reviews;
-        private PictureBox pictureBox1;
         private Button btnMinimizeCustomers;
-        private PictureBox pictureBox2;
         private Button btnhome;
         private Button btnProducts;
         private Button cart;
@@ -309,5 +379,12 @@
         private TextBox Amount;
         private Label label2;
         private Button confirmPayment;
+        private Panel panel1;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
+        private Button button1;
+        private Button button5;
+        private Button button3;
+        private Button btnLogout;
     }
 }
