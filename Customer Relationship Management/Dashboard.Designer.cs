@@ -176,11 +176,11 @@
             label3.AutoSize = true;
             label3.Font = new Font("Verdana", 22F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(65, 216);
+            label3.Location = new Point(52, 216);
             label3.Name = "label3";
-            label3.Size = new Size(507, 53);
+            label3.Size = new Size(535, 53);
             label3.TabIndex = 6;
-            label3.Text = "vs. Yesterday: +8.5%";
+            label3.Text = "vs. Yesterday: +00.0%";
             // 
             // label2
             // 
@@ -188,11 +188,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Verdana", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(72, 123);
+            label2.Location = new Point(86, 123);
             label2.Name = "label2";
-            label2.Size = new Size(497, 67);
+            label2.Size = new Size(457, 67);
             label2.TabIndex = 5;
-            label2.Text = "PHP 12,500.00";
+            label2.Text = "PHP 0,000.00";
             label2.Click += label2_Click;
             // 
             // label1
@@ -239,11 +239,11 @@
             label5.AutoSize = true;
             label5.Font = new Font("Verdana", 28F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(247, 123);
+            label5.Location = new Point(266, 123);
             label5.Name = "label5";
-            label5.Size = new Size(149, 67);
+            label5.Size = new Size(109, 67);
             label5.TabIndex = 7;
-            label5.Text = "115";
+            label5.Text = "00";
             // 
             // label4
             // 
@@ -292,7 +292,7 @@
             label8.Name = "label8";
             label8.Size = new Size(109, 67);
             label8.TabIndex = 9;
-            label8.Text = "18";
+            label8.Text = "00";
             // 
             // label9
             // 
@@ -324,11 +324,11 @@
             label11.AutoSize = true;
             label11.Font = new Font("Verdana", 28F, FontStyle.Bold);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(142, 130);
+            label11.Location = new Point(166, 130);
             label11.Name = "label11";
-            label11.Size = new Size(357, 67);
+            label11.Size = new Size(297, 67);
             label11.TabIndex = 8;
-            label11.Text = "PHP 2,150";
+            label11.Text = "PHP 000";
             label11.Click += label11_Click;
             // 
             // label10
@@ -401,7 +401,6 @@
             Name = "Dashboard";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
-            WindowState = FormWindowState.Normal;
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
