@@ -442,7 +442,7 @@
             Name = "Sales";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sales";
-            WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Normal;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

@@ -351,7 +351,7 @@
             Name = "History";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "History";
-            WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Normal;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

@@ -395,7 +395,7 @@
             Name = "Customers";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Customers";
-            WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Normal;
             Load += Customers_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
