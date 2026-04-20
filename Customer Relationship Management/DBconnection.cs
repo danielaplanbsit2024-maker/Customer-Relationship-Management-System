@@ -76,6 +76,20 @@ namespace Customer_Relationship_Management
                            Module NVARCHAR(100),
                            Details NVARCHAR(MAX)
                        );");
+
+                // Create AdminUsers table for maintainable admin authentication and CRUD.
+                CRUD(@"IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID('AdminUsers') AND type = 'U')
+                       CREATE TABLE AdminUsers (
+                           AdminId INT IDENTITY(1,1) PRIMARY KEY,
+                           Username NVARCHAR(50) NOT NULL UNIQUE,
+                           [Password] NVARCHAR(100) NOT NULL,
+                           DisplayName NVARCHAR(100) NULL,
+                           CreatedAt DATETIME NOT NULL DEFAULT GETDATE()
+                       );");
+
+                CRUD(@"IF NOT EXISTS (SELECT 1 FROM AdminUsers WHERE Username = 'admin')
+                       INSERT INTO AdminUsers (Username, [Password], DisplayName)
+                       VALUES ('admin', 'admin123', 'Default Administrator');");
             }
             catch { /* Silently handle if already exists or table locked */ }
         }

@@ -33,6 +33,7 @@ namespace Customer_Relationship_Management
 
             button3.Click += (s, e) => ClearLogs();
             button1.Click += (s, e) => ExportLogs();
+            btnAddadmin.Click += (s, e) => ShowAdminManager();
         }
 
         private void ConfigureGrid()
@@ -294,6 +295,363 @@ namespace Customer_Relationship_Management
             }
 
             return value;
+        }
+
+        private void ShowAdminManager()
+        {
+            Form managerForm = new Form
+            {
+                Width = 920,
+                Height = 620,
+                Text = "Admin Manager",
+                StartPosition = FormStartPosition.CenterParent,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                MaximizeBox = false,
+                MinimizeBox = false,
+                BackColor = Color.FromArgb(245, 236, 224),
+                Font = new Font("Verdana", 9F)
+            };
+
+            TabControl tabs = new TabControl
+            {
+                Dock = DockStyle.Fill
+            };
+
+            TabPage existingTab = new TabPage("Existing Admins") { BackColor = Color.WhiteSmoke };
+            TabPage addTab = new TabPage("Add Admin") { BackColor = Color.WhiteSmoke };
+
+            DataGridView adminGrid = new DataGridView
+            {
+                Dock = DockStyle.Top,
+                Height = 420,
+                ReadOnly = true,
+                MultiSelect = false,
+                AllowUserToAddRows = false,
+                AllowUserToDeleteRows = false,
+                SelectionMode = DataGridViewSelectionMode.FullRowSelect,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+                RowHeadersVisible = false,
+                BackgroundColor = Color.White
+            };
+
+            Panel existingActions = new Panel
+            {
+                Dock = DockStyle.Bottom,
+                Height = 90
+            };
+
+            Button btnRefreshAdmins = CreateAdminActionButton("REFRESH", 24, 20, Color.SaddleBrown, Color.White);
+            Button btnEditAdmin = CreateAdminActionButton("EDIT", 214, 20, Color.Peru, Color.White);
+            Button btnDeleteAdmin = CreateAdminActionButton("DELETE", 404, 20, Color.PeachPuff, Color.FromArgb(85, 61, 30));
+
+            Label lblExistingNote = new Label
+            {
+                AutoSize = false,
+                Left = 594,
+                Top = 30,
+                Width = 280,
+                Height = 28,
+                Text = "Manage admin usernames and passwords.",
+                ForeColor = Color.FromArgb(85, 61, 30)
+            };
+
+            existingActions.Controls.AddRange(new Control[] { btnRefreshAdmins, btnEditAdmin, btnDeleteAdmin, lblExistingNote });
+            existingTab.Controls.Add(existingActions);
+            existingTab.Controls.Add(adminGrid);
+
+            Label lblAddUsername = new Label { Text = "Username", Left = 40, Top = 50, Width = 140 };
+            TextBox txtAddUsername = new TextBox { Left = 210, Top = 46, Width = 260 };
+            Label lblAddDisplay = new Label { Text = "Display Name", Left = 40, Top = 105, Width = 140 };
+            TextBox txtAddDisplay = new TextBox { Left = 210, Top = 101, Width = 260 };
+            Label lblAddPassword = new Label { Text = "Password", Left = 40, Top = 160, Width = 140 };
+            TextBox txtAddPassword = new TextBox { Left = 210, Top = 156, Width = 260, UseSystemPasswordChar = true };
+            Label lblAddConfirm = new Label { Text = "Confirm Password", Left = 40, Top = 215, Width = 160 };
+            TextBox txtAddConfirm = new TextBox { Left = 210, Top = 211, Width = 260, UseSystemPasswordChar = true };
+            Button btnCreateAdmin = CreateAdminActionButton("CREATE ADMIN", 210, 280, Color.SaddleBrown, Color.White);
+
+            addTab.Controls.AddRange(new Control[]
+            {
+                lblAddUsername, txtAddUsername,
+                lblAddDisplay, txtAddDisplay,
+                lblAddPassword, txtAddPassword,
+                lblAddConfirm, txtAddConfirm,
+                btnCreateAdmin
+            });
+
+            tabs.TabPages.Add(existingTab);
+            tabs.TabPages.Add(addTab);
+            managerForm.Controls.Add(tabs);
+
+            void LoadAdminGrid()
+            {
+                try
+                {
+                    using (DBconnection db = new DBconnection(ConStr))
+                    {
+                        DataTable admins = db.Select(
+                            @"SELECT AdminId AS [Admin ID],
+                                     Username,
+                                     ISNULL(DisplayName, '') AS [Display Name],
+                                     CreatedAt AS [Created At]
+                              FROM AdminUsers
+                              ORDER BY Username",
+                            new Dictionary<string, object>());
+                        adminGrid.DataSource = admins;
+
+                        if (adminGrid.Columns["Created At"] != null)
+                        {
+                            adminGrid.Columns["Created At"].DefaultCellStyle.Format = "MMM dd, yyyy hh:mm tt";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading admins: " + ex.Message);
+                }
+            }
+
+            btnRefreshAdmins.Click += (s, e) => LoadAdminGrid();
+
+            btnCreateAdmin.Click += (s, e) =>
+            {
+                string username = txtAddUsername.Text.Trim();
+                string displayName = txtAddDisplay.Text.Trim();
+                string password = txtAddPassword.Text;
+                string confirmPassword = txtAddConfirm.Text;
+
+                if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+                {
+                    MessageBox.Show("Username and password are required.");
+                    return;
+                }
+
+                if (password != confirmPassword)
+                {
+                    MessageBox.Show("Password and confirmation do not match.");
+                    return;
+                }
+
+                try
+                {
+                    using (DBconnection db = new DBconnection(ConStr))
+                    {
+                        object existing = db.ExecuteScalar("SELECT COUNT(1) FROM AdminUsers WHERE Username = @username",
+                            new Dictionary<string, object> { ["@username"] = username });
+
+                        if (Convert.ToInt32(existing) > 0)
+                        {
+                            MessageBox.Show("That admin username already exists.");
+                            return;
+                        }
+
+                        db.CRUD(
+                            "INSERT INTO AdminUsers (Username, [Password], DisplayName) VALUES (@username, @password, @displayName)",
+                            new Dictionary<string, object>
+                            {
+                                ["@username"] = username,
+                                ["@password"] = password,
+                                ["@displayName"] = string.IsNullOrWhiteSpace(displayName) ? DBNull.Value : displayName
+                            });
+                    }
+
+                    DBconnection.Log("Admin", "Admin Added", "History", $"Created admin account '{username}'.");
+                    txtAddUsername.Clear();
+                    txtAddDisplay.Clear();
+                    txtAddPassword.Clear();
+                    txtAddConfirm.Clear();
+                    tabs.SelectedTab = existingTab;
+                    LoadAdminGrid();
+                    RefreshHistoryView();
+                    MessageBox.Show("Admin account created successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error creating admin: " + ex.Message);
+                }
+            };
+
+            btnEditAdmin.Click += (s, e) =>
+            {
+                if (adminGrid.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Please select an admin to edit.");
+                    return;
+                }
+
+                DataGridViewRow row = adminGrid.SelectedRows[0];
+                int adminId = Convert.ToInt32(row.Cells["Admin ID"].Value);
+                string currentUsername = row.Cells["Username"].Value?.ToString() ?? string.Empty;
+                string currentDisplayName = row.Cells["Display Name"].Value?.ToString() ?? string.Empty;
+
+                Form editForm = new Form
+                {
+                    Width = 430,
+                    Height = 330,
+                    Text = "Edit Admin",
+                    StartPosition = FormStartPosition.CenterParent,
+                    FormBorderStyle = FormBorderStyle.FixedDialog,
+                    MaximizeBox = false,
+                    MinimizeBox = false,
+                    BackColor = Color.Tan,
+                    Font = new Font("Verdana", 9F)
+                };
+
+                Label lblUsername = new Label { Text = "Username", Left = 20, Top = 25, Width = 120 };
+                TextBox txtUsername = new TextBox { Left = 160, Top = 22, Width = 220, Text = currentUsername };
+                Label lblDisplay = new Label { Text = "Display Name", Left = 20, Top = 70, Width = 120 };
+                TextBox txtDisplay = new TextBox { Left = 160, Top = 67, Width = 220, Text = currentDisplayName };
+                Label lblPassword = new Label { Text = "New Password", Left = 20, Top = 115, Width = 120 };
+                TextBox txtPassword = new TextBox { Left = 160, Top = 112, Width = 220, UseSystemPasswordChar = true };
+                Label lblConfirm = new Label { Text = "Confirm Password", Left = 20, Top = 160, Width = 130 };
+                TextBox txtConfirm = new TextBox { Left = 160, Top = 157, Width = 220, UseSystemPasswordChar = true };
+                Label lblHint = new Label { Left = 20, Top = 200, Width = 360, Height = 35, Text = "Leave password blank if you only want to rename the admin." };
+                Button btnSave = CreateAdminActionButton("SAVE", 160, 245, Color.SaddleBrown, Color.White);
+
+                btnSave.Click += (sender, args) =>
+                {
+                    string newUsername = txtUsername.Text.Trim();
+                    string newDisplayName = txtDisplay.Text.Trim();
+                    string newPassword = txtPassword.Text;
+                    string confirmPassword = txtConfirm.Text;
+
+                    if (string.IsNullOrWhiteSpace(newUsername))
+                    {
+                        MessageBox.Show("Username is required.");
+                        return;
+                    }
+
+                    if (!string.IsNullOrEmpty(newPassword) && newPassword != confirmPassword)
+                    {
+                        MessageBox.Show("Password and confirmation do not match.");
+                        return;
+                    }
+
+                    try
+                    {
+                        using (DBconnection db = new DBconnection(ConStr))
+                        {
+                            object duplicate = db.ExecuteScalar(
+                                "SELECT COUNT(1) FROM AdminUsers WHERE Username = @username AND AdminId <> @id",
+                                new Dictionary<string, object> { ["@username"] = newUsername, ["@id"] = adminId });
+
+                            if (Convert.ToInt32(duplicate) > 0)
+                            {
+                                MessageBox.Show("That username is already used by another admin.");
+                                return;
+                            }
+
+                            if (string.IsNullOrEmpty(newPassword))
+                            {
+                                db.CRUD(
+                                    "UPDATE AdminUsers SET Username = @username, DisplayName = @displayName WHERE AdminId = @id",
+                                    new Dictionary<string, object>
+                                    {
+                                        ["@username"] = newUsername,
+                                        ["@displayName"] = string.IsNullOrWhiteSpace(newDisplayName) ? DBNull.Value : newDisplayName,
+                                        ["@id"] = adminId
+                                    });
+                            }
+                            else
+                            {
+                                db.CRUD(
+                                    "UPDATE AdminUsers SET Username = @username, DisplayName = @displayName, [Password] = @password WHERE AdminId = @id",
+                                    new Dictionary<string, object>
+                                    {
+                                        ["@username"] = newUsername,
+                                        ["@displayName"] = string.IsNullOrWhiteSpace(newDisplayName) ? DBNull.Value : newDisplayName,
+                                        ["@password"] = newPassword,
+                                        ["@id"] = adminId
+                                    });
+                            }
+                        }
+
+                        DBconnection.Log("Admin", "Admin Updated", "History", $"Updated admin account '{newUsername}'.");
+                        editForm.DialogResult = DialogResult.OK;
+                        editForm.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error updating admin: " + ex.Message);
+                    }
+                };
+
+                editForm.Controls.AddRange(new Control[]
+                {
+                    lblUsername, txtUsername,
+                    lblDisplay, txtDisplay,
+                    lblPassword, txtPassword,
+                    lblConfirm, txtConfirm,
+                    lblHint, btnSave
+                });
+
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadAdminGrid();
+                    RefreshHistoryView();
+                }
+            };
+
+            btnDeleteAdmin.Click += (s, e) =>
+            {
+                if (adminGrid.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Please select an admin to delete.");
+                    return;
+                }
+
+                DataGridViewRow row = adminGrid.SelectedRows[0];
+                int adminId = Convert.ToInt32(row.Cells["Admin ID"].Value);
+                string username = row.Cells["Username"].Value?.ToString() ?? string.Empty;
+
+                if (MessageBox.Show($"Delete admin '{username}'?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+                {
+                    return;
+                }
+
+                try
+                {
+                    using (DBconnection db = new DBconnection(ConStr))
+                    {
+                        object adminCount = db.ExecuteScalar("SELECT COUNT(1) FROM AdminUsers", new Dictionary<string, object>());
+                        if (Convert.ToInt32(adminCount) <= 1)
+                        {
+                            MessageBox.Show("At least one admin account must remain.");
+                            return;
+                        }
+
+                        db.CRUD("DELETE FROM AdminUsers WHERE AdminId = @id", new Dictionary<string, object> { ["@id"] = adminId });
+                    }
+
+                    DBconnection.Log("Admin", "Admin Deleted", "History", $"Deleted admin account '{username}'.");
+                    LoadAdminGrid();
+                    RefreshHistoryView();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting admin: " + ex.Message);
+                }
+            };
+
+            LoadAdminGrid();
+            managerForm.ShowDialog(this);
+        }
+
+        private Button CreateAdminActionButton(string text, int left, int top, Color backColor, Color foreColor)
+        {
+            Button button = new Button
+            {
+                Text = text,
+                Left = left,
+                Top = top,
+                Width = 170,
+                Height = 46,
+                BackColor = backColor,
+                ForeColor = foreColor,
+                FlatStyle = FlatStyle.Flat,
+                Font = new Font("Verdana", 10F, FontStyle.Bold)
+            };
+            button.FlatAppearance.BorderSize = 0;
+            return button;
         }
 
         private void WireNavigation()

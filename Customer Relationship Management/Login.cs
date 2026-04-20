@@ -34,17 +34,6 @@ namespace Customer_Relationship_Management
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtLoginUsername.Text == "admin" && txtLoginPassword.Text == "admin123")
-            {
-                DBconnection.Log("Admin", "Login Success", "Auth", "Administrator accessed the dashboard.");
-                Dashboard dashboard = new Dashboard();
-                dashboard.Location = this.Location;
-                dashboard.StartPosition = FormStartPosition.Manual;
-                dashboard.Show();
-                this.Hide();
-                return; // Prevent running database check for admin
-            }
-
             try
             {
                 using (DBconnection db = new DBconnection(ConStr))
@@ -55,6 +44,25 @@ namespace Customer_Relationship_Management
                     if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                     {
                         MessageBox.Show("Username and password cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    var adminResult = db.ExecuteScalar("SELECT COUNT(1) FROM AdminUsers WHERE Username = @username AND [Password] = @password",
+                        new Dictionary<string, object>
+                        {
+                            ["@username"] = username,
+                            ["@password"] = password
+                        });
+
+                    if (adminResult != null && Convert.ToInt32(adminResult) == 1)
+                    {
+                        DBconnection.Log(username, "Login Success", "Auth", "Administrator accessed the dashboard.");
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.Location = this.Location;
+                        dashboard.StartPosition = FormStartPosition.Manual;
+                        dashboard.WindowState = FormWindowState.Normal;
+                        dashboard.Show();
+                        this.Hide();
                         return;
                     }
 
@@ -71,6 +79,7 @@ namespace Customer_Relationship_Management
                         User_Home home = new User_Home(username!);
                         home.Location = this.Location;
                         home.StartPosition = FormStartPosition.Manual;
+                        home.WindowState = FormWindowState.Normal;
                         home.Show();
                         this.Hide();
                     }
@@ -92,6 +101,7 @@ namespace Customer_Relationship_Management
             Register registerForm = new Register();
             registerForm.Location = this.Location;
             registerForm.StartPosition = FormStartPosition.Manual;
+            registerForm.WindowState = FormWindowState.Normal;
             registerForm.Show();
             this.Hide();
         }
