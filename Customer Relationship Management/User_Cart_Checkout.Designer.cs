@@ -170,7 +170,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1160, 74);
+            panel3.Size = new Size(1408, 74);
             panel3.TabIndex = 51;
             // 
             // label2
@@ -348,7 +348,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1160, 650);
+            ClientSize = new Size(1408, 914);
             Controls.Add(backToCart);
             Controls.Add(checkout);
             Controls.Add(orderSummary);
@@ -368,9 +368,11 @@
             Controls.Add(label1);
             Controls.Add(panel3);
             Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "User_Cart_Checkout";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Cart_Checkout";
+            WindowState = FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);

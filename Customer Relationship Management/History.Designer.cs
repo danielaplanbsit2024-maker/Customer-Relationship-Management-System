@@ -142,7 +142,7 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(0, 205);
+            panel1.Location = new Point(1, 205);
             panel1.Name = "panel1";
             panel1.Size = new Size(1408, 96);
             panel1.TabIndex = 35;
@@ -230,7 +230,7 @@
             panel2.Controls.Add(btnAddadmin);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(label17);
-            panel2.Location = new Point(0, 819);
+            panel2.Location = new Point(1, 819);
             panel2.Name = "panel2";
             panel2.Size = new Size(1408, 95);
             panel2.TabIndex = 36;
@@ -282,7 +282,7 @@
             // 
             dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(7, 308);
+            dataGridView1.Location = new Point(8, 308);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1392, 504);
@@ -295,7 +295,7 @@
             label16.BackColor = SystemColors.ControlDark;
             label16.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label16.ForeColor = SystemColors.ControlDark;
-            label16.Location = new Point(606, 439);
+            label16.Location = new Point(607, 439);
             label16.Name = "label16";
             label16.Size = new Size(191, 34);
             label16.TabIndex = 82;
@@ -308,7 +308,7 @@
             label5.BackColor = SystemColors.ControlDark;
             label5.Font = new Font("Verdana", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ControlDark;
-            label5.Location = new Point(327, 549);
+            label5.Location = new Point(328, 549);
             label5.Name = "label5";
             label5.Size = new Size(765, 25);
             label5.TabIndex = 83;
@@ -320,7 +320,7 @@
             panel3.BackColor = Color.FromArgb(75, 54, 33);
             panel3.Controls.Add(pictureBox2);
             panel3.Controls.Add(pictureBox1);
-            panel3.Location = new Point(0, 0);
+            panel3.Location = new Point(1, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(1408, 146);
             panel3.TabIndex = 84;
@@ -357,7 +357,7 @@
             flowLayoutPanel2.Controls.Add(btnHistoryToCustomers);
             flowLayoutPanel2.Controls.Add(btnHistory);
             flowLayoutPanel2.Controls.Add(btnHistoryLogout);
-            flowLayoutPanel2.Location = new Point(0, 146);
+            flowLayoutPanel2.Location = new Point(1, 146);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(1408, 59);
             flowLayoutPanel2.TabIndex = 85;
@@ -367,7 +367,7 @@
             AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(1407, 914);
+            ClientSize = new Size(1408, 914);
             Controls.Add(panel1);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(panel3);
@@ -381,6 +381,7 @@
             Name = "History";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "History";
+            WindowState = FormWindowState.Minimized;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
