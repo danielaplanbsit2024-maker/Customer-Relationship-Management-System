@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class Customers
     {

@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Cart
     {
@@ -34,7 +34,6 @@
             pictureBox2 = new PictureBox();
             button1 = new Button();
             button5 = new Button();
-            button3 = new Button();
             btnLogout = new Button();
             button2 = new Button();
             label1 = new Label();
@@ -64,7 +63,6 @@
             panel3.Controls.Add(pictureBox2);
             panel3.Controls.Add(button1);
             panel3.Controls.Add(button5);
-            panel3.Controls.Add(button3);
             panel3.Controls.Add(btnLogout);
             panel3.Location = new Point(-29, 0);
             panel3.Name = "panel3";
@@ -100,9 +98,9 @@
             button1.BackColor = Color.FromArgb(75, 54, 33);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Verdana", 14F);
+            button1.Font = new Font("Verdana", 12F);
             button1.ForeColor = SystemColors.Info;
-            button1.Location = new Point(760, 47);
+            button1.Location = new Point(847, 47);
             button1.Name = "button1";
             button1.Size = new Size(194, 47);
             button1.TabIndex = 45;
@@ -116,9 +114,9 @@
             button5.BackColor = Color.FromArgb(75, 54, 33);
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Verdana", 14F);
+            button5.Font = new Font("Verdana", 12F);
             button5.ForeColor = SystemColors.Info;
-            button5.Location = new Point(1091, 47);
+            button5.Location = new Point(1047, 47);
             button5.Name = "button5";
             button5.Size = new Size(186, 47);
             button5.TabIndex = 55;
@@ -126,35 +124,19 @@
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
-            // button3
-            // 
-            button3.Anchor = AnchorStyles.None;
-            button3.BackColor = Color.FromArgb(75, 54, 33);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Verdana", 14F);
-            button3.ForeColor = SystemColors.Info;
-            button3.Location = new Point(954, 47);
-            button3.Name = "button3";
-            button3.Size = new Size(137, 47);
-            button3.TabIndex = 47;
-            button3.Text = "CART";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
             // btnLogout
             // 
             btnLogout.Anchor = AnchorStyles.None;
             btnLogout.BackColor = Color.FromArgb(75, 54, 33);
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Font = new Font("Verdana", 14F);
+            btnLogout.Font = new Font("Verdana", 12F);
             btnLogout.ForeColor = SystemColors.Info;
-            btnLogout.Location = new Point(1277, 47);
+            btnLogout.Location = new Point(1252, 47);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(153, 47);
             btnLogout.TabIndex = 29;
-            btnLogout.Text = "LOGOUT";
+            btnLogout.Text = "LOG OUT";
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
@@ -362,7 +344,6 @@
             Name = "User_Cart";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Cart";
-            WindowState = FormWindowState.Minimized;
             Load += User_Cart_Load;
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -378,7 +359,6 @@
         private Button btnLogout;
         private Button button2;
         private Button button1;
-        private Button button3;
         private Label label1;
         private DataGridView dataGridView1;
         private Label label2;

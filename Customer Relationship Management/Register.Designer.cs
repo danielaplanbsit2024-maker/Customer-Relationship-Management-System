@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class Register
     {
@@ -49,7 +49,7 @@
             // 
             txtRegisterPassword.Anchor = AnchorStyles.None;
             txtRegisterPassword.Location = new Point(679, 529);
-            txtRegisterPassword.Name = "txtRegisterPassword";
+            txtRegisterPassword.Name = "txtRegisterPassword"; txtRegisterPassword.UseSystemPasswordChar = true;
             txtRegisterPassword.Size = new Size(632, 37);
             txtRegisterPassword.TabIndex = 14;
             // 
@@ -90,7 +90,7 @@
             // 
             txtRegisterConfirmPass.Anchor = AnchorStyles.None;
             txtRegisterConfirmPass.Location = new Point(679, 645);
-            txtRegisterConfirmPass.Name = "txtRegisterConfirmPass";
+            txtRegisterConfirmPass.Name = "txtRegisterConfirmPass"; txtRegisterConfirmPass.UseSystemPasswordChar = true;
             txtRegisterConfirmPass.Size = new Size(632, 37);
             txtRegisterConfirmPass.TabIndex = 16;
             // 

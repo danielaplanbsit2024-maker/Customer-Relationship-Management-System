@@ -68,11 +68,21 @@ namespace Customer_Relationship_Management
 
                 using (DBconnection db = new DBconnection(ConStr))
                 {
+                    // Check for existing username
+                    var existing = db.ExecuteScalar("SELECT COUNT(1) FROM Users WHERE username = @username", 
+                        new Dictionary<string, object> { ["@username"] = username });
+                    
+                    if (existing != null && Convert.ToInt32(existing) > 0)
+                    {
+                        MessageBox.Show("That username is already taken. Please choose another.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     string sql = "INSERT INTO Users (username, password) VALUES (@username, @password)";
                     var parameters = new System.Collections.Generic.Dictionary<string, object>
                     {
                         { "@username", username },
-                        { "@password", password }
+                        { "@password", DBconnection.HashPassword(password) }
                     };
 
                     int rowsAffected = db.CRUD(sql, parameters);

@@ -167,7 +167,7 @@ namespace Customer_Relationship_Management
 
         private void Navigate<T>(Func<string, T> f) where T : Form
         {
-            var form = f(CurrentUser); form.Location = this.Location; form.StartPosition = FormStartPosition.Manual; form.Show(); this.Close();
+            var form = f(CurrentUser); form.Location = this.Location; form.StartPosition = FormStartPosition.Manual; form.Show(); this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e) => Navigate(u => new User_Products(u));

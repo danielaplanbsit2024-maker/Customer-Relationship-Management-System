@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Confirm_Ewallet
     {
@@ -283,7 +283,6 @@
             Name = "User_Confirm_Ewallet";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Confirm_Ewallet";
-            WindowState = FormWindowState.Minimized;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();

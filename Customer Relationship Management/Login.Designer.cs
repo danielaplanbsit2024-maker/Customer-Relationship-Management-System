@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class Login
     {
@@ -98,7 +98,7 @@
             // 
             txtLoginPassword.Anchor = AnchorStyles.None;
             txtLoginPassword.Location = new Point(677, 569);
-            txtLoginPassword.Name = "txtLoginPassword";
+            txtLoginPassword.Name = "txtLoginPassword"; txtLoginPassword.UseSystemPasswordChar = true;
             txtLoginPassword.Size = new Size(632, 37);
             txtLoginPassword.TabIndex = 6;
             // 

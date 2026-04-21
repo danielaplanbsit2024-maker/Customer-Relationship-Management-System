@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class History
     {
@@ -52,6 +52,7 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             flowLayoutPanel2 = new FlowLayoutPanel();
+            btnMonitor = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -154,7 +155,7 @@
             textBox1.ForeColor = Color.Gray;
             textBox1.Location = new Point(1043, 28);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(330, 42);
+            textBox1.Size = new Size(330, 30);
             textBox1.TabIndex = 43;
             textBox1.Text = "SEARCH DETAILS";
             // 
@@ -182,7 +183,7 @@
             dateTimePicker2.MaxDate = new DateTime(9000, 12, 31, 0, 0, 0, 0);
             dateTimePicker2.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(275, 32);
+            dateTimePicker2.Size = new Size(275, 24);
             dateTimePicker2.TabIndex = 85;
             dateTimePicker2.Value = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
@@ -206,7 +207,7 @@
             comboBox1.Items.AddRange(new object[] { "All", "Admin", "Cashier", "Manager" });
             comboBox1.Location = new Point(191, 32);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(217, 33);
+            comboBox1.Size = new Size(217, 24);
             comboBox1.TabIndex = 83;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -227,6 +228,7 @@
             // 
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.Tan;
+            panel2.Controls.Add(btnMonitor);
             panel2.Controls.Add(btnAddadmin);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(label17);
@@ -243,7 +245,7 @@
             btnAddadmin.FlatStyle = FlatStyle.Flat;
             btnAddadmin.Font = new Font("Verdana", 14F, FontStyle.Bold);
             btnAddadmin.ForeColor = Color.FromArgb(85, 61, 30);
-            btnAddadmin.Location = new Point(841, 12);
+            btnAddadmin.Location = new Point(847, 12);
             btnAddadmin.Name = "btnAddadmin";
             btnAddadmin.Size = new Size(257, 71);
             btnAddadmin.TabIndex = 87;
@@ -274,7 +276,7 @@
             label17.ForeColor = Color.Black;
             label17.Location = new Point(30, 25);
             label17.Name = "label17";
-            label17.Size = new Size(474, 44);
+            label17.Size = new Size(313, 29);
             label17.TabIndex = 84;
             label17.Text = "LOGS AVAILABLE: 100";
             // 
@@ -297,7 +299,7 @@
             label16.ForeColor = SystemColors.ControlDark;
             label16.Location = new Point(607, 439);
             label16.Name = "label16";
-            label16.Size = new Size(191, 34);
+            label16.Size = new Size(128, 23);
             label16.TabIndex = 82;
             label16.Text = "[database]";
             // 
@@ -310,7 +312,7 @@
             label5.ForeColor = SystemColors.ControlDark;
             label5.Location = new Point(328, 549);
             label5.Name = "label5";
-            label5.Size = new Size(765, 25);
+            label5.Size = new Size(527, 17);
             label5.TabIndex = 83;
             label5.Text = "LoginID | TimeStamp | User | Action | Module | Description/Notes";
             // 
@@ -362,9 +364,24 @@
             flowLayoutPanel2.Size = new Size(1408, 59);
             flowLayoutPanel2.TabIndex = 85;
             // 
+            // btnMonitor
+            // 
+            btnMonitor.Anchor = AnchorStyles.None;
+            btnMonitor.BackColor = Color.PeachPuff;
+            btnMonitor.FlatAppearance.BorderSize = 0;
+            btnMonitor.FlatStyle = FlatStyle.Flat;
+            btnMonitor.Font = new Font("Verdana", 14F, FontStyle.Bold);
+            btnMonitor.ForeColor = Color.FromArgb(85, 61, 30);
+            btnMonitor.Location = new Point(576, 12);
+            btnMonitor.Name = "btnMonitor";
+            btnMonitor.Size = new Size(257, 71);
+            btnMonitor.TabIndex = 88;
+            btnMonitor.Text = "Monitor";
+            btnMonitor.UseVisualStyleBackColor = false;
+            // 
             // History
             // 
-            AutoScaleDimensions = new SizeF(13F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(1408, 914);
@@ -381,7 +398,6 @@
             Name = "History";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "History";
-            WindowState = FormWindowState.Minimized;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -420,5 +436,6 @@
         private PictureBox pictureBox1;
         private FlowLayoutPanel flowLayoutPanel2;
         private Button btnAddadmin;
+        private Button btnMonitor;
     }
 }

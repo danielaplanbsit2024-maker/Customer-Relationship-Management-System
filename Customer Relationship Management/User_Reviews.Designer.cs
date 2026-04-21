@@ -1,4 +1,4 @@
-﻿namespace Customer_Relationship_Management
+namespace Customer_Relationship_Management
 {
     partial class User_Reviews
     {
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Reviews));
-            button5 = new Button();
             btnMinimizeCustomers = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -55,34 +54,19 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
-            // button5
-            // 
-            button5.Anchor = AnchorStyles.None;
-            button5.BackColor = Color.FromArgb(75, 54, 33);
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Verdana", 14F);
-            button5.ForeColor = SystemColors.Info;
-            button5.Location = new Point(1080, 47);
-            button5.Name = "button5";
-            button5.Size = new Size(164, 48);
-            button5.TabIndex = 55;
-            button5.Text = "REVIEWS";
-            button5.UseVisualStyleBackColor = false;
-            // 
             // btnMinimizeCustomers
             // 
             btnMinimizeCustomers.Anchor = AnchorStyles.None;
             btnMinimizeCustomers.BackColor = Color.FromArgb(75, 54, 33);
             btnMinimizeCustomers.FlatAppearance.BorderSize = 0;
             btnMinimizeCustomers.FlatStyle = FlatStyle.Flat;
-            btnMinimizeCustomers.Font = new Font("Verdana", 14F);
+            btnMinimizeCustomers.Font = new Font("Verdana", 12F);
             btnMinimizeCustomers.ForeColor = SystemColors.Info;
-            btnMinimizeCustomers.Location = new Point(1244, 47);
+            btnMinimizeCustomers.Location = new Point(1214, 47);
             btnMinimizeCustomers.Name = "btnMinimizeCustomers";
             btnMinimizeCustomers.Size = new Size(164, 48);
             btnMinimizeCustomers.TabIndex = 29;
-            btnMinimizeCustomers.Text = "LOGOUT";
+            btnMinimizeCustomers.Text = "LOG OUT";
             btnMinimizeCustomers.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -91,9 +75,9 @@
             button2.BackColor = Color.FromArgb(75, 54, 33);
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Verdana", 14F);
+            button2.Font = new Font("Verdana", 12F);
             button2.ForeColor = SystemColors.Info;
-            button2.Location = new Point(663, 47);
+            button2.Location = new Point(757, 47);
             button2.Name = "button2";
             button2.Size = new Size(120, 48);
             button2.TabIndex = 46;
@@ -107,9 +91,9 @@
             button1.BackColor = Color.FromArgb(75, 54, 33);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Verdana", 14F);
+            button1.Font = new Font("Verdana", 12F);
             button1.ForeColor = SystemColors.Info;
-            button1.Location = new Point(783, 47);
+            button1.Location = new Point(896, 47);
             button1.Name = "button1";
             button1.Size = new Size(181, 48);
             button1.TabIndex = 45;
@@ -123,9 +107,9 @@
             button3.BackColor = Color.FromArgb(75, 54, 33);
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Verdana", 14F);
+            button3.Font = new Font("Verdana", 12F);
             button3.ForeColor = SystemColors.Info;
-            button3.Location = new Point(964, 47);
+            button3.Location = new Point(1090, 47);
             button3.Name = "button3";
             button3.Size = new Size(116, 48);
             button3.TabIndex = 47;
@@ -200,7 +184,6 @@
             // 
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.FromArgb(75, 54, 33);
-            panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(button1);
@@ -240,9 +223,9 @@
             pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.BackgroundImageLayout = ImageLayout.None;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(158, 9);
+            pictureBox3.Location = new Point(148, 8);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(500, 119);
+            pictureBox3.Size = new Size(461, 119);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 51;
             pictureBox3.TabStop = false;
@@ -253,7 +236,7 @@
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(9, -9);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(143, 150);
+            pictureBox4.Size = new Size(133, 150);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 56;
             pictureBox4.TabStop = false;
@@ -379,7 +362,6 @@
             Name = "User_Reviews";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User_Reviews";
-            WindowState = FormWindowState.Minimized;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -388,7 +370,6 @@
         }
 
         #endregion
-        private Button button5;
         private Button btnMinimizeCustomers;
         private Button button2;
         private Button button1;
