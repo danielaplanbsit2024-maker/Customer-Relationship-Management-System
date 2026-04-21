@@ -741,7 +741,7 @@ namespace Customer_Relationship_Management
             btnHistoryToDashboard.Click += (s, e) => Navigate(new Dashboard());
             btnHistoryToSales.Click += (s, e) => Navigate(new Sales());
             btnHistoryToCustomers.Click += (s, e) => Navigate(new Customers());
-            
+
             // Highlight the current tab
             btnHistory.BackColor = Color.FromArgb(75, 54, 33);
 
@@ -771,6 +771,16 @@ namespace Customer_Relationship_Management
         }
 
         private void btnHistoryToCustomers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHistory_Click_1(object sender, EventArgs e)
         {
 
         }

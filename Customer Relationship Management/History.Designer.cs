@@ -42,6 +42,7 @@ namespace Customer_Relationship_Management
             comboBox1 = new ComboBox();
             label2 = new Label();
             panel2 = new Panel();
+            btnMonitor = new Button();
             btnAddadmin = new Button();
             button1 = new Button();
             label17 = new Label();
@@ -51,15 +52,14 @@ namespace Customer_Relationship_Management
             panel3 = new Panel();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            flowLayoutPanel2 = new FlowLayoutPanel();
-            btnMonitor = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            flowLayoutPanel2.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnHistoryLogout
@@ -155,7 +155,7 @@ namespace Customer_Relationship_Management
             textBox1.ForeColor = Color.Gray;
             textBox1.Location = new Point(1043, 28);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(330, 30);
+            textBox1.Size = new Size(330, 42);
             textBox1.TabIndex = 43;
             textBox1.Text = "SEARCH DETAILS";
             // 
@@ -183,7 +183,7 @@ namespace Customer_Relationship_Management
             dateTimePicker2.MaxDate = new DateTime(9000, 12, 31, 0, 0, 0, 0);
             dateTimePicker2.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(275, 24);
+            dateTimePicker2.Size = new Size(275, 32);
             dateTimePicker2.TabIndex = 85;
             dateTimePicker2.Value = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
@@ -207,7 +207,7 @@ namespace Customer_Relationship_Management
             comboBox1.Items.AddRange(new object[] { "All", "Admin", "Cashier", "Manager" });
             comboBox1.Location = new Point(191, 32);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(217, 24);
+            comboBox1.Size = new Size(217, 33);
             comboBox1.TabIndex = 83;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -236,6 +236,21 @@ namespace Customer_Relationship_Management
             panel2.Name = "panel2";
             panel2.Size = new Size(1408, 95);
             panel2.TabIndex = 36;
+            // 
+            // btnMonitor
+            // 
+            btnMonitor.Anchor = AnchorStyles.None;
+            btnMonitor.BackColor = Color.PeachPuff;
+            btnMonitor.FlatAppearance.BorderSize = 0;
+            btnMonitor.FlatStyle = FlatStyle.Flat;
+            btnMonitor.Font = new Font("Verdana", 14F, FontStyle.Bold);
+            btnMonitor.ForeColor = Color.FromArgb(85, 61, 30);
+            btnMonitor.Location = new Point(576, 12);
+            btnMonitor.Name = "btnMonitor";
+            btnMonitor.Size = new Size(257, 71);
+            btnMonitor.TabIndex = 88;
+            btnMonitor.Text = "Monitor";
+            btnMonitor.UseVisualStyleBackColor = false;
             // 
             // btnAddadmin
             // 
@@ -276,7 +291,7 @@ namespace Customer_Relationship_Management
             label17.ForeColor = Color.Black;
             label17.Location = new Point(30, 25);
             label17.Name = "label17";
-            label17.Size = new Size(313, 29);
+            label17.Size = new Size(474, 44);
             label17.TabIndex = 84;
             label17.Text = "LOGS AVAILABLE: 100";
             // 
@@ -299,7 +314,7 @@ namespace Customer_Relationship_Management
             label16.ForeColor = SystemColors.ControlDark;
             label16.Location = new Point(607, 439);
             label16.Name = "label16";
-            label16.Size = new Size(128, 23);
+            label16.Size = new Size(191, 34);
             label16.TabIndex = 82;
             label16.Text = "[database]";
             // 
@@ -312,7 +327,7 @@ namespace Customer_Relationship_Management
             label5.ForeColor = SystemColors.ControlDark;
             label5.Location = new Point(328, 549);
             label5.Name = "label5";
-            label5.Size = new Size(527, 17);
+            label5.Size = new Size(765, 25);
             label5.TabIndex = 83;
             label5.Text = "LoginID | TimeStamp | User | Action | Module | Description/Notes";
             // 
@@ -350,44 +365,29 @@ namespace Customer_Relationship_Management
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
-            // flowLayoutPanel2
+            // flowLayoutPanel1
             // 
-            flowLayoutPanel2.Anchor = AnchorStyles.None;
-            flowLayoutPanel2.BackColor = Color.FromArgb(85, 61, 30);
-            flowLayoutPanel2.Controls.Add(btnHistoryToDashboard);
-            flowLayoutPanel2.Controls.Add(btnHistoryToSales);
-            flowLayoutPanel2.Controls.Add(btnHistoryToCustomers);
-            flowLayoutPanel2.Controls.Add(btnHistory);
-            flowLayoutPanel2.Controls.Add(btnHistoryLogout);
-            flowLayoutPanel2.Location = new Point(1, 146);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(1408, 59);
-            flowLayoutPanel2.TabIndex = 85;
-            // 
-            // btnMonitor
-            // 
-            btnMonitor.Anchor = AnchorStyles.None;
-            btnMonitor.BackColor = Color.PeachPuff;
-            btnMonitor.FlatAppearance.BorderSize = 0;
-            btnMonitor.FlatStyle = FlatStyle.Flat;
-            btnMonitor.Font = new Font("Verdana", 14F, FontStyle.Bold);
-            btnMonitor.ForeColor = Color.FromArgb(85, 61, 30);
-            btnMonitor.Location = new Point(576, 12);
-            btnMonitor.Name = "btnMonitor";
-            btnMonitor.Size = new Size(257, 71);
-            btnMonitor.TabIndex = 88;
-            btnMonitor.Text = "Monitor";
-            btnMonitor.UseVisualStyleBackColor = false;
+            flowLayoutPanel1.Anchor = AnchorStyles.None;
+            flowLayoutPanel1.BackColor = Color.FromArgb(85, 61, 30);
+            flowLayoutPanel1.Controls.Add(btnHistoryToDashboard);
+            flowLayoutPanel1.Controls.Add(btnHistoryToSales);
+            flowLayoutPanel1.Controls.Add(btnHistoryToCustomers);
+            flowLayoutPanel1.Controls.Add(btnHistory);
+            flowLayoutPanel1.Controls.Add(btnHistoryLogout);
+            flowLayoutPanel1.Location = new Point(0, 146);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1408, 59);
+            flowLayoutPanel1.TabIndex = 35;
             // 
             // History
             // 
-            AutoScaleDimensions = new SizeF(8F, 16F);
+            AutoScaleDimensions = new SizeF(13F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(1408, 914);
             Controls.Add(panel1);
-            Controls.Add(flowLayoutPanel2);
             Controls.Add(panel3);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(label5);
             Controls.Add(label16);
             Controls.Add(dataGridView1);
@@ -406,7 +406,7 @@ namespace Customer_Relationship_Management
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            flowLayoutPanel2.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -434,8 +434,8 @@ namespace Customer_Relationship_Management
         private Panel panel3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private FlowLayoutPanel flowLayoutPanel2;
         private Button btnAddadmin;
         private Button btnMonitor;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
