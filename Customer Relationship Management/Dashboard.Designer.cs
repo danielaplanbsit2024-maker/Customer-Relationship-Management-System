@@ -176,11 +176,11 @@
             label3.AutoSize = true;
             label3.Font = new Font("Verdana", 22F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(52, 216);
+            label3.Location = new Point(68, 216);
             label3.Name = "label3";
-            label3.Size = new Size(535, 53);
+            label3.Size = new Size(563, 53);
             label3.TabIndex = 6;
-            label3.Text = "vs. Yesterday: +00.0%";
+            label3.Text = "vs. Yesterday: +000.0%";
             // 
             // label2
             // 
@@ -188,7 +188,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Verdana", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(86, 123);
+            label2.Location = new Point(102, 123);
             label2.Name = "label2";
             label2.Size = new Size(457, 67);
             label2.TabIndex = 5;
@@ -201,7 +201,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(113, 43);
+            label1.Location = new Point(104, 43);
             label1.Name = "label1";
             label1.Size = new Size(408, 53);
             label1.TabIndex = 4;
@@ -239,11 +239,11 @@
             label5.AutoSize = true;
             label5.Font = new Font("Verdana", 28F, FontStyle.Bold);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(266, 123);
+            label5.Location = new Point(287, 123);
             label5.Name = "label5";
-            label5.Size = new Size(109, 67);
+            label5.Size = new Size(69, 67);
             label5.TabIndex = 7;
-            label5.Text = "00";
+            label5.Text = "0";
             // 
             // label4
             // 
@@ -276,7 +276,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Verdana", 22F);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(230, 212);
+            label7.Location = new Point(236, 212);
             label7.Name = "label7";
             label7.Size = new Size(151, 53);
             label7.TabIndex = 8;
@@ -288,11 +288,11 @@
             label8.AutoSize = true;
             label8.Font = new Font("Verdana", 28F, FontStyle.Bold);
             label8.ForeColor = Color.Black;
-            label8.Location = new Point(248, 130);
+            label8.Location = new Point(273, 130);
             label8.Name = "label8";
-            label8.Size = new Size(109, 67);
+            label8.Size = new Size(69, 67);
             label8.TabIndex = 9;
-            label8.Text = "00";
+            label8.Text = "0";
             // 
             // label9
             // 
@@ -324,11 +324,11 @@
             label11.AutoSize = true;
             label11.Font = new Font("Verdana", 28F, FontStyle.Bold);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(166, 130);
+            label11.Location = new Point(120, 130);
             label11.Name = "label11";
-            label11.Size = new Size(297, 67);
+            label11.Size = new Size(397, 67);
             label11.TabIndex = 8;
-            label11.Text = "PHP 000";
+            label11.Text = "PHP 000.00";
             label11.Click += label11_Click;
             // 
             // label10
@@ -337,7 +337,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("Verdana", 22F);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(167, 212);
+            label10.Location = new Point(166, 212);
             label10.Name = "label10";
             label10.Size = new Size(302, 53);
             label10.TabIndex = 9;
